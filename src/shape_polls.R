@@ -21,7 +21,7 @@ president_polls <- read_csv("data/president_polls.csv") %>%
          party = case_when(!is.na(party) ~ party,
                            is.na(party) ~ "None"),
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
-           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
   group_by(poll_id, question_id) %>%
   mutate(biden_v_trump = any(grepl("Biden", candidate)) & any(grepl("Trump", candidate)),
          has_3p = any(!grepl("Biden|Trump", candidate))) %>%

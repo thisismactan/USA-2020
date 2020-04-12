@@ -1,0 +1,715 @@
+﻿year,state,party,candidate,votes
+1992,Alabama,Democratic,Bill Clinton,690080
+1992,Alabama,Republican,George Bush,804283
+1992,Alaska,Democratic,Bill Clinton,78294
+1992,Alaska,Republican,George Bush,102000
+1992,Arizona,Democratic,Bill Clinton,543050
+1992,Arizona,Republican,George Bush,572086
+1992,Arkansas,Democratic,Bill Clinton,505823
+1992,Arkansas,Republican,George Bush,337324
+1992,California,Democratic,Bill Clinton,5121325
+1992,California,Republican,George Bush,3630574
+1992,Colorado,Democratic,Bill Clinton,629681
+1992,Colorado,Republican,George Bush,562850
+1992,Connecticut,Democratic,Bill Clinton,682318
+1992,Connecticut,Republican,George Bush,578313
+1992,Delaware,Democratic,Bill Clinton,126054
+1992,Delaware,Republican,George Bush,102313
+1992,District of Columbia,Democratic,Bill Clinton,192619
+1992,District of Columbia,Republican,George Bush,20698
+1992,Florida,Democratic,Bill Clinton,2072698
+1992,Florida,Republican,George Bush,2173310
+1992,Georgia,Democratic,Bill Clinton,1008966
+1992,Georgia,Republican,George Bush,995252
+1992,Hawaii,Democratic,Bill Clinton,179310
+1992,Hawaii,Republican,George Bush,136822
+1992,Idaho,Democratic,Bill Clinton,137013
+1992,Idaho,Republican,George Bush,202645
+1992,Illinois,Democratic,Bill Clinton,2453350
+1992,Illinois,Republican,George Bush,1734096
+1992,Indiana,Democratic,Bill Clinton,848420
+1992,Indiana,Republican,George Bush,989375
+1992,Iowa,Democratic,Bill Clinton,586353
+1992,Iowa,Republican,George Bush,504891
+1992,Kansas,Democratic,Bill Clinton,390434
+1992,Kansas,Republican,George Bush,449951
+1992,Kentucky,Democratic,Bill Clinton,665104
+1992,Kentucky,Republican,George Bush,617178
+1992,Louisiana,Democratic,Bill Clinton,815971
+1992,Louisiana,Republican,George Bush,733386
+1992,Maine,Democratic,Bill Clinton,263420
+1992,Maine,Republican,George Bush,206504
+1992,Maryland,Democratic,Bill Clinton,988571
+1992,Maryland,Republican,George Bush,707094
+1992,Massachusetts,Democratic,Bill Clinton,1318662
+1992,Massachusetts,Republican,George Bush,805049
+1992,Michigan,Democratic,Bill Clinton,1871182
+1992,Michigan,Republican,George Bush,1554940
+1992,Minnesota,Democratic,Bill Clinton,1020997
+1992,Minnesota,Republican,George Bush,747841
+1992,Mississippi,Democratic,Bill Clinton,400258
+1992,Mississippi,Republican,George Bush,487793
+1992,Missouri,Democratic,Bill Clinton,1053873
+1992,Missouri,Republican,George Bush,811159
+1992,Montana,Democratic,Bill Clinton,154507
+1992,Montana,Republican,George Bush,144207
+1992,Nebraska,Democratic,Bill Clinton,217344
+1992,Nebraska,Republican,George Bush,344346
+1992,Nevada,Democratic,Bill Clinton,189148
+1992,Nevada,Republican,George Bush,175828
+1992,New Hampshire,Democratic,Bill Clinton,209040
+1992,New Hampshire,Republican,George Bush,202484
+1992,New Jersey,Democratic,Bill Clinton,1436206
+1992,New Jersey,Republican,George Bush,1356865
+1992,New Mexico,Democratic,Bill Clinton,261617
+1992,New Mexico,Republican,George Bush,212824
+1992,New York,Democratic,Bill Clinton,3444450
+1992,New York,Republican,George Bush,2346649
+1992,North Carolina,Democratic,Bill Clinton,1114042
+1992,North Carolina,Republican,George Bush,1134661
+1992,North Dakota,Democratic,Bill Clinton,99168
+1992,North Dakota,Republican,George Bush,136244
+1992,Ohio,Democratic,Bill Clinton,1984942
+1992,Ohio,Republican,George Bush,1894310
+1992,Oklahoma,Democratic,Bill Clinton,473066
+1992,Oklahoma,Republican,George Bush,592929
+1992,Oregon,Democratic,Bill Clinton,621314
+1992,Oregon,Republican,George Bush,475757
+1992,Pennsylvania,Democratic,Bill Clinton,2239164
+1992,Pennsylvania,Republican,George Bush,1791841
+1992,Rhode Island,Democratic,Bill Clinton,213299
+1992,Rhode Island,Republican,George Bush,131601
+1992,South Carolina,Democratic,Bill Clinton,479514
+1992,South Carolina,Republican,George Bush,577507
+1992,South Dakota,Democratic,Bill Clinton,124888
+1992,South Dakota,Republican,George Bush,136718
+1992,Tennessee,Democratic,Bill Clinton,933521
+1992,Tennessee,Republican,George Bush,841300
+1992,Texas,Democratic,Bill Clinton,2281815
+1992,Texas,Republican,George Bush,2496071
+1992,Utah,Democratic,Bill Clinton,183429
+1992,Utah,Republican,George Bush,322632
+1992,Vermont,Democratic,Bill Clinton,133592
+1992,Vermont,Republican,George Bush,88122
+1992,Virginia,Democratic,Bill Clinton,1038650
+1992,Virginia,Republican,George Bush,1150517
+1992,Washington,Democratic,Bill Clinton,993037
+1992,Washington,Republican,George Bush,731234
+1992,West Virginia,Democratic,Bill Clinton,331001
+1992,West Virginia,Republican,George Bush,241974
+1992,Wisconsin,Democratic,Bill Clinton,1041066
+1992,Wisconsin,Republican,George Bush,930855
+1992,Wyoming,Democratic,Bill Clinton,68160
+1992,Wyoming,Republican,George Bush,79347
+1996,Alabama,Democratic,Bill Clinton,662165
+1996,Alabama,Republican,Bob Dole,769044
+1996,Alaska,Democratic,Bill Clinton,80380
+1996,Alaska,Republican,Bob Dole,122746
+1996,Arizona,Democratic,Bill Clinton,653288
+1996,Arizona,Republican,Bob Dole,622073
+1996,Arkansas,Democratic,Bill Clinton,475171
+1996,Arkansas,Republican,Bob Dole,325416
+1996,California,Democratic,Bill Clinton,5119835
+1996,California,Republican,Bob Dole,3828380
+1996,Colorado,Democratic,Bill Clinton,671152
+1996,Colorado,Republican,Bob Dole,691848
+1996,Connecticut,Democratic,Bill Clinton,735740
+1996,Connecticut,Republican,Bob Dole,483109
+1996,Delaware,Democratic,Bill Clinton,140355
+1996,Delaware,Republican,Bob Dole,99062
+1996,District of Columbia,Democratic,Bill Clinton,158220
+1996,District of Columbia,Republican,Bob Dole,17339
+1996,Florida,Democratic,Bill Clinton,2546870
+1996,Florida,Republican,Bob Dole,2244536
+1996,Georgia,Democratic,Bill Clinton,1053849
+1996,Georgia,Republican,Bob Dole,1080843
+1996,Hawaii,Democratic,Bill Clinton,205012
+1996,Hawaii,Republican,Bob Dole,113943
+1996,Idaho,Democratic,Bill Clinton,165443
+1996,Idaho,Republican,Bob Dole,256595
+1996,Illinois,Democratic,Bill Clinton,2341744
+1996,Illinois,Republican,Bob Dole,1587021
+1996,Indiana,Democratic,Bill Clinton,887424
+1996,Indiana,Republican,Bob Dole,1006693
+1996,Iowa,Democratic,Bill Clinton,620258
+1996,Iowa,Republican,Bob Dole,492644
+1996,Kansas,Democratic,Bill Clinton,387659
+1996,Kansas,Republican,Bob Dole,583245
+1996,Kentucky,Democratic,Bill Clinton,636614
+1996,Kentucky,Republican,Bob Dole,623283
+1996,Louisiana,Democratic,Bill Clinton,927837
+1996,Louisiana,Republican,Bob Dole,712586
+1996,Maine,Democratic,Bill Clinton,312788
+1996,Maine,Republican,Bob Dole,186378
+1996,Maryland,Democratic,Bill Clinton,966207
+1996,Maryland,Republican,Bob Dole,681530
+1996,Massachusetts,Democratic,Bill Clinton,1571763
+1996,Massachusetts,Republican,Bob Dole,718107
+1996,Michigan,Democratic,Bill Clinton,1989653
+1996,Michigan,Republican,Bob Dole,1481212
+1996,Minnesota,Democratic,Bill Clinton,1120438
+1996,Minnesota,Republican,Bob Dole,766476
+1996,Mississippi,Democratic,Bill Clinton,394022
+1996,Mississippi,Republican,Bob Dole,439838
+1996,Missouri,Democratic,Bill Clinton,1025935
+1996,Missouri,Republican,Bob Dole,890016
+1996,Montana,Democratic,Bill Clinton,167922
+1996,Montana,Republican,Bob Dole,179652
+1996,Nebraska,Democratic,Bill Clinton,236761
+1996,Nebraska,Republican,Bob Dole,363467
+1996,Nevada,Democratic,Bill Clinton,203974
+1996,Nevada,Republican,Bob Dole,199244
+1996,New Hampshire,Democratic,Bill Clinton,246214
+1996,New Hampshire,Republican,Bob Dole,196532
+1996,New Jersey,Democratic,Bill Clinton,1652329
+1996,New Jersey,Republican,Bob Dole,1103078
+1996,New Mexico,Democratic,Bill Clinton,273495
+1996,New Mexico,Republican,Bob Dole,232751
+1996,New York,Democratic,Bill Clinton,3756177
+1996,New York,Republican,Bob Dole,1933492
+1996,North Carolina,Democratic,Bill Clinton,1107849
+1996,North Carolina,Republican,Bob Dole,1225938
+1996,North Dakota,Democratic,Bill Clinton,106905
+1996,North Dakota,Republican,Bob Dole,125050
+1996,Ohio,Democratic,Bill Clinton,2148222
+1996,Ohio,Republican,Bob Dole,1859883
+1996,Oklahoma,Democratic,Bill Clinton,488105
+1996,Oklahoma,Republican,Bob Dole,582315
+1996,Oregon,Democratic,Bill Clinton,649641
+1996,Oregon,Republican,Bob Dole,538152
+1996,Pennsylvania,Democratic,Bill Clinton,2215819
+1996,Pennsylvania,Republican,Bob Dole,1801169
+1996,Rhode Island,Democratic,Bill Clinton,233050
+1996,Rhode Island,Republican,Bob Dole,104683
+1996,South Carolina,Democratic,Bill Clinton,504051
+1996,South Carolina,Republican,Bob Dole,573458
+1996,South Dakota,Democratic,Bill Clinton,139333
+1996,South Dakota,Republican,Bob Dole,150543
+1996,Tennessee,Democratic,Bill Clinton,909146
+1996,Tennessee,Republican,Bob Dole,863530
+1996,Texas,Democratic,Bill Clinton,2459683
+1996,Texas,Republican,Bob Dole,2736167
+1996,Utah,Democratic,Bill Clinton,221633
+1996,Utah,Republican,Bob Dole,361911
+1996,Vermont,Democratic,Bill Clinton,137894
+1996,Vermont,Republican,Bob Dole,80352
+1996,Virginia,Democratic,Bill Clinton,1091060
+1996,Virginia,Republican,Bob Dole,1138350
+1996,Washington,Democratic,Bill Clinton,1123323
+1996,Washington,Republican,Bob Dole,840712
+1996,West Virginia,Democratic,Bill Clinton,327812
+1996,West Virginia,Republican,Bob Dole,233946
+1996,Wisconsin,Democratic,Bill Clinton,1071971
+1996,Wisconsin,Republican,Bob Dole,845029
+1996,Wyoming,Democratic,Bill Clinton,77934
+1996,Wyoming,Republican,Bob Dole,105388
+2000,Alabama,Democratic,Al Gore,692611
+2000,Alabama,Republican,George W. Bush,941173
+2000,Alaska,Democratic,Al Gore,79004
+2000,Alaska,Republican,George W. Bush,167398
+2000,Arizona,Democratic,Al Gore,685341
+2000,Arizona,Republican,George W. Bush,781652
+2000,Arkansas,Democratic,Al Gore,422768
+2000,Arkansas,Republican,George W. Bush,472940
+2000,California,Democratic,Al Gore,5861203
+2000,California,Republican,George W. Bush,4567429
+2000,Colorado,Democratic,Al Gore,738227
+2000,Colorado,Republican,George W. Bush,883748
+2000,Connecticut,Democratic,Al Gore,816015
+2000,Connecticut,Republican,George W. Bush,561094
+2000,Delaware,Democratic,Al Gore,180068
+2000,Delaware,Republican,George W. Bush,137288
+2000,District of Columbia,Democratic,Al Gore,171923
+2000,District of Columbia,Republican,George W. Bush,18073
+2000,Florida,Democratic,Al Gore,2912253
+2000,Florida,Republican,George W. Bush,2912790
+2000,Georgia,Democratic,Al Gore,1116230
+2000,Georgia,Republican,George W. Bush,1419720
+2000,Hawaii,Democratic,Al Gore,205286
+2000,Hawaii,Republican,George W. Bush,137845
+2000,Idaho,Democratic,Al Gore,138637
+2000,Idaho,Republican,George W. Bush,336937
+2000,Illinois,Democratic,Al Gore,2589026
+2000,Illinois,Republican,George W. Bush,2019421
+2000,Indiana,Democratic,Al Gore,901980
+2000,Indiana,Republican,George W. Bush,1245836
+2000,Iowa,Democratic,Al Gore,638517
+2000,Iowa,Republican,George W. Bush,634373
+2000,Kansas,Democratic,Al Gore,399276
+2000,Kansas,Republican,George W. Bush,622332
+2000,Kentucky,Democratic,Al Gore,638898
+2000,Kentucky,Republican,George W. Bush,872492
+2000,Louisiana,Democratic,Al Gore,792344
+2000,Louisiana,Republican,George W. Bush,927871
+2000,Maine,Democratic,Al Gore,319951
+2000,Maine,Republican,George W. Bush,286616
+2000,Maryland,Democratic,Al Gore,1145782
+2000,Maryland,Republican,George W. Bush,813797
+2000,Massachusetts,Democratic,Al Gore,1616487
+2000,Massachusetts,Republican,George W. Bush,878502
+2000,Michigan,Democratic,Al Gore,2170418
+2000,Michigan,Republican,George W. Bush,1953139
+2000,Minnesota,Democratic,Al Gore,1168266
+2000,Minnesota,Republican,George W. Bush,1109659
+2000,Mississippi,Democratic,Al Gore,404614
+2000,Mississippi,Republican,George W. Bush,572844
+2000,Missouri,Democratic,Al Gore,1111138
+2000,Missouri,Republican,George W. Bush,1189924
+2000,Montana,Democratic,Al Gore,137126
+2000,Montana,Republican,George W. Bush,240178
+2000,Nebraska,Democratic,Al Gore,231780
+2000,Nebraska,Republican,George W. Bush,433862
+2000,Nevada,Democratic,Al Gore,279978
+2000,Nevada,Republican,George W. Bush,301575
+2000,New Hampshire,Democratic,Al Gore,266348
+2000,New Hampshire,Republican,George W. Bush,273559
+2000,New Jersey,Democratic,Al Gore,1788850
+2000,New Jersey,Republican,George W. Bush,1284173
+2000,New Mexico,Democratic,Al Gore,286783
+2000,New Mexico,Republican,George W. Bush,286417
+2000,New York,Democratic,Al Gore,4107697
+2000,New York,Republican,George W. Bush,2403374
+2000,North Carolina,Democratic,Al Gore,1257692
+2000,North Carolina,Republican,George W. Bush,1631163
+2000,North Dakota,Democratic,Al Gore,95284
+2000,North Dakota,Republican,George W. Bush,174852
+2000,Ohio,Democratic,Al Gore,2186190
+2000,Ohio,Republican,George W. Bush,2351209
+2000,Oklahoma,Democratic,Al Gore,474276
+2000,Oklahoma,Republican,George W. Bush,744337
+2000,Oregon,Democratic,Al Gore,720342
+2000,Oregon,Republican,George W. Bush,713577
+2000,Pennsylvania,Democratic,Al Gore,2485967
+2000,Pennsylvania,Republican,George W. Bush,2281127
+2000,Rhode Island,Democratic,Al Gore,249508
+2000,Rhode Island,Republican,George W. Bush,130555
+2000,South Carolina,Democratic,Al Gore,565561
+2000,South Carolina,Republican,George W. Bush,785937
+2000,South Dakota,Democratic,Al Gore,118804
+2000,South Dakota,Republican,George W. Bush,190700
+2000,Tennessee,Democratic,Al Gore,981720
+2000,Tennessee,Republican,George W. Bush,1061949
+2000,Texas,Democratic,Al Gore,2433746
+2000,Texas,Republican,George W. Bush,3799639
+2000,Utah,Democratic,Al Gore,203053
+2000,Utah,Republican,George W. Bush,515096
+2000,Vermont,Democratic,Al Gore,149022
+2000,Vermont,Republican,George W. Bush,119775
+2000,Virginia,Democratic,Al Gore,1217290
+2000,Virginia,Republican,George W. Bush,1437490
+2000,Washington,Democratic,Al Gore,1247652
+2000,Washington,Republican,George W. Bush,1108864
+2000,West Virginia,Democratic,Al Gore,295497
+2000,West Virginia,Republican,George W. Bush,336475
+2000,Wisconsin,Democratic,Al Gore,1242987
+2000,Wisconsin,Republican,George W. Bush,1237279
+2000,Wyoming,Democratic,Al Gore,60481
+2000,Wyoming,Republican,George W. Bush,147947
+2004,Alabama,Democratic,John Kerry,693933
+2004,Alabama,Republican,George W. Bush,1176394
+2004,Alaska,Democratic,John Kerry,111025
+2004,Alaska,Republican,George W. Bush,190889
+2004,Arizona,Democratic,John Kerry,893524
+2004,Arizona,Republican,George W. Bush,1104294
+2004,Arkansas,Democratic,John Kerry,469953
+2004,Arkansas,Republican,George W. Bush,572898
+2004,California,Democratic,John Kerry,6745485
+2004,California,Republican,George W. Bush,5509826
+2004,Colorado,Democratic,John Kerry,1001732
+2004,Colorado,Republican,George W. Bush,1101255
+2004,Connecticut,Democratic,John Kerry,857488
+2004,Connecticut,Republican,George W. Bush,693826
+2004,Delaware,Democratic,John Kerry,200152
+2004,Delaware,Republican,George W. Bush,171660
+2004,District of Columbia,Democratic,John Kerry,202970
+2004,District of Columbia,Republican,George W. Bush,21256
+2004,Florida,Democratic,John Kerry,3583544
+2004,Florida,Republican,George W. Bush,3964522
+2004,Georgia,Democratic,John Kerry,1366149
+2004,Georgia,Republican,George W. Bush,1914254
+2004,Hawaii,Democratic,John Kerry,231708
+2004,Hawaii,Republican,George W. Bush,194191
+2004,Idaho,Democratic,John Kerry,181098
+2004,Idaho,Republican,George W. Bush,409235
+2004,Illinois,Democratic,John Kerry,2891550
+2004,Illinois,Republican,George W. Bush,2345946
+2004,Indiana,Democratic,John Kerry,969011
+2004,Indiana,Republican,George W. Bush,1479438
+2004,Iowa,Democratic,John Kerry,741898
+2004,Iowa,Republican,George W. Bush,751957
+2004,Kansas,Democratic,John Kerry,434993
+2004,Kansas,Republican,George W. Bush,736456
+2004,Kentucky,Democratic,John Kerry,712733
+2004,Kentucky,Republican,George W. Bush,1069439
+2004,Louisiana,Democratic,John Kerry,820299
+2004,Louisiana,Republican,George W. Bush,1102169
+2004,Maine,Democratic,John Kerry,396842
+2004,Maine,Republican,George W. Bush,330201
+2004,Maryland,Democratic,John Kerry,1334493
+2004,Maryland,Republican,George W. Bush,1024703
+2004,Massachusetts,Democratic,John Kerry,1803800
+2004,Massachusetts,Republican,George W. Bush,1071109
+2004,Michigan,Democratic,John Kerry,2479183
+2004,Michigan,Republican,George W. Bush,2313746
+2004,Minnesota,Democratic,John Kerry,1445014
+2004,Minnesota,Republican,George W. Bush,1346695
+2004,Mississippi,Democratic,John Kerry,458094
+2004,Mississippi,Republican,George W. Bush,684981
+2004,Missouri,Democratic,John Kerry,1259171
+2004,Missouri,Republican,George W. Bush,1455713
+2004,Montana,Democratic,John Kerry,173710
+2004,Montana,Republican,George W. Bush,266063
+2004,Nebraska,Democratic,John Kerry,254328
+2004,Nebraska,Republican,George W. Bush,512814
+2004,Nevada,Democratic,John Kerry,397190
+2004,Nevada,Republican,George W. Bush,418690
+2004,New Hampshire,Democratic,John Kerry,340511
+2004,New Hampshire,Republican,George W. Bush,331237
+2004,New Jersey,Democratic,John Kerry,1911430
+2004,New Jersey,Republican,George W. Bush,1670003
+2004,New Mexico,Democratic,John Kerry,370942
+2004,New Mexico,Republican,George W. Bush,376930
+2004,New York,Democratic,John Kerry,4314280
+2004,New York,Republican,George W. Bush,2962567
+2004,North Carolina,Democratic,John Kerry,1525849
+2004,North Carolina,Republican,George W. Bush,1961166
+2004,North Dakota,Democratic,John Kerry,111052
+2004,North Dakota,Republican,George W. Bush,196651
+2004,Ohio,Democratic,John Kerry,2741167
+2004,Ohio,Republican,George W. Bush,2859768
+2004,Oklahoma,Democratic,John Kerry,503966
+2004,Oklahoma,Republican,George W. Bush,959792
+2004,Oregon,Democratic,John Kerry,943163
+2004,Oregon,Republican,George W. Bush,866831
+2004,Pennsylvania,Democratic,John Kerry,2938095
+2004,Pennsylvania,Republican,George W. Bush,2793847
+2004,Rhode Island,Democratic,John Kerry,259765
+2004,Rhode Island,Republican,George W. Bush,169046
+2004,South Carolina,Democratic,John Kerry,661699
+2004,South Carolina,Republican,George W. Bush,937974
+2004,South Dakota,Democratic,John Kerry,149244
+2004,South Dakota,Republican,George W. Bush,232584
+2004,Tennessee,Democratic,John Kerry,1036477
+2004,Tennessee,Republican,George W. Bush,1384375
+2004,Texas,Democratic,John Kerry,2832704
+2004,Texas,Republican,George W. Bush,4526917
+2004,Utah,Democratic,John Kerry,241199
+2004,Utah,Republican,George W. Bush,663742
+2004,Vermont,Democratic,John Kerry,184067
+2004,Vermont,Republican,George W. Bush,121180
+2004,Virginia,Democratic,John Kerry,1454742
+2004,Virginia,Republican,George W. Bush,1716959
+2004,Washington,Democratic,John Kerry,1510201
+2004,Washington,Republican,George W. Bush,1304894
+2004,West Virginia,Democratic,John Kerry,326541
+2004,West Virginia,Republican,George W. Bush,423778
+2004,Wisconsin,Democratic,John Kerry,1489504
+2004,Wisconsin,Republican,George W. Bush,1478120
+2004,Wyoming,Democratic,John Kerry,70776
+2004,Wyoming,Republican,George W. Bush,167629
+2008,Alabama,Democratic,Barack Obama,813479
+2008,Alabama,Republican,John McCain,1266546
+2008,Alaska,Democratic,Barack Obama,123594
+2008,Alaska,Republican,John McCain,193841
+2008,Arizona,Democratic,Barack Obama,1034707
+2008,Arizona,Republican,John McCain,1230111
+2008,Arkansas,Democratic,Barack Obama,422310
+2008,Arkansas,Republican,John McCain,638017
+2008,California,Democratic,Barack Obama,8274473
+2008,California,Republican,John McCain,5011781
+2008,Colorado,Democratic,Barack Obama,1288633
+2008,Colorado,Republican,John McCain,1073629
+2008,Connecticut,Democratic,Barack Obama,997772
+2008,Connecticut,Republican,John McCain,629428
+2008,Delaware,Democratic,Barack Obama,255459
+2008,Delaware,Republican,John McCain,152374
+2008,District of Columbia,Democratic,Barack Obama,245800
+2008,District of Columbia,Republican,John McCain,17367
+2008,Florida,Democratic,Barack Obama,4282074
+2008,Florida,Republican,John McCain,4045624
+2008,Georgia,Democratic,Barack Obama,1844123
+2008,Georgia,Republican,John McCain,2048759
+2008,Hawaii,Democratic,Barack Obama,325871
+2008,Hawaii,Republican,John McCain,120566
+2008,Idaho,Democratic,Barack Obama,236440
+2008,Idaho,Republican,John McCain,403012
+2008,Illinois,Democratic,Barack Obama,3419348
+2008,Illinois,Republican,John McCain,2031179
+2008,Indiana,Democratic,Barack Obama,1374039
+2008,Indiana,Republican,John McCain,1345648
+2008,Iowa,Democratic,Barack Obama,828940
+2008,Iowa,Republican,John McCain,682379
+2008,Kansas,Democratic,Barack Obama,514765
+2008,Kansas,Republican,John McCain,699655
+2008,Kentucky,Democratic,Barack Obama,751985
+2008,Kentucky,Republican,John McCain,1048462
+2008,Louisiana,Democratic,Barack Obama,782989
+2008,Louisiana,Republican,John McCain,1148275
+2008,Maine,Democratic,Barack Obama,421923
+2008,Maine,Republican,John McCain,295273
+2008,Maryland,Democratic,Barack Obama,1629467
+2008,Maryland,Republican,John McCain,959862
+2008,Massachusetts,Democratic,Barack Obama,1904097
+2008,Massachusetts,Republican,John McCain,1108854
+2008,Michigan,Democratic,Barack Obama,2872579
+2008,Michigan,Republican,John McCain,2048639
+2008,Minnesota,Democratic,Barack Obama,1573354
+2008,Minnesota,Republican,John McCain,1275409
+2008,Mississippi,Democratic,Barack Obama,554662
+2008,Mississippi,Republican,John McCain,724597
+2008,Missouri,Democratic,Barack Obama,1441911
+2008,Missouri,Republican,John McCain,1445814
+2008,Montana,Democratic,Barack Obama,231667
+2008,Montana,Republican,John McCain,242763
+2008,Nebraska,Democratic,Barack Obama,333319
+2008,Nebraska,Republican,John McCain,452979
+2008,Nevada,Democratic,Barack Obama,533736
+2008,Nevada,Republican,John McCain,412827
+2008,New Hampshire,Democratic,Barack Obama,384826
+2008,New Hampshire,Republican,John McCain,316534
+2008,New Jersey,Democratic,Barack Obama,2215422
+2008,New Jersey,Republican,John McCain,1613207
+2008,New Mexico,Democratic,Barack Obama,472422
+2008,New Mexico,Republican,John McCain,346832
+2008,New York,Democratic,Barack Obama,4804945
+2008,New York,Republican,John McCain,2752771
+2008,North Carolina,Democratic,Barack Obama,2142651
+2008,North Carolina,Republican,John McCain,2128474
+2008,North Dakota,Democratic,Barack Obama,141278
+2008,North Dakota,Republican,John McCain,168601
+2008,Ohio,Democratic,Barack Obama,2940044
+2008,Ohio,Republican,John McCain,2677820
+2008,Oklahoma,Democratic,Barack Obama,502496
+2008,Oklahoma,Republican,John McCain,960165
+2008,Oregon,Democratic,Barack Obama,1037291
+2008,Oregon,Republican,John McCain,738475
+2008,Pennsylvania,Democratic,Barack Obama,3276363
+2008,Pennsylvania,Republican,John McCain,2655885
+2008,Rhode Island,Democratic,Barack Obama,296571
+2008,Rhode Island,Republican,John McCain,165391
+2008,South Carolina,Democratic,Barack Obama,862449
+2008,South Carolina,Republican,John McCain,1034896
+2008,South Dakota,Democratic,Barack Obama,170924
+2008,South Dakota,Republican,John McCain,203054
+2008,Tennessee,Democratic,Barack Obama,1087437
+2008,Tennessee,Republican,John McCain,1479178
+2008,Texas,Democratic,Barack Obama,3528633
+2008,Texas,Republican,John McCain,4479328
+2008,Utah,Democratic,Barack Obama,327670
+2008,Utah,Republican,John McCain,596030
+2008,Vermont,Democratic,Barack Obama,219262
+2008,Vermont,Republican,John McCain,98974
+2008,Virginia,Democratic,Barack Obama,1959532
+2008,Virginia,Republican,John McCain,1725005
+2008,Washington,Democratic,Barack Obama,1750848
+2008,Washington,Republican,John McCain,1229216
+2008,West Virginia,Democratic,Barack Obama,303857
+2008,West Virginia,Republican,John McCain,397466
+2008,Wisconsin,Democratic,Barack Obama,1677211
+2008,Wisconsin,Republican,John McCain,1262393
+2008,Wyoming,Democratic,Barack Obama,82868
+2008,Wyoming,Republican,John McCain,164958
+2012,Alabama,Democratic,Barack Obama,795696
+2012,Alabama,Republican,Mitt Romney,1255925
+2012,Alaska,Democratic,Barack Obama,122640
+2012,Alaska,Republican,Mitt Romney,164676
+2012,Arizona,Democratic,Barack Obama,1025232
+2012,Arizona,Republican,Mitt Romney,1233654
+2012,Arkansas,Democratic,Barack Obama,394409
+2012,Arkansas,Republican,Mitt Romney,647744
+2012,California,Democratic,Barack Obama,7854285
+2012,California,Republican,Mitt Romney,4839958
+2012,Colorado,Democratic,Barack Obama,1323101
+2012,Colorado,Republican,Mitt Romney,1185243
+2012,Connecticut,Democratic,Barack Obama,905083
+2012,Connecticut,Republican,Mitt Romney,634892
+2012,Delaware,Democratic,Barack Obama,242584
+2012,Delaware,Republican,Mitt Romney,165484
+2012,District of Columbia,Democratic,Barack Obama,267070
+2012,District of Columbia,Republican,Mitt Romney,21381
+2012,Florida,Democratic,Barack Obama,4237756
+2012,Florida,Republican,Mitt Romney,4163447
+2012,Georgia,Democratic,Barack Obama,1773827
+2012,Georgia,Republican,Mitt Romney,2078688
+2012,Hawaii,Democratic,Barack Obama,306658
+2012,Hawaii,Republican,Mitt Romney,121015
+2012,Idaho,Democratic,Barack Obama,212787
+2012,Idaho,Republican,Mitt Romney,420911
+2012,Illinois,Democratic,Barack Obama,3019512
+2012,Illinois,Republican,Mitt Romney,2135216
+2012,Indiana,Democratic,Barack Obama,1152887
+2012,Indiana,Republican,Mitt Romney,1420543
+2012,Iowa,Democratic,Barack Obama,822544
+2012,Iowa,Republican,Mitt Romney,730617
+2012,Kansas,Democratic,Barack Obama,440726
+2012,Kansas,Republican,Mitt Romney,692634
+2012,Kentucky,Democratic,Barack Obama,679370
+2012,Kentucky,Republican,Mitt Romney,1087190
+2012,Louisiana,Democratic,Barack Obama,809141
+2012,Louisiana,Republican,Mitt Romney,1152262
+2012,Maine,Democratic,Barack Obama,401306
+2012,Maine,Republican,Mitt Romney,292276
+2012,Maryland,Democratic,Barack Obama,1677844
+2012,Maryland,Republican,Mitt Romney,971869
+2012,Massachusetts,Democratic,Barack Obama,1921290
+2012,Massachusetts,Republican,Mitt Romney,1188314
+2012,Michigan,Democratic,Barack Obama,2564569
+2012,Michigan,Republican,Mitt Romney,2115256
+2012,Minnesota,Democratic,Barack Obama,1546167
+2012,Minnesota,Republican,Mitt Romney,1320225
+2012,Mississippi,Democratic,Barack Obama,562949
+2012,Mississippi,Republican,Mitt Romney,710746
+2012,Missouri,Democratic,Barack Obama,1223796
+2012,Missouri,Republican,Mitt Romney,1482440
+2012,Montana,Democratic,Barack Obama,201839
+2012,Montana,Republican,Mitt Romney,267928
+2012,Nebraska,Democratic,Barack Obama,302081
+2012,Nebraska,Republican,Mitt Romney,475064
+2012,Nevada,Democratic,Barack Obama,531373
+2012,Nevada,Republican,Mitt Romney,463567
+2012,New Hampshire,Democratic,Barack Obama,369561
+2012,New Hampshire,Republican,Mitt Romney,329918
+2012,New Jersey,Democratic,Barack Obama,2125101
+2012,New Jersey,Republican,Mitt Romney,1477568
+2012,New Mexico,Democratic,Barack Obama,415335
+2012,New Mexico,Republican,Mitt Romney,335788
+2012,New York,Democratic,Barack Obama,4485741
+2012,New York,Republican,Mitt Romney,2490431
+2012,North Carolina,Democratic,Barack Obama,2178391
+2012,North Carolina,Republican,Mitt Romney,2270395
+2012,North Dakota,Democratic,Barack Obama,124827
+2012,North Dakota,Republican,Mitt Romney,188163
+2012,Ohio,Democratic,Barack Obama,2827709
+2012,Ohio,Republican,Mitt Romney,2661437
+2012,Oklahoma,Democratic,Barack Obama,443547
+2012,Oklahoma,Republican,Mitt Romney,891325
+2012,Oregon,Democratic,Barack Obama,970488
+2012,Oregon,Republican,Mitt Romney,754175
+2012,Pennsylvania,Democratic,Barack Obama,2990274
+2012,Pennsylvania,Republican,Mitt Romney,2680434
+2012,Rhode Island,Democratic,Barack Obama,279677
+2012,Rhode Island,Republican,Mitt Romney,157204
+2012,South Carolina,Democratic,Barack Obama,865941
+2012,South Carolina,Republican,Mitt Romney,1071645
+2012,South Dakota,Democratic,Barack Obama,145039
+2012,South Dakota,Republican,Mitt Romney,210610
+2012,Tennessee,Democratic,Barack Obama,960709
+2012,Tennessee,Republican,Mitt Romney,1462330
+2012,Texas,Democratic,Barack Obama,3308124
+2012,Texas,Republican,Mitt Romney,4569843
+2012,Utah,Democratic,Barack Obama,251813
+2012,Utah,Republican,Mitt Romney,740600
+2012,Vermont,Democratic,Barack Obama,199239
+2012,Vermont,Republican,Mitt Romney,92698
+2012,Virginia,Democratic,Barack Obama,1971820
+2012,Virginia,Republican,Mitt Romney,1822522
+2012,Washington,Democratic,Barack Obama,1755396
+2012,Washington,Republican,Mitt Romney,1290670
+2012,West Virginia,Democratic,Barack Obama,238269
+2012,West Virginia,Republican,Mitt Romney,417655
+2012,Wisconsin,Democratic,Barack Obama,1620985
+2012,Wisconsin,Republican,Mitt Romney,1407966
+2012,Wyoming,Democratic,Barack Obama,69286
+2012,Wyoming,Republican,Mitt Romney,170962
+2016,Alabama,Democratic,Hillary Clinton,729547
+2016,Alabama,Republican,Donald Trump,1318255
+2016,Alaska,Democratic,Hillary Clinton,116454
+2016,Alaska,Republican,Donald Trump,163387
+2016,Arizona,Democratic,Hillary Clinton,1161167
+2016,Arizona,Republican,Donald Trump,1252401
+2016,Arkansas,Democratic,Hillary Clinton,380494
+2016,Arkansas,Republican,Donald Trump,684872
+2016,California,Democratic,Hillary Clinton,8753788
+2016,California,Republican,Donald Trump,4483810
+2016,Colorado,Democratic,Hillary Clinton,1338870
+2016,Colorado,Republican,Donald Trump,1202484
+2016,Connecticut,Democratic,Hillary Clinton,897572
+2016,Connecticut,Republican,Donald Trump,673215
+2016,Delaware,Democratic,Hillary Clinton,235603
+2016,Delaware,Republican,Donald Trump,185127
+2016,District of Columbia,Democratic,Hillary Clinton,282830
+2016,District of Columbia,Republican,Donald Trump,12723
+2016,Florida,Democratic,Hillary Clinton,4504975
+2016,Florida,Republican,Donald Trump,4617886
+2016,Georgia,Democratic,Hillary Clinton,1877963
+2016,Georgia,Republican,Donald Trump,2089104
+2016,Hawaii,Democratic,Hillary Clinton,266891
+2016,Hawaii,Republican,Donald Trump,128847
+2016,Idaho,Democratic,Hillary Clinton,189765
+2016,Idaho,Republican,Donald Trump,409055
+2016,Illinois,Democratic,Hillary Clinton,3090729
+2016,Illinois,Republican,Donald Trump,2146015
+2016,Indiana,Democratic,Hillary Clinton,1033126
+2016,Indiana,Republican,Donald Trump,1557286
+2016,Iowa,Democratic,Hillary Clinton,653669
+2016,Iowa,Republican,Donald Trump,800983
+2016,Kansas,Democratic,Hillary Clinton,427005
+2016,Kansas,Republican,Donald Trump,671018
+2016,Kentucky,Democratic,Hillary Clinton,628854
+2016,Kentucky,Republican,Donald Trump,1202971
+2016,Louisiana,Democratic,Hillary Clinton,780154
+2016,Louisiana,Republican,Donald Trump,1178638
+2016,Maine,Democratic,Hillary Clinton,357735
+2016,Maine,Republican,Donald Trump,335593
+2016,Maryland,Democratic,Hillary Clinton,1677928
+2016,Maryland,Republican,Donald Trump,943169
+2016,Massachusetts,Democratic,Hillary Clinton,1995196
+2016,Massachusetts,Republican,Donald Trump,1090893
+2016,Michigan,Democratic,Hillary Clinton,2268839
+2016,Michigan,Republican,Donald Trump,2279543
+2016,Minnesota,Democratic,Hillary Clinton,1367716
+2016,Minnesota,Republican,Donald Trump,1322951
+2016,Mississippi,Democratic,Hillary Clinton,485131
+2016,Mississippi,Republican,Donald Trump,700714
+2016,Missouri,Democratic,Hillary Clinton,1071068
+2016,Missouri,Republican,Donald Trump,1594511
+2016,Montana,Democratic,Hillary Clinton,177709
+2016,Montana,Republican,Donald Trump,279240
+2016,Nebraska,Democratic,Hillary Clinton,284494
+2016,Nebraska,Republican,Donald Trump,495961
+2016,Nevada,Democratic,Hillary Clinton,539260
+2016,Nevada,Republican,Donald Trump,512058
+2016,New Hampshire,Democratic,Hillary Clinton,348526
+2016,New Hampshire,Republican,Donald Trump,345790
+2016,New Jersey,Democratic,Hillary Clinton,2148278
+2016,New Jersey,Republican,Donald Trump,1601933
+2016,New Mexico,Democratic,Hillary Clinton,385234
+2016,New Mexico,Republican,Donald Trump,319667
+2016,New York,Democratic,Hillary Clinton,4556124
+2016,New York,Republican,Donald Trump,2819534
+2016,North Carolina,Democratic,Hillary Clinton,2189316
+2016,North Carolina,Republican,Donald Trump,2362631
+2016,North Dakota,Democratic,Hillary Clinton,93758
+2016,North Dakota,Republican,Donald Trump,216794
+2016,Ohio,Democratic,Hillary Clinton,2394164
+2016,Ohio,Republican,Donald Trump,2841005
+2016,Oklahoma,Democratic,Hillary Clinton,420375
+2016,Oklahoma,Republican,Donald Trump,949136
+2016,Oregon,Democratic,Hillary Clinton,1002106
+2016,Oregon,Republican,Donald Trump,782403
+2016,Pennsylvania,Democratic,Hillary Clinton,2926441
+2016,Pennsylvania,Republican,Donald Trump,2970733
+2016,Rhode Island,Democratic,Hillary Clinton,252525
+2016,Rhode Island,Republican,Donald Trump,180543
+2016,South Carolina,Democratic,Hillary Clinton,855373
+2016,South Carolina,Republican,Donald Trump,1155389
+2016,South Dakota,Democratic,Hillary Clinton,117458
+2016,South Dakota,Republican,Donald Trump,227721
+2016,Tennessee,Democratic,Hillary Clinton,870695
+2016,Tennessee,Republican,Donald Trump,1522925
+2016,Texas,Democratic,Hillary Clinton,3877868
+2016,Texas,Republican,Donald Trump,4685047
+2016,Utah,Democratic,Hillary Clinton,310676
+2016,Utah,Republican,Donald Trump,515231
+2016,Vermont,Democratic,Hillary Clinton,178573
+2016,Vermont,Republican,Donald Trump,95369
+2016,Virginia,Democratic,Hillary Clinton,1981473
+2016,Virginia,Republican,Donald Trump,1769443
+2016,Washington,Democratic,Hillary Clinton,1742718
+2016,Washington,Republican,Donald Trump,1221747
+2016,West Virginia,Democratic,Hillary Clinton,188794
+2016,West Virginia,Republican,Donald Trump,489371
+2016,Wisconsin,Democratic,Hillary Clinton,1382536
+2016,Wisconsin,Republican,Donald Trump,1405284
+2016,Wyoming,Democratic,Hillary Clinton,55973
+2016,Wyoming,Republican,Donald Trump,174419
