@@ -6,11 +6,12 @@ library(lubridate)
 library(reshape2)
 library(scales)
 library(tidyverse)
+library(zoo)
 
 #### Modeling ####
 library(lme4)
+library(mvnfast)
 library(randomForest)
-library(xgboost)
 
 #### Scraping and data collection ####
 library(httr)

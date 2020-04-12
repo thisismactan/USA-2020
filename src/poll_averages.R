@@ -58,8 +58,20 @@ national_president_polls_adj <- national_president_polls %>%
                              candidate == "trump" ~ pct - house / 2 - rv_bias + 0.01 * (party == "DEM") - 0.01 * (party == "REP"),
                              !(candidate %in% c("biden", "trump")) ~ pct))
 
+
+# Covariance matrix for current polls
+president_poll_matrix <- national_president_polls_adj %>%
+  mutate(weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  filter(weight > 0) %>%
+  dplyr::select(weight, poll_id, question_id, candidate, pct) %>% 
+  spread(candidate, pct) %>%
+  dplyr::select(weight, biden, trump)
+
+president_poll_covariance <- cov.wt(as.matrix(president_poll_matrix %>% dplyr::select(biden, trump)), wt = president_poll_matrix$weight)
+
 # Recompute with house effect-adjusted polls
 national_president_polls_adj_list <- national_president_average_adj_list <- national_president_sd_adj_list <- vector("list", n_days)
+
 
 # Presidential polls
 for(i in 1:n_days) {
