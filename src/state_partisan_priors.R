@@ -13,6 +13,7 @@ historical_results <- read_csv("data/presidential_election_results_by_state.csv"
                                      year == 2016 ~ "Donald Trump"))
 
 national_historical_results <- historical_results %>%
+  filter(!grepl("congressional", state)) %>%
   group_by(year, party) %>%
   summarise(national_votes = sum(votes)) %>%
   mutate(two_party_pct_natl = national_votes / sum(national_votes)) %>%
@@ -21,6 +22,17 @@ national_historical_results <- historical_results %>%
   mutate(two_party_margin_natl = Democratic - Republican) %>%
   dplyr::select(year, two_party_margin_natl) %>%
   ungroup()
+
+two_party_margin_2016 <- national_historical_results %>%
+  filter(year == 2016) %>%
+  pull(two_party_margin_natl)
+
+state_two_party_margins_2016 <- historical_results %>%
+  filter(year == 2016) %>%
+  dplyr::select(-year, -votes, -national_winner) %>%
+  spread(party, two_party_pct) %>%
+  mutate(state_two_party_margin = Democratic - Republican) %>%
+  dplyr::select(-Democratic, -Republican)
 
 # Shape to changes
 incumbent_running_results <- historical_results %>%
@@ -42,7 +54,7 @@ summary(two_party_margin_change_model)
 # With regions
 two_party_margin_change_model_regions <- lmer(two_party_margin ~ last_two_party_margin + two_party_margin_natl_change + (1|region), 
                                               data = incumbent_running_results)
-model_summary <- summary(two_party_margin_change_model_regions)
+fixed_effect_coefficients <- as.matrix(coefficients(two_party_margin_change_model_regions)$region)[1, 2:3]
 
 # Variance components
 regional_sd <- sqrt(as.numeric(VarCorr(two_party_margin_change_model_regions)))
