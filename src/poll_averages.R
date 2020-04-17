@@ -131,7 +131,7 @@ state_president_averages <- bind_rows(state_president_average_list) %>%
   left_join(national_president_averages_adj %>% dplyr::select(-state), by = c("candidate", "median_date")) %>%
   mutate(state_avg = avg + avg_lean,
          state_var = lean_var + var,
-         state_eff_n = pmax(lean_eff_n, eff_n)) %>%
+         state_eff_n = lean_eff_n) %>%
   dplyr::select(candidate, state, avg = state_avg, var = state_var, eff_n = state_eff_n, median_date) %>%
   arrange(state, candidate, median_date) %>%
   group_by(state, candidate) %>%

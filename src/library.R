@@ -25,6 +25,7 @@ library(xml2)
 library(doParallel)
 library(foreach)
 library(mvnfast)
+library(matrixcalc)
 
 #### Mapping ####
 library(leaflet)
@@ -37,3 +38,10 @@ library(USAboundaries)
 candidate_fullnames <- c("biden" = "Joe Biden (D)", "trump" = "Donald Trump (R)")
 candidate_colors <- c("biden" = "blue", "trump" = "red")
 candidate_lastnames <- c("biden" = "Biden", "trump" = "Trump")
+
+## CUSTOM FUNCTIONS
+replace_na_zero <- function(x) {
+  x <- case_when(is.na(x) ~ 0,
+                 !is.na(x) ~ x) 
+  return(x)
+}

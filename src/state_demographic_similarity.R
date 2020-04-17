@@ -45,9 +45,9 @@ state_pca <- prcomp(~ PctWhite + PctBlack + PctLatino + PctColl + MedInc + Pover
 # Grab principal component scores and compute covariance matrix
 state_pcs <- state_pca$x
 state_eigenvalues <- state_pca$sdev^2
-state_cor <- cov.wt(t(state_pcs), wt = state_eigenvalues, cor = TRUE)$cor
+state_cor <- round(cov.wt(t(state_pcs), wt = state_eigenvalues, cor = TRUE)$cor, 6)
 rownames(state_cor) <- colnames(state_cor) <- state_fips$State
 
-polling_error_sd <- 0.06
+polling_error_sd <- 0.05
 
 state_cov <- state_cor * (polling_error_sd^2)
