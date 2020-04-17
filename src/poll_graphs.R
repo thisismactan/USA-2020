@@ -1,17 +1,17 @@
 source("src/poll_averages.R")
 
-graph_state <- "National"
+graph_states <- c("National")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
-  filter(state == graph_state, candidate %in% c("biden", "trump"))
+  filter(state %in% graph_states, candidate %in% c("biden", "trump"))
 
 max_pct <- max(graph_state_polls$pct)
 min_pct <- min(graph_state_polls$pct)
 
 # Current average
 current_poll_average <- president_averages %>%
-  filter(median_date == today(), state == graph_state)
+  filter(median_date == today(), state %in% graph_states)
 
 current_poll_average %>%
   ggplot(aes(x = candidate, y = avg, fill = candidate)) +
@@ -21,7 +21,7 @@ current_poll_average %>%
   scale_y_continuous(labels = scales::percent) +
   scale_fill_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
-  labs(title = paste0(graph_state, " presidential polling average"), x = "Candidate", y = "Average %",
+  labs(title = paste0(graph_states, " presidential polling average"), x = "Candidate", y = "Average %",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "Error bars indicate 90% confidence intervals")
 
@@ -37,8 +37,8 @@ president_averages_smoothed %>%
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_fill_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_y_continuous(labels = scales::percent, limits = c(min_pct - 0.1, max_pct + 0.1)) +
-  scale_x_date(date_labels = "%b %Y", limits = as.Date(c("2019-06-01", "2020-11-03")), breaks = date_breaks("2 months")) +
+  scale_x_date(date_labels = "%b %Y", limits = as.Date(c("2020-01-01", "2020-11-03")), breaks = date_breaks("2 months")) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = -0.01)) +
-  labs(title = paste0(graph_state, " presidential polling"), x = "Date", y = "%",
+  labs(title = paste0(graph_states, " presidential polling"), x = "Date", y = "%",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "Averages smoothed over past five days")

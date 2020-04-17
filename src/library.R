@@ -14,6 +14,7 @@ library(mvnfast)
 library(randomForest)
 
 #### Scraping and data collection ####
+library(censusapi)
 library(httr)
 library(tidycensus)
 library(rvest)
@@ -25,10 +26,12 @@ library(doParallel)
 library(foreach)
 library(mvnfast)
 
-#### Mapping, potentially ####
+#### Mapping ####
 library(leaflet)
 library(rgdal)
 library(sf)
+library(sp)
+library(USAboundaries)
 
 ## COLORS/LABELS
 candidate_fullnames <- c("biden" = "Joe Biden (D)", "trump" = "Donald Trump (R)")

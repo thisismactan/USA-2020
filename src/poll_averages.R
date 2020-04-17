@@ -1,6 +1,6 @@
 source("src/shape_polls.R")
 
-poll_dates <- seq(from = as.Date("2019-01-01"), to = today(), by = 1)
+poll_dates <- seq(from = as.Date("2019-06-01"), to = today(), by = 1)
 n_days <- length(poll_dates)
 
 national_president_poll_list <- national_president_average_list <- national_president_sd_list <- vector("list", n_days)
@@ -114,7 +114,7 @@ for(i in 1:n_days) {
   # Compute weights
   state_president_poll_list[[i]] <- state_president_poll_leans %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = 100 * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0)
   
   # Compute averages and standard errors
@@ -123,9 +123,7 @@ for(i in 1:n_days) {
     summarise(avg_lean = wtd.mean(state_lean, weight),
               lean_var = wtd.var(state_lean, weight),
               lean_eff_n = sum(weight)^2 / sum(weight^2)) %>%
-    mutate(median_date = current_date,
-           lean_var = case_when(lean_var == 0 ~ 0.25,
-                                lean_var > 0 ~ lean_var))
+    mutate(median_date = current_date)
 }
 
 state_president_averages <- bind_rows(state_president_average_list) %>%
