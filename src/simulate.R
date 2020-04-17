@@ -76,7 +76,7 @@ state_priors <- total_deviations %>%
 # State prior probabilities
 state_prior_probabilities <- state_priors %>%
   mutate(winner = case_when(biden > trump ~ "Biden",
-                            trump > biden ~ "Trump")) %>%
+                            trump >= biden ~ "Trump")) %>%
   group_by(state, winner) %>%
   summarise(prob = n() / n_sims) %>%
   spread(winner, prob, fill = 0)
@@ -149,3 +149,10 @@ pres_state_sims <- state_polling_error_sims %>%
          trump = trump + (1 - biden_undecided_frac) * undecided) %>%
   dplyr::select(sim_id, state, electoral_votes, biden, trump) %>%
   as.tbl()
+
+pres_state_probabilities <- pres_state_sims %>%
+  mutate(winner = case_when(biden > trump ~ "Biden",
+                            trump > biden ~ "Trump")) %>%
+  group_by(state, winner) %>%
+  summarise(prob = n() / n_sims) %>%
+  spread(winner, prob, fill = 0)
