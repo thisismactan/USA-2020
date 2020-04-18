@@ -1,0 +1,115 @@
+date,state,candidate,prob
+2020-04-18,Alabama,biden,4e-5
+2020-04-18,Alabama,trump,0.99996
+2020-04-18,Alaska,biden,0.04693
+2020-04-18,Alaska,trump,0.95307
+2020-04-18,Arizona,biden,0.67148
+2020-04-18,Arizona,trump,0.32852
+2020-04-18,Arkansas,biden,0.00254
+2020-04-18,Arkansas,trump,0.99746
+2020-04-18,California,biden,1
+2020-04-18,California,trump,0
+2020-04-18,Colorado,biden,0.87618
+2020-04-18,Colorado,trump,0.12382
+2020-04-18,Connecticut,biden,0.98017
+2020-04-18,Connecticut,trump,0.01983
+2020-04-18,Delaware,biden,0.99598
+2020-04-18,Delaware,trump,0.00402
+2020-04-18,District of Columbia,biden,1
+2020-04-18,District of Columbia,trump,0
+2020-04-18,Florida,biden,0.7195
+2020-04-18,Florida,trump,0.2805
+2020-04-18,Georgia,biden,0.40425
+2020-04-18,Georgia,trump,0.59575
+2020-04-18,Hawaii,biden,1
+2020-04-18,Hawaii,trump,0
+2020-04-18,Idaho,biden,9e-5
+2020-04-18,Idaho,trump,0.99991
+2020-04-18,Illinois,biden,0.99361
+2020-04-18,Illinois,trump,0.00639
+2020-04-18,Indiana,biden,0.03229
+2020-04-18,Indiana,trump,0.96771
+2020-04-18,Iowa,biden,0.09561
+2020-04-18,Iowa,trump,0.90439
+2020-04-18,Kansas,biden,0.01861
+2020-04-18,Kansas,trump,0.98139
+2020-04-18,Kentucky,biden,7e-5
+2020-04-18,Kentucky,trump,0.99993
+2020-04-18,Louisiana,biden,0.03162
+2020-04-18,Louisiana,trump,0.96838
+2020-04-18,Maine,biden,0.84691
+2020-04-18,Maine,trump,0.15309
+2020-04-18,Maine's 1st congressional district,biden,0.98722
+2020-04-18,Maine's 1st congressional district,trump,0.01278
+2020-04-18,Maine's 2nd congressional district,biden,0.20641
+2020-04-18,Maine's 2nd congressional district,trump,0.79359
+2020-04-18,Maryland,biden,1
+2020-04-18,Maryland,trump,0
+2020-04-18,Massachusetts,biden,0.99954
+2020-04-18,Massachusetts,trump,4.6e-4
+2020-04-18,Michigan,biden,0.7551
+2020-04-18,Michigan,trump,0.2449
+2020-04-18,Minnesota,biden,0.87347
+2020-04-18,Minnesota,trump,0.12653
+2020-04-18,Mississippi,biden,0.0054
+2020-04-18,Mississippi,trump,0.9946
+2020-04-18,Missouri,biden,0.01201
+2020-04-18,Missouri,trump,0.98799
+2020-04-18,Montana,biden,5.2e-4
+2020-04-18,Montana,trump,0.99948
+2020-04-18,National,biden,0.75863
+2020-04-18,National,trump,0.24137
+2020-04-18,Nebraska,biden,0.00395
+2020-04-18,Nebraska,trump,0.99605
+2020-04-18,Nebraska's 1st congressional district,biden,0.01668
+2020-04-18,Nebraska's 1st congressional district,trump,0.98332
+2020-04-18,Nebraska's 2nd congressional district,biden,0.56783
+2020-04-18,Nebraska's 2nd congressional district,trump,0.43217
+2020-04-18,Nebraska's 3rd congressional district,biden,0
+2020-04-18,Nebraska's 3rd congressional district,trump,1
+2020-04-18,Nevada,biden,0.84191
+2020-04-18,Nevada,trump,0.15809
+2020-04-18,New Hampshire,biden,0.66461
+2020-04-18,New Hampshire,trump,0.33539
+2020-04-18,New Jersey,biden,0.99904
+2020-04-18,New Jersey,trump,9.6e-4
+2020-04-18,New Mexico,biden,0.98129
+2020-04-18,New Mexico,trump,0.01871
+2020-04-18,New York,biden,1
+2020-04-18,New York,trump,0
+2020-04-18,North Carolina,biden,0.33996
+2020-04-18,North Carolina,trump,0.66004
+2020-04-18,North Dakota,biden,0
+2020-04-18,North Dakota,trump,1
+2020-04-18,Ohio,biden,0.32899
+2020-04-18,Ohio,trump,0.67101
+2020-04-18,Oklahoma,biden,0
+2020-04-18,Oklahoma,trump,1
+2020-04-18,Oregon,biden,0.96768
+2020-04-18,Oregon,trump,0.03232
+2020-04-18,Pennsylvania,biden,0.60155
+2020-04-18,Pennsylvania,trump,0.39845
+2020-04-18,Rhode Island,biden,0.99008
+2020-04-18,Rhode Island,trump,0.00992
+2020-04-18,South Carolina,biden,0.06287
+2020-04-18,South Carolina,trump,0.93713
+2020-04-18,South Dakota,biden,6.8e-4
+2020-04-18,South Dakota,trump,0.99932
+2020-04-18,Tennessee,biden,3.9e-4
+2020-04-18,Tennessee,trump,0.99961
+2020-04-18,Texas,biden,0.21227
+2020-04-18,Texas,trump,0.78773
+2020-04-18,Utah,biden,0.00475
+2020-04-18,Utah,trump,0.99525
+2020-04-18,Vermont,biden,0.9999
+2020-04-18,Vermont,trump,1e-4
+2020-04-18,Virginia,biden,0.94861
+2020-04-18,Virginia,trump,0.05139
+2020-04-18,Washington,biden,0.99969
+2020-04-18,Washington,trump,3.1e-4
+2020-04-18,West Virginia,biden,0
+2020-04-18,West Virginia,trump,1
+2020-04-18,Wisconsin,biden,0.59554
+2020-04-18,Wisconsin,trump,0.40446
+2020-04-18,Wyoming,biden,0
+2020-04-18,Wyoming,trump,1
