@@ -150,9 +150,38 @@ pres_state_sims <- state_polling_error_sims %>%
   dplyr::select(sim_id, state, electoral_votes, biden, trump) %>%
   as.tbl()
 
+# Probabilities
+pres_win_probabilities <- pres_state_sims %>%
+  mutate(biden_ev = (biden > 0.5) * electoral_votes) %>%
+  group_by(sim_id) %>%
+  summarise(biden_ev = sum(biden_ev)) %>%
+  mutate(candidate = case_when(biden_ev >= 270 ~ "biden",
+                               biden_ev < 270 ~ "trump")) %>%
+  group_by(state = "National", candidate) %>%
+  summarise(prob = n() / n_sims)
+
 pres_state_probabilities <- pres_state_sims %>%
-  mutate(winner = case_when(biden > trump ~ "Biden",
-                            trump > biden ~ "Trump")) %>%
+  mutate(winner = case_when(biden > trump ~ "biden",
+                            trump > biden ~ "trump")) %>%
   group_by(state, winner) %>%
   summarise(prob = n() / n_sims) %>%
   spread(winner, prob, fill = 0)
+
+presidential_forecast_probabilities_today <- pres_state_probabilities %>%
+  melt(id.vars = "state", variable.name = "candidate", value.name = "prob") %>% 
+  bind_rows(pres_win_probabilities) %>%
+  arrange(state, candidate) %>%
+  mutate(date = today()) %>%
+  dplyr::select(date, state, candidate, prob)
+
+# Write this to an output file
+if(!("presidential_forecast_probabilities_history.csv" %in% list.files("output"))) {
+  write_csv(presidential_forecast_probabilities_today, "output/presidential_forecast_probabilities_history.csv")
+}
+
+presidential_forecast_probabilities_history <- read_csv("output/presidential_forecast_probabilities_history.csv") %>%
+  bind_rows(presidential_forecast_probabilities_today) %>%
+  group_by(date, state, candidate) %>%
+  dplyr::slice(n())
+
+write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")

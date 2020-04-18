@@ -66,9 +66,7 @@ pres_state_sims %>%
   melt(id.vars = "sim_id", variable.name = "Candidate", value.name = "ev") %>%
   group_by(Candidate) %>%
   summarise(pct05 = quantile(ev, 0.05),
-            pct25 = quantile(ev, 0.25),
             avg = mean(ev),
-            pct75 = quantile(ev, 0.75),
             pct95 = quantile(ev, 0.95))
 
 ## Histogram that shit
