@@ -1,6 +1,6 @@
 source("src/poll_averages.R")
 
-graph_states <- c("National")
+graph_states <- c("Michigan")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
@@ -27,7 +27,7 @@ current_poll_average %>%
 
 # Polls over time
 president_averages_smoothed %>%
-  filter(state == graph_state, candidate %in% c("biden", "trump")) %>%
+  filter(state %in% graph_states, candidate %in% c("biden", "trump")) %>%
   ggplot(aes(x = median_date, y = avg, col = candidate, fill = candidate)) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
   geom_ribbon(aes(ymin = avg - 1.645 * sqrt(var / eff_n), ymax = avg + 1.645 * sqrt(var / eff_n)), alpha = 0.2, col = NA) +

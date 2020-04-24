@@ -31,9 +31,11 @@ president_polls <- read_csv("data/president_polls.csv") %>%
                                grepl("Biden", candidate) ~ "biden",
                                grepl("Trump", candidate) ~ "trump"))
 
-# National vs. state polls
+## National vs. state polls
 national_president_polls <- president_polls %>% 
   filter(state == "National")
 
 state_president_polls <- president_polls %>%
   filter(state != "National")
+
+# House generic ballot

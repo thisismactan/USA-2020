@@ -59,3 +59,14 @@ fixed_effect_coefficients <- as.matrix(coefficients(two_party_margin_change_mode
 # Variance components
 regional_sd <- sqrt(as.numeric(VarCorr(two_party_margin_change_model_regions)))
 residual_sd <- attributes(VarCorr(two_party_margin_change_model_regions))$sc
+
+# ggplot(incumbent_running_results, aes(x = last_two_party_margin, y = two_party_margin, col = factor(year))) +
+#   facet_wrap(~year) +
+#   geom_abline(slope = 1, intercept = 0, col = "#888888", size = 1, linetype = 2) +
+#   geom_smooth(method = "lm", show.legend = FALSE, se = FALSE) +
+#   geom_text(aes(label = abbrev, size = ), size = 3, show.legend = FALSE) +
+#   scale_colour_manual(name = "Year", values = c("1996" = "red", "2004" = "green4", "2012" = "blue")) +
+#   scale_x_continuous(labels = scales::percent) +
+#   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+#   labs(title = "State-level presidential election results vs. previous year's results",
+#        x = "Two-party Democratic margin in last election", y = "Two-party Democratic margin")
