@@ -53,6 +53,8 @@ generic_ballot_polls <- read_csv("data/generic_ballot_polls.csv") %>%
          party = case_when(!is.na(party) ~ party,
                            is.na(party) ~ "None"),
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
-           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2),
+         loess_weight = case_when(grepl("McLaughlin", pollster) ~ loess_weight / 4,
+                                  !grepl("McLaughlin", pollster) ~ loess_weight)) %>%
   group_by(poll_id, question_id) %>%
   ungroup()
