@@ -1,57 +1,57 @@
-﻿state,electoral_votes,census_region1,census_region2,region
-Alabama,9,South,East South Central,Deep South
-Alaska,3,West,Pacific,Mountain West
-Arizona,11,West,Mountain,Southwest
-Arkansas,6,South,West South Central,Upper South
-California,55,West,Pacific,Pacific Coast
-Colorado,9,West,Mountain,Mountain West
-Connecticut,7,Northeast,Northeast,New England
-Delaware,3,South,South Atlantic,Mid-Atlantic
-District of Columbia,3,South,South Atlantic,Mid-Atlantic
-Florida,29,South,South Atlantic,South Atlantic
-Georgia,16,South,South Atlantic,South Atlantic
-Hawaii,4,West,Pacific,Pacific Coast
-Idaho,4,West,Mountain,Mountain West
-Illinois,20,Midwest,East North Central,Great Lakes
-Indiana,11,Midwest,East North Central,Great Lakes
-Iowa,6,Midwest,West North Central,Great Plains
-Kansas,6,Midwest,West North Central,Great Plains
-Kentucky,8,South,East South Central,Upper South
-Louisiana,8,South,West South Central,Deep South
-Maine,2,Northeast,New England,New England
-Maine's 1st congressional district,1,Northeast,New England,New England
-Maine's 2nd congressional district,1,Northeast,New England,New England
-Maryland,10,South,South Atlantic,Mid-Atlantic
-Massachusetts,11,Northeast,New England,New England
-Michigan,16,Midwest,East North Central,Great Lakes
-Minnesota,10,Midwest,West North Central,Great Lakes
-Mississippi,6,South,East South Central,Deep South
-Missouri,10,Midwest,West North Central,Upper South
-Montana,3,West,Mountain,Mountain West
-Nebraska,2,Midwest,West North Central,Great Plains
-Nebraska's 1st congressional district,1,Midwest,West North Central,Great Plains
-Nebraska's 2nd congressional district,1,Midwest,West North Central,Great Plains
-Nebraska's 3rd congressional district,1,Midwest,West North Central,Great Plains
-Nevada,6,West,Mountain,Southwest
-New Hampshire,4,Northeast,New England,New England
-New Jersey,14,Northeast,Middle Atlantic,Mid-Atlantic
-New Mexico,5,West,Mountain,Southwest
-New York,29,Northeast,Middle Atlantic,Mid-Atlantic
-North Carolina,15,South,South Atlantic,South Atlantic
-North Dakota,3,Midwest,West North Central,Great Plains
-Ohio,18,Midwest,East North Central,Great Lakes
-Oklahoma,7,South,West South Central,Great Plains
-Oregon,7,West,Pacific,Pacific Coast
-Pennsylvania,20,Northeast,Northeast,Great Lakes
-Rhode Island,4,Northeast,New England,New England
-South Carolina,9,South,South Atlantic,South Atlantic
-South Dakota,3,Midwest,West North Central,Great Plains
-Tennessee,11,South,East South Central,Upper South
-Texas,38,South,West South Central,Southwest
-Utah,6,West,Mountain,Mountain West
-Vermont,3,Northeast,New England,New England
-Virginia,13,South,South Atlantic,Mid-Atlantic
-Washington,12,West,Pacific,Pacific Coast
-West Virginia,5,South,South Atlantic,Upper South
-Wisconsin,10,Midwest,East North Central,Great Lakes
-Wyoming,3,West,Mountain,Mountain West
+﻿state,abbrev,electoral_votes,census_region1,census_region2,region
+Alabama,AL,9,South,East South Central,Deep South
+Alaska,AK,3,West,Pacific,Mountain West
+Arizona,AZ,11,West,Mountain,Southwest
+Arkansas,AR,6,South,West South Central,Upper South
+California,CA,55,West,Pacific,Pacific Coast
+Colorado,CO,9,West,Mountain,Mountain West
+Connecticut,CT,7,Northeast,Northeast,New England
+Delaware,DE,3,South,South Atlantic,Mid-Atlantic
+District of Columbia,DC,3,South,South Atlantic,Mid-Atlantic
+Florida,FL,29,South,South Atlantic,South Atlantic
+Georgia,GA,16,South,South Atlantic,South Atlantic
+Hawaii,HI,4,West,Pacific,Pacific Coast
+Idaho,ID,4,West,Mountain,Mountain West
+Illinois,IL,20,Midwest,East North Central,Great Lakes
+Indiana,IN,11,Midwest,East North Central,Great Lakes
+Iowa,IA,6,Midwest,West North Central,Great Plains
+Kansas,KS,6,Midwest,West North Central,Great Plains
+Kentucky,KY,8,South,East South Central,Upper South
+Louisiana,LA,8,South,West South Central,Deep South
+Maine,ME,2,Northeast,New England,New England
+Maine's 1st congressional district,ME-01,1,Northeast,New England,New England
+Maine's 2nd congressional district,ME-02,1,Northeast,New England,New England
+Maryland,MD,10,South,South Atlantic,Mid-Atlantic
+Massachusetts,MA,11,Northeast,New England,New England
+Michigan,MI,16,Midwest,East North Central,Great Lakes
+Minnesota,MN,10,Midwest,West North Central,Great Lakes
+Mississippi,MS,6,South,East South Central,Deep South
+Missouri,MO,10,Midwest,West North Central,Upper South
+Montana,MT,3,West,Mountain,Mountain West
+Nebraska,NE,2,Midwest,West North Central,Great Plains
+Nebraska's 1st congressional district,NE-01,1,Midwest,West North Central,Great Plains
+Nebraska's 2nd congressional district,NE-02,1,Midwest,West North Central,Great Plains
+Nebraska's 3rd congressional district,NE-03,1,Midwest,West North Central,Great Plains
+Nevada,NV,6,West,Mountain,Southwest
+New Hampshire,NH,4,Northeast,New England,New England
+New Jersey,NJ,14,Northeast,Middle Atlantic,Mid-Atlantic
+New Mexico,NM,5,West,Mountain,Southwest
+New York,NY,29,Northeast,Middle Atlantic,Mid-Atlantic
+North Carolina,NC,15,South,South Atlantic,South Atlantic
+North Dakota,ND,3,Midwest,West North Central,Great Plains
+Ohio,OH,18,Midwest,East North Central,Great Lakes
+Oklahoma,OK,7,South,West South Central,Great Plains
+Oregon,OR,7,West,Pacific,Pacific Coast
+Pennsylvania,PA,20,Northeast,Northeast,Great Lakes
+Rhode Island,RI,4,Northeast,New England,New England
+South Carolina,SC,9,South,South Atlantic,South Atlantic
+South Dakota,SD,3,Midwest,West North Central,Great Plains
+Tennessee,TN,11,South,East South Central,Upper South
+Texas,TX,38,South,West South Central,Southwest
+Utah,UT,6,West,Mountain,Mountain West
+Vermont,VT,3,Northeast,New England,New England
+Virginia,VA,13,South,South Atlantic,Mid-Atlantic
+Washington,WA,12,West,Pacific,Pacific Coast
+West Virginia,WV,5,South,South Atlantic,Upper South
+Wisconsin,WI,10,Midwest,East North Central,Great Lakes
+Wyoming,WY,3,West,Mountain,Mountain West

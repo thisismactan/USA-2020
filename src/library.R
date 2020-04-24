@@ -39,6 +39,9 @@ candidate_fullnames <- c("biden" = "Joe Biden (D)", "trump" = "Donald Trump (R)"
 candidate_colors <- c("biden" = "blue", "trump" = "red")
 candidate_lastnames <- c("biden" = "Biden", "trump" = "Trump")
 
+party_names <- c("dem" = "Democratic", "rep" = "Republican")
+party_colors <- c("dem" = "blue", "rep" = "red")
+
 ## CUSTOM FUNCTIONS
 replace_na_zero <- function(x) {
   x <- case_when(is.na(x) ~ 0,

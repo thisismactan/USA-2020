@@ -39,3 +39,20 @@ state_president_polls <- president_polls %>%
   filter(state != "National")
 
 # House generic ballot
+generic_ballot_polls <- read_csv("data/generic_ballot_polls.csv") %>%
+  filter(is.na(state), population %in% c("rv", "lv")) %>%
+  dplyr::select(poll_id, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
+                party = partisan, tracking, dem, rep) %>%
+  melt(measure.vars = c("dem", "rep"), variable.name = "candidate", value.name = "pct") %>%
+  mutate(pct = pct / 100,
+         start_date = as.Date(start_date, format = "%m/%d/%y"),
+         end_date = as.Date(end_date, format = "%m/%d/%y"),
+         spread = as.numeric(end_date - start_date) + 1,
+         median_date = start_date + round(spread / 2),
+         age = as.numeric(today() - median_date),
+         party = case_when(!is.na(party) ~ party,
+                           is.na(party) ~ "None"),
+         loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+  group_by(poll_id, question_id) %>%
+  ungroup()
