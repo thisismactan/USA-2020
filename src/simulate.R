@@ -182,6 +182,7 @@ if(!("presidential_forecast_probabilities_history.csv" %in% list.files("output")
 presidential_forecast_probabilities_history <- read_csv("output/presidential_forecast_probabilities_history.csv") %>%
   bind_rows(presidential_forecast_probabilities_today) %>%
   group_by(date, state, candidate) %>%
-  dplyr::slice(n())
+  dplyr::slice(n()) %>%
+  ungroup()
 
 write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")

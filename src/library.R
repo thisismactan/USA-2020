@@ -48,3 +48,13 @@ replace_na_zero <- function(x) {
                  !is.na(x) ~ x) 
   return(x)
 }
+
+logit <- function(x) {
+  logit_x <- log(x / (1 - x))
+  return(logit_x)
+}
+
+logit_inv <- function(x) {
+  invlogit_x <- exp(x) / (1 + exp(x))
+  return(invlogit_x)
+}

@@ -142,9 +142,10 @@ trump_bellwetherogram <- pres_conditional_distribution %>%
 bellwetherogram <- biden_bellwetherogram %>%
   full_join(trump_bellwetherogram, by = "state") %>%
   left_join(biden_win_prob_by_state, by = "state") %>%
-  mutate(BPI = (biden_cond_prob - biden_win_prob) * (trump_cond_prob - (1 - biden_win_prob)),
-         BPI = BPI / max(BPI, na.rm = TRUE)) %>%
-  left_join(regions %>% dplyr::select(state, abbrev))
+  mutate(BPI = (biden_cond_prob - biden_win_pres_prob) * (trump_cond_prob - (1 - biden_win_pres_prob))) %>%
+  left_join(regions %>% dplyr::select(state, abbrev), by = "state") %>%
+  dplyr::select(state, abbrev, biden_cond_prob, trump_cond_prob, biden_win_prob, BPI) %>%
+  arrange(desc(BPI))
 
 bellwetherogram %>%
   arrange(desc(BPI)) %>%
@@ -166,14 +167,31 @@ comp_states <- c("Arizona", "Colorado", "Florida", "Georgia", "Iowa", "Maine", "
 swing_state_pres_forecast_history <- presidential_forecast_probabilities_history %>%
   filter(state %in% comp_states)
 
-ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidate)) +
-  facet_wrap(~state, nrow = 3) +
+# National
+presidential_forecast_probabilities_history %>%
+  filter(state == "National") %>%
+  ggplot(aes(x = date, y = prob, col = candidate)) +
   geom_line(size = 1) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04"))) +
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
   theme(legend.position = "bottom") +
   labs(title = "StatSheet 2020 presidential election forecast over time", x = "Date", y = "Probability of winning",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today()))) 
+
+# Competitive states
+ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidate)) +
+  facet_wrap(~state, nrow = 3) +
+  geom_line(data = presidential_forecast_probabilities_history %>% filter(state == "National") %>% dplyr::select(date, candidate, prob),
+            alpha = 1/5, size = 1) +
+  geom_line(size = 1) +
+  geom_vline(xintercept = as.Date("2020-11-03")) +
+  scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
+  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04"))) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
+  theme(legend.position = "bottom") +
+  labs(title = "StatSheet 2020 presidential election forecast over time by state", x = "Date", y = "Probability of winning",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
-       caption = "States and districts decided by single digits in 2016") 
+       caption = "States and districts decided by single digits in 2016\nNational forecast shown in lighter colors") 
+

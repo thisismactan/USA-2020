@@ -21,12 +21,12 @@ president_polls <- read_csv("data/president_polls.csv") %>%
          party = case_when(!is.na(party) ~ party,
                            is.na(party) ~ "None"),
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
-           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
   group_by(poll_id, question_id) %>%
   mutate(biden_v_trump = any(grepl("Biden", candidate)) & any(grepl("Trump", candidate)),
          has_3p = any(!grepl("Biden|Trump", candidate))) %>%
   ungroup() %>%
-  filter(biden_v_trump, pop %in% c("lv", "rv"), !(candidate %in% c("Howard Schultz", "Justin Amash"))) %>%
+  filter(biden_v_trump, pop %in% c("lv", "rv", "v"), !(candidate %in% c("Howard Schultz", "Justin Amash"))) %>%
   mutate(candidate = case_when(!grepl("Biden|Trump", candidate) ~ candidate,
                                grepl("Biden", candidate) ~ "biden",
                                grepl("Trump", candidate) ~ "trump"))
@@ -52,9 +52,32 @@ generic_ballot_polls <- read_csv("data/generic_ballot_polls.csv") %>%
          age = as.numeric(today() - median_date),
          party = case_when(!is.na(party) ~ party,
                            is.na(party) ~ "None"),
+         party = case_when(grepl("McLaughlin", pollster) ~ "REP",
+                           !grepl("McLaughlin", pollster) ~ party),
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
-           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "nONE", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2),
-         loess_weight = case_when(grepl("McLaughlin", pollster) ~ loess_weight / 4,
-                                  !grepl("McLaughlin", pollster) ~ loess_weight)) %>%
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+  group_by(poll_id, question_id) %>%
+  ungroup()
+
+# Individual House district polls
+house_district_polls <- read_csv("data/house_district_polls.csv")
+
+# Senate
+senate_polls <- read_csv("data/senate_polls.csv") %>%
+  filter(!is.na(state), population %in% c("rv", "lv", "v")) %>%
+  dplyr::select(poll_id, state, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
+                party = partisan, tracking, candidate_party, candidate = candidate_name, pct) %>%
+  mutate(pct = pct / 100,
+         start_date = as.Date(start_date, format = "%m/%d/%y"),
+         end_date = as.Date(end_date, format = "%m/%d/%y"),
+         spread = as.numeric(end_date - start_date) + 1,
+         median_date = start_date + round(spread / 2),
+         age = as.numeric(today() - median_date),
+         party = case_when(!is.na(party) ~ party,
+                           is.na(party) ~ "None"),
+         party = case_when(grepl("McLaughlin", pollster) ~ "REP",
+                           !grepl("McLaughlin", pollster) ~ party),
+         loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
   group_by(poll_id, question_id) %>%
   ungroup()

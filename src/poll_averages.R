@@ -155,7 +155,7 @@ for(i in 1:n_days) {
   # Compute weights
   generic_ballot_poll_list[[i]] <- generic_ballot_polls %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 2)^0.5)) %>%
+           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0)
   
   # Compute averages and standard errors

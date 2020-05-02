@@ -2,7 +2,7 @@ source("src/library.R")
 
 president_shp <- us_states() %>%
   filter(name != "Puerto Rico") %>%
-  left_join(conditional_state_probabilities %>% dplyr::select(state, Biden = biden, Trump = trump), by = c("name" = "state")) %>%
+  left_join(pres_state_probabilities %>% dplyr::select(state, Biden = biden, Trump = trump), by = c("name" = "state")) %>%
   mutate(color = case_when(Biden > Trump ~ "#104E8B",
                            Trump >= Biden ~ "firebrick"),
          alpha = case_when(Biden > Trump ~ sqrt(2*(Biden - 0.5)),
