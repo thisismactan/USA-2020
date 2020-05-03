@@ -186,3 +186,49 @@ presidential_forecast_probabilities_history <- read_csv("output/presidential_for
   ungroup()
 
 write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")
+
+# For the House
+pres_generic_ballot_data <- national_president_polls_adj %>%
+  dplyr::select(poll_id, question_id, candidate, pct) %>%
+  spread(candidate, pct) %>%
+  mutate(pres_margin = biden - trump) %>%
+  dplyr::select(poll_id, question_id, pres_margin) %>%
+  inner_join(generic_ballot_polls_adj %>%
+              dplyr::select(poll_id, question_id, loess_weight, candidate, pct) %>%
+              spread(candidate, pct) %>%
+              mutate(house_margin = dem - rep) %>%
+              dplyr::select(poll_id, loess_weight, house_margin),
+            by = "poll_id")
+
+pres_generic_ballot_lm <- lm(house_margin ~ pres_margin, data = pres_generic_ballot_data, weight = loess_weight)
+generic_ballot_sigma <- sqrt(sum(pres_generic_ballot_lm$residuals^2) / pres_generic_ballot_lm$df.residual)
+pres_generic_ballot_r2 <- summary(pres_generic_ballot_lm)$r.squared
+
+# House popular vote sims: predict national House vote from presidential sims and add appropriate noise to ensure correlation
+# matches generic ballot
+house_two_party_sims <- national_popular_vote_sims %>%
+  dplyr::select(sim_id, pres_margin = national_two_party_margin) %>%
+  mutate(expected_house_two_party_margin = predict(pres_generic_ballot_lm, newdata = .),
+         dev = rnorm(n(), 0, generic_ballot_sigma),
+         house_two_party_margin = expected_house_two_party_margin + dev)
+
+simulated_house_r2 <- var(house_two_party_sims$expected_house_two_party_margin) / var(house_two_party_sims$house_two_party_margin)
+r2_ratio <- simulated_house_r2 / pres_generic_ballot_r2
+
+house_two_party_sims <- national_popular_vote_sims %>%
+  dplyr::select(sim_id, pres_margin = national_two_party_margin) %>%
+  mutate(house_two_party_margin = predict(pres_generic_ballot_lm, newdata = .) + rnorm(n(), 0, r2_ratio * generic_ballot_sigma))
+
+# Center and rescale so that mean and standard deviation match two-party generic ballot
+generic_ballot_2party_avg <- generic_ballot_averages_adj %>%
+  filter(median_date == today())
+
+house_margin_mean <- -diff(generic_ballot_2party_avg$avg)
+house_margin_var <- sum(generic_ballot_2party_avg$var) - 2 * generic_ballot_poll_covariance$cov[1, 2]
+house_margin_scale_ratio <- sqrt(house_margin_var) / sd(house_two_party_sims$house_two_party_margin)
+
+house_two_party_sims_rescaled <- house_two_party_sims %>%
+  mutate(house_margin_rescaled = house_two_party_margin * house_margin_scale_ratio,
+         house_margin_rescaled = house_margin_rescaled - mean(house_margin_rescaled) + house_margin_mean) %>%
+  dplyr::select(sim_id, pres_margin, house_two_party_margin = house_margin_rescaled) 
+

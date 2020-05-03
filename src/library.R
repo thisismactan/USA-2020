@@ -12,6 +12,7 @@ library(zoo)
 library(lme4)
 library(mvnfast)
 library(randomForest)
+library(xgboost)
 
 #### Scraping and data collection ####
 library(censusapi)
