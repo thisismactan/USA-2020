@@ -3,20 +3,17 @@ source("src/shape_polls.R")
 poll_dates <- seq(from = as.Date("2019-06-01"), to = today(), by = 1)
 n_days <- length(poll_dates)
 
-national_president_poll_list <- national_president_average_list <- national_president_sd_list <- vector("list", n_days)
+national_president_average_list <- vector("list", n_days)
 
 # Presidential polls ####
 for(i in 1:n_days) {
   current_date <- poll_dates[i]
   
-  # Compute weights
-  national_president_poll_list[[i]] <- national_president_polls %>%
+  # Compute averages and standard errors
+  national_president_average_list[[i]] <- national_president_polls %>%
     mutate(age = as.numeric(current_date - median_date),
            weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
-    filter(weight > 0)
-  
-  # Compute averages and standard errors
-  national_president_average_list[[i]] <- national_president_poll_list[[i]] %>%
+    filter(weight > 0) %>%
     group_by(candidate, state) %>%
     summarise(avg = wtd.mean(pct, weight),
               var = n() * wtd.var(pct, weight) / (n() - 1),
@@ -70,21 +67,17 @@ president_poll_matrix <- national_president_polls_adj %>%
 president_poll_covariance <- cov.wt(as.matrix(president_poll_matrix %>% dplyr::select(biden, trump)), wt = president_poll_matrix$weight)
 
 # Recompute with house effect-adjusted polls
-national_president_polls_adj_list <- national_president_average_adj_list <- national_president_sd_adj_list <- vector("list", n_days)
-
+national_president_average_adj_list <- vector("list", n_days)
 
 # Presidential polls
 for(i in 1:n_days) {
   current_date <- poll_dates[i]
   
-  # Compute weights
-  national_president_polls_adj_list[[i]] <- national_president_polls_adj %>%
+  # Compute averages and standard errors
+  national_president_average_adj_list[[i]] <- national_president_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
            weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
-    filter(weight > 0)
-  
-  # Compute averages and standard errors
-  national_president_average_adj_list[[i]] <- national_president_polls_adj_list[[i]] %>%
+    filter(weight > 0) %>%
     group_by(candidate, state) %>%
     summarise(avg = wtd.mean(pct, weight),
               var = n() * wtd.var(pct, weight) / (n() - 1),
@@ -106,19 +99,16 @@ state_president_poll_leans <- state_president_polls %>%
                          !(candidate %in% c("biden", "trump")) ~ pct),
          state_lean = pct - avg)
 
-state_president_poll_list <- state_president_average_list <- state_president_sd_list <- vector("list", n_days)
+state_president_average_list <- vector("list", n_days)
 
 for(i in 1:n_days) {
   current_date <- poll_dates[i]
   
-  # Compute weights
-  state_president_poll_list[[i]] <- state_president_poll_leans %>%
+  # Compute averages and standard errors
+  state_president_average_list[[i]] <- state_president_poll_leans %>%
     mutate(age = as.numeric(current_date - median_date),
            weight = 100 * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
-    filter(weight > 0)
-  
-  # Compute averages and standard errors
-  state_president_average_list[[i]] <- state_president_poll_list[[i]] %>%
+    filter(weight > 0) %>%
     group_by(candidate, state) %>%
     summarise(avg_lean = wtd.mean(state_lean, weight),
               lean_var = wtd.var(state_lean, weight),
@@ -147,19 +137,16 @@ president_averages_smoothed <- president_averages %>%
 
 
 # House polls ####
-generic_ballot_poll_list <- generic_ballot_average_list <- generic_ballot_sd_list <- vector("list", n_days)
+generic_ballot_average_list <- vector("list", n_days)
 
 for(i in 1:n_days) {
   current_date <- poll_dates[i]
   
-  # Compute weights
-  generic_ballot_poll_list[[i]] <- generic_ballot_polls %>%
+  # Compute averages and standard errors
+  generic_ballot_average_list[[i]] <- generic_ballot_polls %>%
     mutate(age = as.numeric(current_date - median_date),
            weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
-    filter(weight > 0)
-  
-  # Compute averages and standard errors
-  generic_ballot_average_list[[i]] <- generic_ballot_poll_list[[i]] %>%
+    filter(weight > 0) %>%
     group_by(candidate) %>%
     summarise(avg = wtd.mean(pct, weight),
               var = n() * wtd.var(pct, weight) / (n() - 1),
@@ -214,20 +201,17 @@ generic_ballot_poll_covariance <- cov.wt(as.matrix(generic_ballot_poll_matrix %>
                                          wt = generic_ballot_poll_matrix$weight)
 
 # Recompute with house effect-adjusted polls
-generic_ballot_polls_adj_list <- generic_ballot_average_adj_list <- vector("list", n_days)
+generic_ballot_average_adj_list <- vector("list", n_days)
 
 # Presidential polls
 for(i in 1:n_days) {
   current_date <- poll_dates[i]
   
-  # Compute weights
-  generic_ballot_polls_adj_list[[i]] <- generic_ballot_polls_adj %>%
+  # Compute averages and standard errors
+  generic_ballot_average_adj_list[[i]] <- generic_ballot_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
            weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
-    filter(weight > 0)
-  
-  # Compute averages and standard errors
-  generic_ballot_average_adj_list[[i]] <- generic_ballot_polls_adj_list[[i]] %>%
+    filter(weight > 0) %>%
     group_by(candidate) %>%
     summarise(avg = wtd.mean(pct, weight),
               var = n() * wtd.var(pct, weight) / (n() - 1),
@@ -246,3 +230,6 @@ generic_ballot_averages_smoothed <- generic_ballot_averages_adj %>%
          var = (lag(var, 4) + lag(var, 3) + lag(var, 2) + lag(var) + var) / 5,
          eff_n = (lag(eff_n, 4) + lag(eff_n, 3) + lag(eff_n, 2) + lag(eff_n) + eff_n) / 5) %>%
   ungroup()
+
+# Clean up after yourself
+rm(list = grep("_list", ls(), value = TRUE))

@@ -1,6 +1,6 @@
 source("src/simulate.R")
 
-## President
+## President ####
 # State priors ####
 ## Total electoral votes
 state_prior_summary_stats <- state_priors %>%
@@ -129,7 +129,13 @@ pres_conditional_distribution <- pres_state_sims %>%
          biden_won_pres = biden_total_ev >= 270,
          trump_won_pres = trump_total_ev >= 270)
 
-biden_bellwetherogram <- pres_conditional_distribution %>%
+biden_bellwetherogram <- pres_state_sims %>%
+  mutate(biden_won_state = biden > trump) %>%
+  group_by(sim_id) %>%
+  mutate(biden_total_ev = sum(biden_won_state * electoral_votes),
+         trump_total_ev = sum(trump_won_state * electoral_votes),
+         biden_won_pres = biden_total_ev >= 270,
+         trump_won_pres = trump_total_ev >= 270)
   filter(biden_won_state) %>%
   group_by(state) %>%
   summarise(biden_cond_prob = sum(biden_won_pres) / n())
@@ -195,3 +201,17 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "States and districts decided by single digits in 2016\nNational forecast shown in lighter colors") 
 
+## ####
+## House
+district_prior_summary_stats <- house_district_prior_sims %>%
+  group_by(state, seat_number) %>%
+  summarise(dem_prob = mean(sim_margin > 0),
+            pct05 = quantile(sim_margin, 0.05),
+            avg = mean(sim_margin),
+            pct95 = quantile(sim_margin, 0.95))
+
+district_prior_summary_stats %>%
+  print(n = Inf)
+
+district_prior_summary_stats %>%
+  filter()
