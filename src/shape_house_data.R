@@ -1,8 +1,9 @@
 source("src/library.R")
 
 # Two-party Democratic margins at district, state, and national levels
+historical_house_incumbents <- read_csv("data/historical_house_incumbents.csv")
 house_results <- read_csv("data/house_results_2000-2018.csv") %>%
-  left_join(read_csv("data/historical_house_incumbents.csv"), by = c("year", "state", "seat_number"))
+  left_join(historical_house_incumbents, by = c("year", "state", "seat_number"))
 
 state_house_results <- house_results %>%
   filter(party %in% c("DEM", "REP")) %>%
@@ -37,7 +38,8 @@ house_results_2party <- house_results %>%
   filter(party %in% c("REP", "DEM")) %>%
   mutate(pct = partyvotes / sum(partyvotes)) %>%
   ungroup() %>%
-  dplyr::select(year, state, seat_number, incumbent_running, democrat_running, republican_running, redistricted, party, pct) %>%
+  left_join(regions %>% dplyr::select(state, region), by = "state") %>%
+  dplyr::select(year, state, seat_number, region, incumbent_running, democrat_running, republican_running, redistricted, party, pct) %>%
   spread(party, pct, fill = 0) 
 
 house_results_2party_filtered <- house_results_2party %>%
@@ -51,8 +53,8 @@ house_results_2party_filtered <- house_results_2party %>%
          !grepl("IND", incumbency_change)) %>%
   left_join(national_house_results %>% mutate(last_natl_margin = lag(natl_margin)), by = "year") %>%
   left_join(state_house_results %>% mutate(last_state_margin = lag(state_margin)), by = c("year", "state")) %>%
-  dplyr::select(year, pres_year, state, seat_number, incumbent_running, incumbency_change, margin, last_margin, natl_margin, last_natl_margin,
-                state_margin, last_state_margin) %>%
+  dplyr::select(year, pres_year, state, seat_number, region, incumbent_running, incumbency_change, margin, last_margin, natl_margin, 
+                last_natl_margin, state_margin, last_state_margin) %>%
   na.omit()
 
 house_results_2party_filtered$incumbency_change <- factor(house_results_2party_filtered$incumbency_change)

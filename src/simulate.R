@@ -187,7 +187,11 @@ presidential_forecast_probabilities_history <- read_csv("output/presidential_for
 
 write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")
 
-# For the House
+# Cleanup
+rm(list = c("regional_deviations", "state_deviations", "state_polling_error_sims", "total_deviations", "biden_undecided_frac",
+            "biden_undecided_pct", "trump_undecided_frac", "trump_undecided_pct", "undecided_pct"))
+
+# For the House ####
 pres_generic_ballot_data <- national_president_polls_adj %>%
   dplyr::select(poll_id, question_id, candidate, pct) %>%
   spread(candidate, pct) %>%
@@ -227,8 +231,58 @@ house_margin_mean <- -diff(generic_ballot_2party_avg$avg)
 house_margin_var <- sum(generic_ballot_2party_avg$var) - 2 * generic_ballot_poll_covariance$cov[1, 2]
 house_margin_scale_ratio <- sqrt(house_margin_var) / sd(house_two_party_sims$house_two_party_margin)
 
-house_two_party_sims_rescaled <- house_two_party_sims %>%
+house_two_party_sims <- national_popular_vote_sims %>%
+  dplyr::select(sim_id, pres_margin = national_two_party_margin) %>%
+  mutate(house_two_party_margin = predict(pres_generic_ballot_lm, newdata = .) + rnorm(n(), 0, r2_ratio * generic_ballot_sigma)) %>%
   mutate(house_margin_rescaled = house_two_party_margin * house_margin_scale_ratio,
          house_margin_rescaled = house_margin_rescaled - mean(house_margin_rescaled) + house_margin_mean) %>%
-  dplyr::select(sim_id, pres_margin, house_two_party_margin = house_margin_rescaled) 
+  dplyr::select(sim_id, natl_margin = house_margin_rescaled) 
 
+
+# Fit House model if it doesn't exist yet
+if(!exists("house_lm")) {
+  source("src/house_modeling.R")
+}
+
+# Shape House dataset
+house_2020_data <- read_csv("data/house_candidates.csv", na = character()) %>%
+  filter(candidate_firstname != "None") %>%
+  dplyr::select(state, seat_number, incumbent_running, candidate_party) %>%
+  group_by(state, seat_number) %>%
+  mutate(dem_running = any(candidate_party == "DEM") | state == "Alaska",
+         rep_running = any(candidate_party == "REP")) %>%
+  dplyr::select(-candidate_party) %>%
+  distinct() %>%
+  left_join(house_results_2party %>%
+              filter(year == 2018) %>%
+              mutate(margin = DEM - REP) %>%
+              dplyr::select(state, seat_number, incumbent_running_last = incumbent_running, democrat_running_last = democrat_running, 
+                            republican_running_last = republican_running, last_margin = margin),
+            by = c("state", "seat_number")) %>%
+  mutate(incumbent_running_last = ifelse(grepl("redistricting", incumbent_running_last), "None", incumbent_running_last),
+         incumbency_change = paste(incumbent_running_last, incumbent_running, sep = " to "),
+         last_natl_margin = national_house_results %>% filter(year == 2018) %>% pull(natl_margin)) %>%
+  left_join(read_csv("data/nc_redistricted.csv") %>% dplyr::select(state, seat_number, lean), by = c("state", "seat_number")) %>%
+  mutate(last_margin = case_when(state == "North Carolina" ~ lean + 0.08713908,
+                                 state != "North Carolina" ~ last_margin),
+         incumbency_change = case_when(state == "North Carolina" ~ "None to None",
+                                       state != "North Carolina" ~ incumbency_change)) %>%
+  ungroup() %>%
+  dplyr::select(state, seat_number, incumbency_change, dem_running, rep_running, last_margin, last_natl_margin)
+  
+
+# Generate district simulations
+if(exists("house_district_prior_sims")) {
+  rm(house_district_prior_sims)
+}
+gc()
+
+house_district_prior_sims <- house_2020_data %>%
+  dplyr::slice(rep(1:n(), each = 0.8*n_sims)) %>%
+  mutate(sim_id = rep(1:(0.8*n_sims), 435)) %>%
+  left_join(house_two_party_sims, by = "sim_id") %>%
+  mutate(sim_margin = predict(house_lm, newdata = .) + rnorm(n(), 0, house_sigma),
+         sim_margin = case_when(!dem_running ~ -1,
+                                !rep_running ~ 1,
+                                dem_running & rep_running ~ sim_margin)) %>%
+  dplyr::select(sim_id, state, seat_number, sim_margin)

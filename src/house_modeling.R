@@ -120,6 +120,13 @@ house_results_2party_filtered %>%
 
 # 2018 model
 house_lm <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change, data = house_results_2party_filtered)
+house_lmer <- lmer(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + (1|state) + (1|region), 
+                   data = house_results_2party_filtered)
+
+region_var <- as.vector(summary(house_lmer)$varcor$region)
+state_var <- as.vector(summary(house_lmer)$varcor$state)
+residual_var <- summary(house_lmer)$sigma^2
+
 house_sigma <- house_results_2party_filtered %>%
   ungroup() %>%
   filter(year == 2016) %>%

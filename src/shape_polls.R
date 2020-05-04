@@ -60,7 +60,24 @@ generic_ballot_polls <- read_csv("data/generic_ballot_polls.csv") %>%
   ungroup()
 
 # Individual House district polls
-house_district_polls <- read_csv("data/house_district_polls.csv")
+house_district_polls <- read_csv("data/house_district_polls.csv") %>%
+  filter(population %in% c("rv", "lv", "v"), cycle == 2020) %>%
+  dplyr::select(poll_id, state, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
+                party = partisan, tracking, candidate_party, candidate = candidate_name, pct) %>%
+  mutate(pct = pct / 100,
+         start_date = as.Date(start_date, format = "%m/%d/%y"),
+         end_date = as.Date(end_date, format = "%m/%d/%y"),
+         spread = as.numeric(end_date - start_date) + 1,
+         median_date = start_date + round(spread / 2),
+         age = as.numeric(today() - median_date),
+         party = case_when(!is.na(party) ~ party,
+                           is.na(party) ~ "None"),
+         party = case_when(grepl("McLaughlin", pollster) ~ "REP",
+                           !grepl("McLaughlin", pollster) ~ party),
+         loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 2, 1) / sqrt(abs(spread - 4) + 2)) %>%
+  group_by(poll_id, question_id) %>%
+  ungroup()
 
 # Senate
 senate_polls <- read_csv("data/senate_polls.csv") %>%
