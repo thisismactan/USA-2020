@@ -7,9 +7,9 @@ Alabama,3,Alabama's 3rd,AL-03,REP,9,DEM,Adia,Winfrey
 Alabama,3,Alabama's 3rd,AL-03,REP,9,REP,Mike,Rogers
 Alabama,4,Alabama's 4th,AL-04,REP,12,DEM,Rick,Neighbors
 Alabama,4,Alabama's 4th,AL-04,REP,12,REP,Robert,Aderholt
-Alabama,5,Alabama's 5th,AL-05,REP,5,DEM,,
+Alabama,5,Alabama's 5th,AL-05,REP,5,DEM,None,
 Alabama,5,Alabama's 5th,AL-05,REP,5,REP,Mo,Brooks
-Alabama,6,Alabama's 6th,AL-06,REP,3,DEM,,
+Alabama,6,Alabama's 6th,AL-06,REP,3,DEM,None,
 Alabama,6,Alabama's 6th,AL-06,REP,3,REP,Gary,Palmer
 Alabama,7,Alabama's 7th,AL-07,DEM,5,DEM,Terri,Sewell
 Alabama,7,Alabama's 7th,AL-07,DEM,5,REP,,
@@ -34,7 +34,7 @@ Arizona,8,Arizona's 8th,AZ-08,REP,2,DEM,,
 Arizona,8,Arizona's 8th,AZ-08,REP,2,REP,Debbie,Lesko
 Arizona,9,Arizona's 9th,AZ-09,DEM,1,DEM,Greg,Stanton
 Arizona,9,Arizona's 9th,AZ-09,DEM,1,REP,,
-Arkansas,1,Arkansas's 1st,AR-01,REP,5,DEM,,
+Arkansas,1,Arkansas's 1st,AR-01,REP,5,DEM,None,
 Arkansas,1,Arkansas's 1st,AR-01,REP,5,REP,Rick,Crawford
 Arkansas,2,Arkansas's 2nd,AR-02,REP,3,DEM,Joyce,Elliott
 Arkansas,2,Arkansas's 2nd,AR-02,REP,3,REP,French,Hill
@@ -374,7 +374,7 @@ Maryland,5,Maryland's 5th,MD-05,DEM,20,DEM,Steny,Hoyer
 Maryland,5,Maryland's 5th,MD-05,DEM,20,REP,,
 Maryland,6,Maryland's 6th,MD-06,DEM,1,DEM,David,Trone
 Maryland,6,Maryland's 6th,MD-06,DEM,1,REP,,
-Maryland,7,Maryland's 7th,MD-07,DEM,1,DEM,,
+Maryland,7,Maryland's 7th,MD-07,DEM,1,DEM,Kweisi,Mfume
 Maryland,7,Maryland's 7th,MD-07,DEM,1,REP,,
 Maryland,8,Maryland's 8th,MD-08,DEM,2,DEM,Jamie,Raskin
 Maryland,8,Maryland's 8th,MD-08,DEM,2,REP,,
@@ -597,37 +597,37 @@ North Carolina,13,North Carolina's 13th,NC-13,REP,2,DEM,Scott,Huffman
 North Carolina,13,North Carolina's 13th,NC-13,REP,2,REP,Tedra,Budd
 North Dakota,1,North Dakota's at-large,ND-AL,REP,1,DEM,,
 North Dakota,1,North Dakota's at-large,ND-AL,REP,1,REP,Kelly,Armstrong
-Ohio,1,Ohio's 1st,OH-01,REP,5,DEM,,
+Ohio,1,Ohio's 1st,OH-01,REP,5,DEM,Kate,Schroder
 Ohio,1,Ohio's 1st,OH-01,REP,5,REP,Steve,Chabot
 Ohio,2,Ohio's 2nd,OH-02,REP,4,DEM,Jaime,Castle
 Ohio,2,Ohio's 2nd,OH-02,REP,4,REP,Brad,Wenstrup
 Ohio,3,Ohio's 3rd,OH-03,DEM,4,DEM,Joyce,Beatty
-Ohio,3,Ohio's 3rd,OH-03,DEM,4,REP,Cleophus,Dulaney
-Ohio,4,Ohio's 4th,OH-04,REP,7,DEM,,
+Ohio,3,Ohio's 3rd,OH-03,DEM,4,REP,Mark,Richardson
+Ohio,4,Ohio's 4th,OH-04,REP,7,DEM,Shannon,Freshour
 Ohio,4,Ohio's 4th,OH-04,REP,7,REP,Jim,Jordan
-Ohio,5,Ohio's 5th,OH-05,REP,6,DEM,,
+Ohio,5,Ohio's 5th,OH-05,REP,6,DEM,Nick,Rubando
 Ohio,5,Ohio's 5th,OH-05,REP,6,REP,Bob,Latta
 Ohio,6,Ohio's 6th,OH-06,REP,5,DEM,Shawna,Roberts
 Ohio,6,Ohio's 6th,OH-06,REP,5,REP,Bill,Johnson
-Ohio,7,Ohio's 7th,OH-07,REP,5,DEM,None,
+Ohio,7,Ohio's 7th,OH-07,REP,5,DEM,Quentin,Potter
 Ohio,7,Ohio's 7th,OH-07,REP,5,REP,Bob,Gibbs
-Ohio,8,Ohio's 8th,OH-08,Rep,3,DEM,,
+Ohio,8,Ohio's 8th,OH-08,Rep,3,DEM,Vanessa,Enoch
 Ohio,8,Ohio's 8th,OH-08,Rep,3,REP,Warren,Davidson
 Ohio,9,Ohio's 9th,OH-09,DEM,19,DEM,Marcy,Kaptur
-Ohio,9,Ohio's 9th,OH-09,DEM,19,REP,,
-Ohio,10,Ohio's 10th,OH-10,REP,9,DEM,,
+Ohio,9,Ohio's 9th,OH-09,DEM,19,REP,Rob,Weber
+Ohio,10,Ohio's 10th,OH-10,REP,9,DEM,Desiree,Tims
 Ohio,10,Ohio's 10th,OH-10,REP,9,REP,Mike,Turner
 Ohio,11,Ohio's 11th,OH-11,DEM,7,DEM,Marcia,Fudge
-Ohio,11,Ohio's 11th,OH-11,DEM,7,REP,,
-Ohio,12,Ohio's 12th,OH-12,REP,2,DEM,,
+Ohio,11,Ohio's 11th,OH-11,DEM,7,REP,Laverne,Gore
+Ohio,12,Ohio's 12th,OH-12,REP,2,DEM,Alaina,Shearer
 Ohio,12,Ohio's 12th,OH-12,REP,2,REP,Troy,Balderson
 Ohio,13,Ohio's 13th,OH-13,DEM,9,DEM,Tim,Ryan
-Ohio,13,Ohio's 13th,OH-13,DEM,9,REP,,
+Ohio,13,Ohio's 13th,OH-13,DEM,9,REP,Christina,Hagan
 Ohio,14,Ohio's 14th,OH-14,REP,4,DEM,Hillary,O'Connor Mueri
 Ohio,14,Ohio's 14th,OH-14,REP,4,REP,David,Joyce
-Ohio,15,Ohio's 15th,OH-15,REP,5,DEM,,
+Ohio,15,Ohio's 15th,OH-15,REP,5,DEM,Joel,Newby
 Ohio,15,Ohio's 15th,OH-15,REP,5,REP,Steve,Stivers
-Ohio,16,Ohio's 16th,OH-16,REP,1,DEM,,
+Ohio,16,Ohio's 16th,OH-16,REP,1,DEM,Aaron Paul,Godfrey
 Ohio,16,Ohio's 16th,OH-16,REP,1,REP,Anthony,Gonzalez
 Oklahoma,1,Oklahoma's 1st,OK-01,REP,1,DEM,,
 Oklahoma,1,Oklahoma's 1st,OK-01,REP,1,REP,Kevin,Hern
