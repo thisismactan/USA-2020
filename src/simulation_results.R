@@ -133,9 +133,7 @@ biden_bellwetherogram <- pres_state_sims %>%
   mutate(biden_won_state = biden > trump) %>%
   group_by(sim_id) %>%
   mutate(biden_total_ev = sum(biden_won_state * electoral_votes),
-         trump_total_ev = sum(trump_won_state * electoral_votes),
-         biden_won_pres = biden_total_ev >= 270,
-         trump_won_pres = trump_total_ev >= 270)
+         biden_won_pres = biden_total_ev >= 270) %>%
   filter(biden_won_state) %>%
   group_by(state) %>%
   summarise(biden_cond_prob = sum(biden_won_pres) / n())
@@ -203,15 +201,49 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 
 ## ####
 ## House
-district_prior_summary_stats <- house_district_prior_sims %>%
+# Majority probability
+house_majority_prob <- house_district_sims %>%
+  group_by(sim_id) %>%
+  summarise(dem_seats = sum(margin > 0)) %>%
+  ungroup() %>%
+  summarise(dem_majority_prob = mean(dem_seats >= 218))
+
+house_majority_prob
+
+## Probabilities by district
+district_prior_summary_stats <- house_district_sims %>%
   group_by(state, seat_number) %>%
-  summarise(dem_prob = mean(sim_margin > 0),
-            pct05 = quantile(sim_margin, 0.05),
-            avg = mean(sim_margin),
-            pct95 = quantile(sim_margin, 0.95))
+  summarise(dem_prob = mean(margin > 0),
+            pct05 = quantile(margin, 0.05),
+            avg = mean(margin),
+            pct95 = quantile(margin, 0.95))
 
 district_prior_summary_stats %>%
   print(n = Inf)
 
-district_prior_summary_stats %>%
-  filter()
+# Distribution of seat totals
+house_seat_distribution <- house_district_sims %>%
+  group_by(sim_id) %>% 
+  summarise(Democrats = sum(sim_margin > 0),
+            Republicans = sum(sim_margin <= 0)) %>%
+  melt(id.vars = "sim_id", variable.name = "Party", value.name = "seats") %>%
+  as.tbl()
+
+house_summary_stats <- house_seat_distribution %>% 
+  group_by(Party) %>%
+  summarise(pct05 = quantile(seats, 0.05),
+            avg = mean(seats),
+            pct95 = quantile(seats, 0.95))
+
+house_summary_stats
+
+house_seat_distribution %>%
+  ggplot(aes(x = seats, y = ..density.., fill = Party)) +
+  facet_wrap(~Party, nrow = 2) +
+  geom_vline(data = house_summary_stats, aes(xintercept = avg, col = Party)) +
+  geom_histogram(binwidth = 1, alpha = 0.7) +
+  scale_fill_manual(name = "Party", values = c("Democrats" = "blue", "Republicans" = "red")) +
+  scale_colour_manual(name = "Party", values = c("Democrats" = "blue", "Republicans" = "red")) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(title = "2020 House of Representatives elections forecast", x = "Seats", y = "Probability",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))

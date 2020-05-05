@@ -1,6 +1,6 @@
 source("src/shape_polls.R")
 
-poll_dates <- seq(from = as.Date("2019-06-01"), to = today(), by = 1)
+poll_dates <- seq(from = as.Date("2019-01-01"), to = today(), by = 1)
 n_days <- length(poll_dates)
 
 national_president_average_list <- vector("list", n_days)
@@ -230,6 +230,45 @@ generic_ballot_averages_smoothed <- generic_ballot_averages_adj %>%
          var = (lag(var, 4) + lag(var, 3) + lag(var, 2) + lag(var) + var) / 5,
          eff_n = (lag(eff_n, 4) + lag(eff_n, 3) + lag(eff_n, 2) + lag(eff_n) + eff_n) / 5) %>%
   ungroup()
+
+# Time trend-adjusting district-level polls
+district_poll_leans <- house_district_polls %>%
+  left_join(generic_ballot_averages_adj %>% mutate(candidate = toupper(as.character(candidate))), 
+            by = c("candidate_party" = "candidate", "median_date" = "median_date")) %>%
+  left_join(generic_ballot_house_effects, by = "pollster") %>%
+  mutate(weight = loess_weight / exp((age + 1)^0.5),
+         house = case_when(is.na(house) ~ 0,
+                           !is.na(house) ~ house),
+         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.04 * (party == "REP") - 0.04 * (party == "DEM"),
+                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.04 * (party == "REP") + 0.04 * (party == "DEM"),
+                         !(candidate %in% c("DEM", "REP")) ~ pct),
+         district_lean = pct - avg)
+
+district_poll_leans_simp <- district_poll_leans %>%
+  dplyr::select(question_id, weight, candidate_party, district_lean) %>%
+  spread(candidate_party, district_lean)
+
+district_poll_cov <- cov.wt(district_poll_leans_simp %>% dplyr::select(DEM, REP),
+                            wt = district_poll_leans_simp$weight)$cov[1,2]
+
+district_averages <- district_poll_leans %>%
+  left_join(generic_ballot_averages_adj %>% 
+              mutate(candidate_party = toupper(as.character(candidate))) %>%
+              filter(median_date == today()) %>%
+              dplyr::select(candidate_party, avg_today = avg, var_today = var, eff_n_today = eff_n), by = c("candidate_party")) %>%
+  group_by(state, seat_number, candidate_party, var_today, eff_n_today) %>%
+  summarise(district_respondents = sum(n),
+            district_avg = wtd.mean(district_lean + avg_today, weight),
+            district_var = wtd.var(district_lean, weight),
+            district_eff_n = sum(weight)^2 / sum(weight^2)) %>%
+  mutate(district_var = district_var + 0.25 / sum(district_respondents) + var_today / eff_n_today + 0.05^2) %>%
+  group_by(state, seat_number) %>%
+  dplyr::mutate(poll_margin = district_avg - lead(district_avg),
+                poll_var = sum(district_var) - 2 * district_poll_cov,
+                poll_weight = 1 / poll_var) %>%
+  ungroup() %>%
+  dplyr::select(state, seat_number, poll_margin, poll_var, poll_weight) %>%
+  na.omit()
 
 # Clean up after yourself
 rm(list = grep("_list", ls(), value = TRUE))

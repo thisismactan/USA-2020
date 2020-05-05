@@ -229,13 +229,15 @@ generic_ballot_2party_avg <- generic_ballot_averages_adj %>%
 
 house_margin_mean <- -diff(generic_ballot_2party_avg$avg)
 house_margin_var <- sum(generic_ballot_2party_avg$var) - 2 * generic_ballot_poll_covariance$cov[1, 2]
+house_margin_eff_n <- mean(generic_ballot_2party_avg$eff_n)
 house_margin_scale_ratio <- sqrt(house_margin_var) / sd(house_two_party_sims$house_two_party_margin)
 
 house_two_party_sims <- national_popular_vote_sims %>%
   dplyr::select(sim_id, pres_margin = national_two_party_margin) %>%
   mutate(house_two_party_margin = predict(pres_generic_ballot_lm, newdata = .) + rnorm(n(), 0, r2_ratio * generic_ballot_sigma)) %>%
   mutate(house_margin_rescaled = house_two_party_margin * house_margin_scale_ratio,
-         house_margin_rescaled = house_margin_rescaled - mean(house_margin_rescaled) + house_margin_mean) %>%
+         house_margin_rescaled = house_margin_rescaled - mean(house_margin_rescaled) + house_margin_mean + rnorm(n(), 0, 0.06) +
+           rnorm(n(), 0, sqrt(house_margin_var / house_margin_eff_n))) %>%
   dplyr::select(sim_id, natl_margin = house_margin_rescaled) 
 
 
@@ -256,7 +258,7 @@ house_2020_data <- read_csv("data/house_candidates.csv", na = character()) %>%
   left_join(house_results_2party %>%
               filter(year == 2018) %>%
               mutate(margin = DEM - REP) %>%
-              dplyr::select(state, seat_number, incumbent_running_last = incumbent_running, democrat_running_last = democrat_running, 
+              dplyr::select(state, seat_number, region, incumbent_running_last = incumbent_running, democrat_running_last = democrat_running, 
                             republican_running_last = republican_running, last_margin = margin),
             by = c("state", "seat_number")) %>%
   mutate(incumbent_running_last = ifelse(grepl("redistricting", incumbent_running_last), "None", incumbent_running_last),
@@ -268,21 +270,60 @@ house_2020_data <- read_csv("data/house_candidates.csv", na = character()) %>%
          incumbency_change = case_when(state == "North Carolina" ~ "None to None",
                                        state != "North Carolina" ~ incumbency_change)) %>%
   ungroup() %>%
-  dplyr::select(state, seat_number, incumbency_change, dem_running, rep_running, last_margin, last_natl_margin)
-  
+  dplyr::select(state, seat_number, region, incumbency_change, dem_running, rep_running, last_margin, last_natl_margin)
+
+# House district polling
+house_district_polling_average <- house_district_polls 
 
 # Generate district simulations
-if(exists("house_district_prior_sims")) {
-  rm(house_district_prior_sims)
+if(exists("house_district_sims")) {
+  rm(house_district_sims)
 }
 gc()
 
-house_district_prior_sims <- house_2020_data %>%
-  dplyr::slice(rep(1:n(), each = 0.8*n_sims)) %>%
-  mutate(sim_id = rep(1:(0.8*n_sims), 435)) %>%
+house_n_sims <- 0.1 * n_sims
+
+## State and regional-level deviations
+house_region_deviations <- regions %>%
+  dplyr::select(region) %>%
+  distinct() %>%
+  dplyr::slice(rep(1:n(), each = house_n_sims)) %>%
+  mutate(sim_id = rep(1:house_n_sims, 10),
+         region_dev = rnorm(n(), 0, region_sd))
+
+house_state_deviations <- regions %>%
+  dplyr::select(state) %>%
+  dplyr::slice(rep(1:n(), each = house_n_sims)) %>%
+  mutate(sim_id = rep(1:house_n_sims, 56),
+         state_dev = rnorm(n(), 0, state_sd))
+
+## District-level polling simulations
+n_districts_polled <- nrow(district_averages)
+
+district_poll_sims <- district_averages %>%
+  dplyr::slice(rep(1:n(), each = house_n_sims)) %>%
+  mutate(sim_id = rep(1:house_n_sims, n_districts_polled),
+         poll_margin = poll_margin + rnorm(n(), 0, sqrt(poll_var))) %>%
+  dplyr::select(-poll_var)
+
+house_district_sims <- house_2020_data %>%
+  dplyr::slice(rep(1:n(), each = house_n_sims)) %>%
+  mutate(sim_id = rep(1:house_n_sims, 435)) %>%
   left_join(house_two_party_sims, by = "sim_id") %>%
-  mutate(sim_margin = predict(house_lm, newdata = .) + rnorm(n(), 0, house_sigma),
+  left_join(house_region_deviations, by = c("region", "sim_id")) %>%
+  left_join(house_state_deviations, by = c("state", "sim_id")) %>%
+  mutate(sim_margin = predict(house_lm, newdata = .) + region_dev + state_dev + rnorm(n(), 0, residual_sd),
          sim_margin = case_when(!dem_running ~ -1,
                                 !rep_running ~ 1,
                                 dem_running & rep_running ~ sim_margin)) %>%
-  dplyr::select(sim_id, state, seat_number, sim_margin)
+  group_by(state, seat_number) %>%
+  mutate(prior_variance = var(sim_margin)) %>%
+  ungroup() %>%
+  mutate(prior_weight = 1 / prior_variance) %>%
+  dplyr::select(sim_id, state, seat_number, prior_margin = sim_margin, prior_weight) %>%
+  left_join(district_poll_sims, by = c("state", "seat_number", "sim_id")) %>%
+  mutate(poll_margin = ifelse(is.na(poll_margin), 0, poll_margin),
+         poll_weight = ifelse(is.na(poll_weight), 0, poll_weight),
+         prior_weight = ifelse(prior_weight == Inf, 99999, prior_weight),
+         margin = (prior_margin * prior_weight + poll_margin * poll_weight) / (prior_weight + poll_weight)) %>%
+  dplyr::select(sim_id, state, seat_number, margin)
