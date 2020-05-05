@@ -16,7 +16,7 @@ house_rf_pre_2016
 ## Gradient boosted trees
 house_results_matrix <- model.matrix(~0 + last_margin + natl_margin + last_natl_margin + state_margin + last_state_margin + pres_year + 
                                        incumbency_change, data = house_results_2party_filtered)
-house_results_dmatrix <- xgb.DMatrix(data = house_results_matrix, label = house_results_2party_filtered$margin)
+house_results_dmatrix <- xgb.DMatrix(data = house_results_matrix, label = house_results_2party_filtered %>% filter(year < 2016) %>% pull(margin))
 
 xgb_params_list <- list(objective = "reg:squarederror",
                         eta = 0.09, 

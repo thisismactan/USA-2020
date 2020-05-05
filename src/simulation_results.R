@@ -202,13 +202,7 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 ## ####
 ## House
 # Majority probability
-house_majority_prob <- house_district_sims %>%
-  group_by(sim_id) %>%
-  summarise(dem_seats = sum(margin > 0)) %>%
-  ungroup() %>%
-  summarise(dem_majority_prob = mean(dem_seats >= 218))
-
-house_majority_prob
+house_forecast_probability_today
 
 ## Probabilities by district
 district_prior_summary_stats <- house_district_sims %>%
@@ -221,11 +215,11 @@ district_prior_summary_stats <- house_district_sims %>%
 district_prior_summary_stats %>%
   print(n = Inf)
 
-# Distribution of seat totals
+## Distribution of seat totals
 house_seat_distribution <- house_district_sims %>%
   group_by(sim_id) %>% 
-  summarise(Democrats = sum(sim_margin > 0),
-            Republicans = sum(sim_margin <= 0)) %>%
+  summarise(Democrats = sum(margin > 0),
+            Republicans = sum(margin <= 0)) %>%
   melt(id.vars = "sim_id", variable.name = "Party", value.name = "seats") %>%
   as.tbl()
 

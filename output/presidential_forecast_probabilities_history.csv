@@ -1947,18 +1947,18 @@ date,state,candidate,prob
 2020-05-05,Arkansas,trump,0.9984
 2020-05-05,California,biden,1
 2020-05-05,California,trump,0
-2020-05-05,Colorado,biden,0.86576
-2020-05-05,Colorado,trump,0.13424
+2020-05-05,Colorado,biden,0.97147
+2020-05-05,Colorado,trump,0.02853
 2020-05-05,Connecticut,biden,0.98133
 2020-05-05,Connecticut,trump,0.01867
 2020-05-05,Delaware,biden,0.99525
 2020-05-05,Delaware,trump,0.00475
 2020-05-05,District of Columbia,biden,1
 2020-05-05,District of Columbia,trump,0
-2020-05-05,Florida,biden,0.60091
-2020-05-05,Florida,trump,0.39909
-2020-05-05,Georgia,biden,0.39606
-2020-05-05,Georgia,trump,0.60394
+2020-05-05,Florida,biden,0.6009
+2020-05-05,Florida,trump,0.3991
+2020-05-05,Georgia,biden,0.39602
+2020-05-05,Georgia,trump,0.60398
 2020-05-05,Hawaii,biden,1
 2020-05-05,Hawaii,trump,0
 2020-05-05,Idaho,biden,3e-5
@@ -1967,8 +1967,8 @@ date,state,candidate,prob
 2020-05-05,Illinois,trump,0.00553
 2020-05-05,Indiana,biden,0.0038
 2020-05-05,Indiana,trump,0.9962
-2020-05-05,Iowa,biden,0.17106
-2020-05-05,Iowa,trump,0.82894
+2020-05-05,Iowa,biden,0.17105
+2020-05-05,Iowa,trump,0.82895
 2020-05-05,Kansas,biden,0.00245
 2020-05-05,Kansas,trump,0.99755
 2020-05-05,Kentucky,biden,4e-5
@@ -1985,18 +1985,18 @@ date,state,candidate,prob
 2020-05-05,Maryland,trump,0
 2020-05-05,Massachusetts,biden,1
 2020-05-05,Massachusetts,trump,0
-2020-05-05,Michigan,biden,0.7545
-2020-05-05,Michigan,trump,0.2455
-2020-05-05,Minnesota,biden,0.8546
-2020-05-05,Minnesota,trump,0.1454
+2020-05-05,Michigan,biden,0.75451
+2020-05-05,Michigan,trump,0.24549
+2020-05-05,Minnesota,biden,0.85459
+2020-05-05,Minnesota,trump,0.14541
 2020-05-05,Mississippi,biden,0.01004
 2020-05-05,Mississippi,trump,0.98996
 2020-05-05,Missouri,biden,0.00754
 2020-05-05,Missouri,trump,0.99246
-2020-05-05,Montana,biden,0.00647
-2020-05-05,Montana,trump,0.99353
-2020-05-05,National,biden,0.76601
-2020-05-05,National,trump,0.23399
+2020-05-05,Montana,biden,0.00638
+2020-05-05,Montana,trump,0.99362
+2020-05-05,National,biden,0.77392
+2020-05-05,National,trump,0.22608
 2020-05-05,Nebraska,biden,0.00237
 2020-05-05,Nebraska,trump,0.99763
 2020-05-05,Nebraska's 1st congressional district,biden,0.01174
@@ -2007,47 +2007,47 @@ date,state,candidate,prob
 2020-05-05,Nebraska's 3rd congressional district,trump,1
 2020-05-05,Nevada,biden,0.82532
 2020-05-05,Nevada,trump,0.17468
-2020-05-05,New Hampshire,biden,0.78917
-2020-05-05,New Hampshire,trump,0.21083
+2020-05-05,New Hampshire,biden,0.78915
+2020-05-05,New Hampshire,trump,0.21085
 2020-05-05,New Jersey,biden,0.99783
 2020-05-05,New Jersey,trump,0.00217
-2020-05-05,New Mexico,biden,0.97013
-2020-05-05,New Mexico,trump,0.02987
+2020-05-05,New Mexico,biden,0.97014
+2020-05-05,New Mexico,trump,0.02986
 2020-05-05,New York,biden,1
 2020-05-05,New York,trump,0
-2020-05-05,North Carolina,biden,0.56363
-2020-05-05,North Carolina,trump,0.43637
+2020-05-05,North Carolina,biden,0.5636
+2020-05-05,North Carolina,trump,0.4364
 2020-05-05,North Dakota,biden,0
 2020-05-05,North Dakota,trump,1
-2020-05-05,Ohio,biden,0.25943
-2020-05-05,Ohio,trump,0.74057
+2020-05-05,Ohio,biden,0.25944
+2020-05-05,Ohio,trump,0.74056
 2020-05-05,Oklahoma,biden,0
 2020-05-05,Oklahoma,trump,1
 2020-05-05,Oregon,biden,0.96897
 2020-05-05,Oregon,trump,0.03103
-2020-05-05,Pennsylvania,biden,0.71353
-2020-05-05,Pennsylvania,trump,0.28647
+2020-05-05,Pennsylvania,biden,0.71349
+2020-05-05,Pennsylvania,trump,0.28651
 2020-05-05,Rhode Island,biden,0.991
 2020-05-05,Rhode Island,trump,0.009
-2020-05-05,South Carolina,biden,0.04713
-2020-05-05,South Carolina,trump,0.95287
+2020-05-05,South Carolina,biden,0.04712
+2020-05-05,South Carolina,trump,0.95288
 2020-05-05,South Dakota,biden,3.9e-4
 2020-05-05,South Dakota,trump,0.99961
 2020-05-05,Tennessee,biden,1.9e-4
 2020-05-05,Tennessee,trump,0.99981
-2020-05-05,Texas,biden,0.21906
-2020-05-05,Texas,trump,0.78094
+2020-05-05,Texas,biden,0.21907
+2020-05-05,Texas,trump,0.78093
 2020-05-05,Utah,biden,5.6e-4
 2020-05-05,Utah,trump,0.99944
 2020-05-05,Vermont,biden,0.99996
 2020-05-05,Vermont,trump,4e-5
-2020-05-05,Virginia,biden,0.94022
-2020-05-05,Virginia,trump,0.05978
+2020-05-05,Virginia,biden,0.94021
+2020-05-05,Virginia,trump,0.05979
 2020-05-05,Washington,biden,0.99909
 2020-05-05,Washington,trump,9.1e-4
 2020-05-05,West Virginia,biden,0
 2020-05-05,West Virginia,trump,1
-2020-05-05,Wisconsin,biden,0.65084
-2020-05-05,Wisconsin,trump,0.34916
+2020-05-05,Wisconsin,biden,0.65081
+2020-05-05,Wisconsin,trump,0.34919
 2020-05-05,Wyoming,biden,0
 2020-05-05,Wyoming,trump,1

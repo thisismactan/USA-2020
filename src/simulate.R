@@ -281,7 +281,7 @@ if(exists("house_district_sims")) {
 }
 gc()
 
-house_n_sims <- 0.1 * n_sims
+house_n_sims <- 0.8 * n_sims
 
 ## State and regional-level deviations
 house_region_deviations <- regions %>%
@@ -327,3 +327,31 @@ house_district_sims <- house_2020_data %>%
          prior_weight = ifelse(prior_weight == Inf, 99999, prior_weight),
          margin = (prior_margin * prior_weight + poll_margin * poll_weight) / (prior_weight + poll_weight)) %>%
   dplyr::select(sim_id, state, seat_number, margin)
+
+## Timeline for the House forecast
+house_forecast_probability_today <- house_district_sims %>%
+  mutate(party = ifelse(margin > 0, "Democrats", "Republicans")) %>%
+  group_by(sim_id, party) %>%
+  summarise(seats = n()) %>%
+  group_by(sim_id) %>%
+  filter(seats == max(seats)) %>%
+  group_by(party) %>%
+  summarise(prob = n() / house_n_sims) %>%
+  mutate(date = today()) %>%
+  dplyr::select(date, party, prob)
+
+# Write this to an output file
+if(!("house_forecast_probability_history.csv" %in% list.files("output"))) {
+  write_csv(house_forecast_probability_today, "output/house_forecast_probability_history.csv")
+}
+
+house_forecast_probability_history <- read_csv("output/house_forecast_probability_history.csv") %>%
+  bind_rows(house_forecast_probability_today) %>%
+  group_by(date, party) %>%
+  dplyr::slice(n()) %>%
+  ungroup()
+
+write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")
+
+rm(district_poll_sims)
+gc()
