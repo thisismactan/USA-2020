@@ -265,8 +265,13 @@ house_2020_data <- read_csv("data/house_candidates.csv", na = character()) %>%
          incumbency_change = paste(incumbent_running_last, incumbent_running, sep = " to "),
          last_natl_margin = national_house_results %>% filter(year == 2018) %>% pull(natl_margin)) %>%
   left_join(read_csv("data/nc_redistricted.csv") %>% dplyr::select(state, seat_number, lean), by = c("state", "seat_number")) %>%
-  mutate(last_margin = case_when(state == "North Carolina" ~ lean + 0.08713908,
-                                 state != "North Carolina" ~ last_margin),
+  left_join(read_csv("data/presidential_results_by_2020_cd.csv") %>%
+              mutate(pres_2party_2016 = (clinton_2016_pct - trump_2016_pct) / (clinton_2016_pct + trump_2016_pct),
+                     pres_2party_2012 = (obama_2012_pct - romney_2012_pct) / (obama_2012_pct + romney_2012_pct)), 
+            by = c("state", "seat_number")) %>%
+  ungroup() %>%
+  mutate(last_margin = case_when((state == "North Carolina") | (abs(last_margin) == 1) ~ predict(contested_2018_lm, newdata = .),
+                                 (state != "North Carolina") & (abs(last_margin) != 1) ~ last_margin),
          incumbency_change = case_when(state == "North Carolina" ~ "None to None",
                                        state != "North Carolina" ~ incumbency_change)) %>%
   ungroup() %>%
@@ -312,7 +317,7 @@ house_district_sims <- house_2020_data %>%
   left_join(house_two_party_sims, by = "sim_id") %>%
   left_join(house_region_deviations, by = c("region", "sim_id")) %>%
   left_join(house_state_deviations, by = c("state", "sim_id")) %>%
-  mutate(sim_margin = predict(house_lm, newdata = .) + region_dev + state_dev + rnorm(n(), 0, residual_sd),
+  mutate(sim_margin = predict(house_lm, newdata = .) + region_dev + state_dev + rnorm(n(), -0.01, residual_sd + 0.01),
          sim_margin = case_when(!dem_running ~ -1,
                                 !rep_running ~ 1,
                                 dem_running & rep_running ~ sim_margin)) %>%

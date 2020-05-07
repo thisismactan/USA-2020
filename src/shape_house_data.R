@@ -29,6 +29,38 @@ national_house_results <- house_results %>%
   ungroup() %>%
   mutate(natl_margin_change = natl_margin - lag(natl_margin)) 
 
+# Fundraising
+election_years <- seq(from = 2006, to = 2020, by = 2)
+fundraising <- vector("list", length(election_years))
+for(y in 1:length(election_years)) {
+  fundraising_filename <- paste0("data/fec-data/fundraising_", election_years[y], ".txt")
+  fundraising[[y]] <- read.delim(fundraising_filename, header = FALSE, sep = "|") %>%
+    mutate(year = election_years[y])
+}
+
+fundraising <- bind_rows(fundraising) %>% 
+  as.tbl() %>%
+  inner_join(regions %>% dplyr::select(state, abbrev), by = c("V19" = "abbrev")) %>%
+  dplyr::select(year, state, seat_number = V20, candidate_id = V1, candidate_name = V2, candidate_status = V3, party_code = V4, party = V5, 
+                total_receipts = V6, transfers_from_committees = V7, total_disbursements = V8, transfers_to_committees = V9, beginning_cash = V10,
+                end_cash = V11, candidate_contributions = V12, candidate_loans = V13, other_loans = V14, candidate_loan_repayments = V15,
+                other_loan_repayments = V16, debt = V17, individual_contributions = V18, special = V21, primary = V22, runoff = V23, general = V24, 
+                vote_share = V25, committee_contributions = V26, party_contributions = V27, end_date = V28, individual_refunds = V29, 
+                committee_refunds = V30) %>%
+  mutate(seat_number = pmax(seat_number, 1))
+
+dem_fundraising_frac <- fundraising %>%
+  filter(general %in% c("W", "L"), special == "", (party %in% c("DEM", "REP") | state == "Alaska")) %>%
+  dplyr::select(year, state, seat_number, party, individual_contributions) %>%
+  group_by(year, state, seat_number) %>%
+  mutate(pct_fundraising = individual_contributions / sum(individual_contributions)) %>%
+  ungroup() %>%
+  filter(party == "DEM") %>%
+  dplyr::select(-individual_contributions, -party)
+
+dem_fundraising_frac %>%
+  spread(party, pct_fundraising)
+
 house_results_2party <- house_results %>%
   filter(!runoff, !special, !writein) %>%
   # Handle multiple candidate from a party (as in states with top-two primaries)
@@ -53,9 +85,22 @@ house_results_2party_filtered <- house_results_2party %>%
          !grepl("IND", incumbency_change)) %>%
   left_join(national_house_results %>% mutate(last_natl_margin = lag(natl_margin)), by = "year") %>%
   left_join(state_house_results %>% mutate(last_state_margin = lag(state_margin)), by = c("year", "state")) %>%
+  left_join(dem_fundraising_frac, by = c("year", "state", "seat_number")) %>%
+  mutate(dem_pct_fundraising = ifelse(is.na(pct_fundraising), 0, pct_fundraising)) %>%
   dplyr::select(year, pres_year, state, seat_number, region, incumbent_running, incumbency_change, margin, last_margin, natl_margin, 
-                last_natl_margin, state_margin, last_state_margin) %>%
+                last_natl_margin, state_margin, last_state_margin, dem_pct_fundraising) %>%
   na.omit()
 
 house_results_2party_filtered$incumbency_change <- factor(house_results_2party_filtered$incumbency_change)
 house_results_2party_filtered
+
+# Filling in results in uncontested races from 2018
+pres_results_by_2020_cd <- house_results_2party %>%
+  filter(year == 2018, democrat_running, republican_running) %>%
+  left_join(read_csv("data/presidential_results_by_2020_cd.csv"), by = c("state", "seat_number")) %>%
+  mutate(margin = DEM - REP,
+         pres_2party_2016 = (clinton_2016_pct - trump_2016_pct) / (clinton_2016_pct + trump_2016_pct),
+         pres_2party_2012 = (obama_2012_pct - romney_2012_pct) / (obama_2012_pct + romney_2012_pct),
+         pres_2party_2008 = (obama_2008_pct - mccain_2008_pct) / (obama_2008_pct + mccain_2008_pct))
+
+contested_2018_lm <- lm(margin ~ pres_2party_2016 + pres_2party_2012, data = pres_results_by_2020_cd)

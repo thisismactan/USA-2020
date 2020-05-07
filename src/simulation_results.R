@@ -178,7 +178,7 @@ presidential_forecast_probabilities_history %>%
   geom_line(size = 1) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
-  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04"))) +
+  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
   theme(legend.position = "bottom") +
   labs(title = "StatSheet 2020 presidential election forecast over time", x = "Date", y = "Probability of winning",
@@ -192,9 +192,9 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
   geom_line(size = 1) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
-  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04"))) +
+  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
-  theme(legend.position = "bottom") +
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   labs(title = "StatSheet 2020 presidential election forecast over time by state", x = "Date", y = "Probability of winning",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "States and districts decided by single digits in 2016\nNational forecast shown in lighter colors") 
@@ -204,7 +204,7 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 # Majority probability
 house_forecast_probability_today
 
-## Probabilities by district
+# Probabilities by district
 district_prior_summary_stats <- house_district_sims %>%
   group_by(state, seat_number) %>%
   summarise(dem_prob = mean(margin > 0),
@@ -215,7 +215,7 @@ district_prior_summary_stats <- house_district_sims %>%
 district_prior_summary_stats %>%
   print(n = Inf)
 
-## Distribution of seat totals
+# Distribution of seat totals
 house_seat_distribution <- house_district_sims %>%
   group_by(sim_id) %>% 
   summarise(Democrats = sum(margin > 0),
@@ -231,13 +231,28 @@ house_summary_stats <- house_seat_distribution %>%
 
 house_summary_stats
 
+# Histogram
 house_seat_distribution %>%
   ggplot(aes(x = seats, y = ..density.., fill = Party)) +
   facet_wrap(~Party, nrow = 2) +
+  geom_vline(xintercept = 218, size = 1, col = "black") +
   geom_vline(data = house_summary_stats, aes(xintercept = avg, col = Party)) +
   geom_histogram(binwidth = 1, alpha = 0.7) +
   scale_fill_manual(name = "Party", values = c("Democrats" = "blue", "Republicans" = "red")) +
   scale_colour_manual(name = "Party", values = c("Democrats" = "blue", "Republicans" = "red")) +
   scale_y_continuous(labels = scales::percent) +
   labs(title = "2020 House of Representatives elections forecast", x = "Seats", y = "Probability",
-       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
+       caption = "218 seats needed for a majority")
+
+# Forecast probabilities over time
+house_forecast_probability_history %>%
+  ggplot(aes(x = date, y = prob, col = party)) +
+  geom_line(size = 1) +
+  geom_vline(xintercept = as.Date("2020-11-03")) +
+  scale_colour_manual(name = "Party", values = c("Democrats" = "blue", "Republicans" = "red")) +
+  scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+  labs(title = "StatSheet 2020 House forecast over time", x = "Date", y = "Probability of majority",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today()))) 

@@ -10,19 +10,20 @@ summary(house_lm_pre_2016)
 
 ## Random forest
 house_rf_pre_2016 <- randomForest(formula = margin ~ last_margin + natl_margin + last_natl_margin + state_margin + last_state_margin + pres_year + 
-                           incumbency_change, data = house_results_2party_filtered %>% filter(year < 2016), ntree = 200, importance = TRUE)
+                           incumbency_change + dem_pct_fundraising, data = house_results_2party_filtered %>% filter(year < 2016), ntree = 200, 
+                           importance = TRUE, mtry = 3)
 house_rf_pre_2016
 
 ## Gradient boosted trees
 house_results_matrix <- model.matrix(~0 + last_margin + natl_margin + last_natl_margin + state_margin + last_state_margin + pres_year + 
-                                       incumbency_change, data = house_results_2party_filtered)
+                                       incumbency_change + dem_pct_fundraising, data = house_results_2party_filtered %>% filter(year < 2016))
 house_results_dmatrix <- xgb.DMatrix(data = house_results_matrix, label = house_results_2party_filtered %>% filter(year < 2016) %>% pull(margin))
 
 xgb_params_list <- list(objective = "reg:squarederror",
-                        eta = 0.09, 
+                        eta = 0.1, 
                         max_depth = 3,
                         nthread = 10,
-                        alpha = 0.2)
+                        alpha = 0)
 
 house_xgb_cv <- xgb.cv(params = xgb_params_list,
                        data = house_results_dmatrix,
@@ -36,7 +37,7 @@ house_results_pre_2016_matrix <- model.matrix(~0 + last_margin + natl_margin + l
 house_results_pre_2016_dmatrix <- xgb.DMatrix(data = house_results_pre_2016_matrix, 
                                               label = house_results_2party_filtered %>% filter(year < 2016) %>% pull(margin))
 
-house_pre_2016_xgb <- xgb.train(params = xgb_params_list, data = house_results_pre_2016_dmatrix, nrounds = 261, nfold = 10)
+house_pre_2016_xgb <- xgb.train(params = xgb_params_list, data = house_results_pre_2016_dmatrix, nrounds = house_xgb_cv$best_iteration, nfold = 10)
 
 house_results_2016_matrix <- model.matrix(~0 + last_margin + natl_margin + last_natl_margin + state_margin + last_state_margin + pres_year + 
                                             incumbency_change, data = house_results_2party_filtered %>% filter(year == 2016))
@@ -46,7 +47,7 @@ house_results_2016_dmatrix <- xgb.DMatrix(data = house_results_2016_matrix)
 ## Linear regression
 house_results_2party_filtered %>%
   ungroup() %>%
-  filter(year == 2016) %>%
+  filter(year == 2016, !(state == "Hawaii" & seat_number == 1)) %>%
   mutate(pred = predict(house_lm_pre_2016, newdata = .),
          residual = pred - margin) %>%
   summarise(avg_residual = mean(residual),
@@ -57,7 +58,7 @@ house_results_2party_filtered %>%
 
 house_results_2party_filtered %>%
   ungroup() %>%
-  filter(year == 2016) %>%
+  filter(year == 2016, !(state == "Hawaii" & seat_number == 1)) %>%
   mutate(pred = predict(house_lm_pre_2016, newdata = .),
          residual = pred - margin) %>%
   ggplot(aes(x = margin, y = residual)) +
@@ -71,7 +72,7 @@ house_results_2party_filtered %>%
 ## Random forest
 house_results_2party_filtered %>%
   ungroup() %>%
-  filter(year == 2016) %>%
+  filter(year == 2016, !(state == "Hawaii" & seat_number == 1)) %>%
   mutate(pred = predict(house_rf_pre_2016, newdata = .),
          residual = pred - margin) %>%
   summarise(avg_residual = mean(residual),
@@ -82,7 +83,7 @@ house_results_2party_filtered %>%
 
 house_results_2party_filtered %>%
   ungroup() %>%
-  filter(year == 2016) %>%
+  filter(year == 2016, !(state == "Hawaii" & seat_number == 1)) %>%
   mutate(pred = predict(house_rf_pre_2016, newdata = .),
          residual = pred - margin) %>%
   ggplot(aes(x = margin, y = residual)) +
@@ -119,7 +120,8 @@ house_results_2party_filtered %>%
        y = "Residual")
 
 # 2018 model
-house_lm <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change, data = house_results_2party_filtered)
+house_lm <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change, 
+               data = house_results_2party_filtered)
 house_lmer <- lmer(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + (1|state) + (1|region), 
                    data = house_results_2party_filtered)
 
