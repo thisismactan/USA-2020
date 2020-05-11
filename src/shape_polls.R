@@ -87,9 +87,9 @@ house_district_polls <- read_csv("data/house_district_polls.csv") %>%
                               118012, 120204)))
 
 # Senate
-senate_polls <- read_csv("data/senate_polls.csv") %>%
-  filter(!is.na(state), population %in% c("rv", "lv", "v")) %>%
-  dplyr::select(poll_id, state, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
+senate_polls_all <- read_csv("data/senate_polls.csv") %>%
+  filter(!is.na(state), population %in% c("rv", "lv", "v"), cycle == 2020) %>%
+  dplyr::select(poll_id, state, seat_name, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
                 party = partisan, tracking, candidate_party, candidate = candidate_name, pct) %>%
   mutate(pct = pct / 100,
          start_date = as.Date(start_date, format = "%m/%d/%y"),
@@ -102,6 +102,24 @@ senate_polls <- read_csv("data/senate_polls.csv") %>%
          party = case_when(grepl("McLaughlin", pollster) ~ "REP",
                            !grepl("McLaughlin", pollster) ~ party),
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
-           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 1, 1 / spread) / sqrt(abs(spread - 4) + 2)) %>%
-  group_by(poll_id, question_id) %>%
-  ungroup()
+           ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 1, 1 / spread) / sqrt(abs(spread - 4) + 2))
+
+## Candidates
+senate_candidates <- read_csv("data/senate_candidates.csv") %>%
+  dplyr::select(state, seat_name, candidate_party, candidate_fullname) %>%
+  spread(candidate_party, candidate_fullname)
+  
+
+## Filter polls to those with the appropriate candidate matchups
+senate_poll_candidates <- senate_polls_all %>%
+  dplyr::select(state, seat_name, question_id, candidate_party, candidate) %>%
+  filter(seat_name == "Class II" | state == "Arizona") %>%
+  spread(candidate_party, candidate)
+
+senate_question_ids <- senate_candidates %>%
+  left_join(senate_poll_candidates, by = c("state", "seat_name", "DEM", "IND", "REP")) %>%
+  filter(!is.na(question_id)) %>%
+  pull(question_id)
+
+senate_polls <- senate_polls_all %>%
+  filter(question_id %in% senate_question_ids)

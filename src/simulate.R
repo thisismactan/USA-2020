@@ -270,8 +270,10 @@ house_2020_data <- read_csv("data/house_candidates.csv", na = character()) %>%
                      pres_2party_2012 = (obama_2012_pct - romney_2012_pct) / (obama_2012_pct + romney_2012_pct)), 
             by = c("state", "seat_number")) %>%
   ungroup() %>%
-  mutate(last_margin = case_when((state == "North Carolina") | (abs(last_margin) == 1) ~ predict(contested_2018_lm, newdata = .),
-                                 (state != "North Carolina") & (abs(last_margin) != 1) ~ last_margin),
+  mutate(fillin = (state == "North Carolina") | (abs(last_margin) == 1) | (state == "New York" & seat_number == 27) |
+           (state == "California" & seat_number == 50),
+         last_margin = case_when(fillin ~ predict(contested_2018_lm, newdata = .),
+                                 !fillin ~ last_margin),
          incumbency_change = case_when(state == "North Carolina" ~ "None to None",
                                        state != "North Carolina" ~ incumbency_change)) %>%
   ungroup() %>%

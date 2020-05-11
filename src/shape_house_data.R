@@ -71,7 +71,8 @@ house_results_2party <- house_results %>%
   mutate(pct = partyvotes / sum(partyvotes)) %>%
   ungroup() %>%
   left_join(regions %>% dplyr::select(state, region), by = "state") %>%
-  dplyr::select(year, state, seat_number, region, incumbent_running, democrat_running, republican_running, redistricted, party, pct) %>%
+  dplyr::select(year, state, seat_number, region, incumbent_running, incumbent_first_elected, democrat_running, republican_running, redistricted, 
+                party, pct) %>%
   spread(party, pct, fill = 0) 
 
 house_results_2party_filtered <- house_results_2party %>%
@@ -86,9 +87,12 @@ house_results_2party_filtered <- house_results_2party %>%
   left_join(national_house_results %>% mutate(last_natl_margin = lag(natl_margin)), by = "year") %>%
   left_join(state_house_results %>% mutate(last_state_margin = lag(state_margin)), by = c("year", "state")) %>%
   left_join(dem_fundraising_frac, by = c("year", "state", "seat_number")) %>%
-  mutate(dem_pct_fundraising = ifelse(is.na(pct_fundraising), 0, pct_fundraising)) %>%
-  dplyr::select(year, pres_year, state, seat_number, region, incumbent_running, incumbency_change, margin, last_margin, natl_margin, 
-                last_natl_margin, state_margin, last_state_margin, dem_pct_fundraising) %>%
+  mutate(dem_pct_fundraising = ifelse(is.na(pct_fundraising), 0, pct_fundraising),
+         multiterm = (incumbent_running != "None") & (year - incumbent_first_elected > 2),
+         multiterm_dem = multiterm & (incumbent_running == "DEM"),
+         multiterm_rep = multiterm & (incumbent_running == "REP")) %>%
+  dplyr::select(year, pres_year, state, seat_number, region, incumbent_running, incumbent_first_elected, multiterm, multiterm_dem, multiterm_rep, 
+                incumbency_change, margin, last_margin, natl_margin, last_natl_margin, state_margin, last_state_margin, dem_pct_fundraising) %>%
   na.omit()
 
 house_results_2party_filtered$incumbency_change <- factor(house_results_2party_filtered$incumbency_change)

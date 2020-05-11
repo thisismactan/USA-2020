@@ -256,3 +256,30 @@ house_forecast_probability_history %>%
   theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5)) +
   labs(title = "StatSheet 2020 House forecast over time", x = "Date", y = "Probability of majority",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today()))) 
+
+# House bellwetherogram
+house_conditional_probs <- house_district_sims %>%
+  left_join(house_seat_distribution %>% filter(Party == "Democrats"), by = "sim_id") %>%
+  mutate(house_majority = ifelse(seats >= 218, "Democrats", "Republicans"),
+         seat_winner = ifelse(margin > 0, "Democrats", "Republicans")) %>%
+  group_by(state, seat_number, seat_winner) %>%
+  summarise(cond_prob = mean(house_majority == seat_winner)) %>%
+  spread(seat_winner, cond_prob) %>%
+  mutate(dem_prob_increase = Democrats - house_forecast_probability_today$prob[1],
+         rep_prob_increase = Republicans - house_forecast_probability_today$prob[2])
+
+house_bellwetherogram <- house_conditional_probs %>%
+  left_join(house_candidates_2020 %>% dplyr::select(state, seat_number, district_abbr) %>% distinct(), by = c("state", "seat_number")) %>%
+  left_join(district_prior_summary_stats %>% dplyr::select(state, seat_number, dem_prob), by = c("state", "seat_number")) %>%
+  mutate(dem_logit = logit(dem_prob))
+
+house_bellwetherogram %>%
+  na.omit() %>%
+  filter(abs(dem_logit) < logit(0.9)) %>%
+  ggplot(aes(x = dem_prob_increase, y = rep_prob_increase, col = dem_prob)) +
+  geom_text(aes(label = district_abbr), size = 2) +
+  scale_colour_gradient2(name = "P(D wins district)", low = "red", mid = "#880088", high = "blue", midpoint = 0.5,
+                         labels = scales::percent) +
+  labs(title = "House bellwether-o-gram", subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
+       x = "P(Democratic majority | Democrat wins district) - P(Democratic majority)",
+       y = "P(Republican majority | Republican wins district) - P(Republican wins district)")
