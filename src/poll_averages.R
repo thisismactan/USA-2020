@@ -239,8 +239,8 @@ district_poll_leans <- house_district_polls %>%
   mutate(weight = loess_weight / exp((age + 1)^0.5),
          house = case_when(is.na(house) ~ 0,
                            !is.na(house) ~ house),
-         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.04 * (party == "REP") - 0.04 * (party == "DEM"),
-                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.04 * (party == "REP") + 0.04 * (party == "DEM"),
+         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.03 * (party == "REP") - 0.03 * (party == "DEM"),
+                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.03 * (party == "REP") + 0.03 * (party == "DEM"),
                          !(candidate %in% c("DEM", "REP")) ~ pct),
          district_lean = pct - avg)
 
@@ -316,7 +316,8 @@ senate_averages <- bind_rows(senate_average_list) %>%
 # Adjusted national polls
 senate_polls_adj <- senate_polls %>%
   left_join(generic_ballot_house_effects, by = c("pollster")) %>%
-  mutate(pct_adj = case_when(candidate_party == "DEM" ~ pct - house / 2 - generic_ballot_rv_bias + 0.01 * (party == "REP") - 0.01 * (party == "DEM"),
+  mutate(house = ifelse(is.na(house), 0, house),
+         pct_adj = case_when(candidate_party == "DEM" ~ pct - house / 2 - generic_ballot_rv_bias + 0.01 * (party == "REP") - 0.01 * (party == "DEM"),
                              candidate == "REP" ~ pct + house / 2 + generic_ballot_rv_bias + 0.01 * (party == "DEM") - 0.01 * (party == "REP"),
                              !(candidate %in% c("DEM", "REP")) ~ pct))
 
@@ -342,9 +343,9 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   senate_average_adj_list[[i]] <- senate_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
-    group_by(candidate, state, seat_name) %>%
+    group_by(candidate, candidate_party, state, seat_name) %>%
     summarise(avg = wtd.mean(pct, weight),
               var = n() * wtd.var(pct, weight) / (n() - 1),
               eff_n = sum(weight)^2 / sum(weight^2)) %>%
@@ -352,7 +353,8 @@ for(i in 1:n_days) {
 }
 
 # Averages
-senate_averages_adj <- bind_rows(senate_average_adj_list)
+senate_averages_adj <- bind_rows(senate_average_adj_list) %>%
+  arrange(state, seat_name, candidate_party, candidate)
 
 # Smoothed averages
 senate_averages_smoothed <- senate_averages_adj %>%

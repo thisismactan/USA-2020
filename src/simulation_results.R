@@ -201,9 +201,6 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 
 ## ####
 ## House
-# Majority probability
-house_forecast_probability_today
-
 # Probabilities by district
 district_prior_summary_stats <- house_district_sims %>%
   group_by(state, seat_number) %>%
@@ -225,7 +222,8 @@ house_seat_distribution <- house_district_sims %>%
 
 house_summary_stats <- house_seat_distribution %>% 
   group_by(Party) %>%
-  summarise(pct05 = quantile(seats, 0.05),
+  summarise(majority_prob = mean(seats >= 218),
+            pct05 = quantile(seats, 0.05),
             avg = mean(seats),
             pct95 = quantile(seats, 0.95))
 
