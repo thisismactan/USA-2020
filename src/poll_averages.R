@@ -236,7 +236,7 @@ district_poll_leans <- house_district_polls %>%
   left_join(generic_ballot_averages_adj %>% mutate(candidate = toupper(as.character(candidate))), 
             by = c("candidate_party" = "candidate", "median_date" = "median_date")) %>%
   left_join(generic_ballot_house_effects, by = "pollster") %>%
-  mutate(weight = loess_weight / exp((age + 1)^0.5),
+  mutate(weight = 100 * loess_weight / exp((age + 1)^0.5),
          house = case_when(is.na(house) ~ 0,
                            !is.na(house) ~ house),
          pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.03 * (party == "REP") - 0.03 * (party == "DEM"),
@@ -264,7 +264,7 @@ district_averages <- district_poll_leans %>%
   mutate(district_var = district_var + 0.25 / sum(district_respondents) + var_today / eff_n_today + 0.05^2) %>%
   group_by(state, seat_number) %>%
   dplyr::mutate(poll_margin = district_avg - lead(district_avg),
-                poll_var = sum(district_var) - 2 * district_poll_cov,
+                poll_var = sum(district_var),
                 poll_weight = 1 / poll_var) %>%
   ungroup() %>%
   dplyr::select(state, seat_number, poll_margin, poll_var, poll_weight) %>%

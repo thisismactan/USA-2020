@@ -90,8 +90,8 @@ California,23,California's 23rd,CA-23,REP,7,DEM,Kim,Mangone
 California,23,California's 23rd,CA-23,REP,7,REP,Kevin,McCarthy
 California,24,California's 24th,CA-24,DEM,2,DEM,Salud,Carbajal
 California,24,California's 24th,CA-24,DEM,2,REP,Andy,Caldwell
-California,25,California's 25th,CA-25,DEM,1,DEM,,
-California,25,California's 25th,CA-25,DEM,1,REP,,
+California,25,California's 25th,CA-25,REP,1,DEM,Christy,Smith
+California,25,California's 25th,CA-25,REP,1,REP,Mike,Garcia
 California,26,California's 26th,CA-26,DEM,4,DEM,Julia,Brownley
 California,26,California's 26th,CA-26,DEM,4,REP,Ronda,Baldwin-Kennedy
 California,27,California's 27th,CA-27,DEM,6,DEM,Judy,Chu
@@ -467,9 +467,9 @@ Missouri,8,Missouri's 8th,MO-08,REP,4,DEM,Kathy,Ellis
 Missouri,8,Missouri's 8th,MO-08,REP,4,REP,Jason,Smith
 Montana,1,Montana's at-large,MT-AL,None,2,DEM,,
 Montana,1,Montana's at-large,MT-AL,None,2,REP,,
-Nebraska,1,Nebraska's 1st,NE-01,REP,8,DEM,,
+Nebraska,1,Nebraska's 1st,NE-01,REP,8,DEM,Kate,Bolz
 Nebraska,1,Nebraska's 1st,NE-01,REP,8,REP,Jeff,Fortenberry
-Nebraska,2,Nebraska's 2nd,NE-02,REP,2,DEM,,
+Nebraska,2,Nebraska's 2nd,NE-02,REP,2,DEM,Kara,Eastman
 Nebraska,2,Nebraska's 2nd,NE-02,REP,2,REP,Don,Bacon
 Nebraska,3,Nebraska's 3rd,NE-03,REP,7,DEM,Mark,Elworth
 Nebraska,3,Nebraska's 3rd,NE-03,REP,7,REP,Adrian,Smith

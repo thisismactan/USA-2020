@@ -42,7 +42,6 @@ regional_deviations <- expand.grid(region = region_names,
 
 # Residual_deviations
 state_names <- regions %>%
-  filter(!grepl("congressional", state)) %>%
   pull(state) %>%
   unique()
 
@@ -87,7 +86,11 @@ state_prior_summary_stats <- state_priors %>%
   summarise(biden_prior_mean = mean(biden),
             trump_prior_mean = mean(trump),
             biden_prior_variance = var(biden),
-            trump_prior_variance = var(trump))
+            trump_prior_variance = var(trump)) %>%
+  mutate(state = case_when(grepl("'s 1st congressional district", state) ~ gsub("'s 1st congressional district", " CD-1", state),
+                           grepl("'s 2nd congressional district", state) ~ gsub("'s 2nd congressional district", " CD-2", state),
+                           grepl("'s 3rd congressional district", state) ~ gsub("'s 3rd congressional district", " CD-3", state),
+                           !grepl("congress", state) ~ state))
 
 # Updating with state-level polling
 state_poll_averages_today <- president_averages %>%
@@ -96,7 +99,7 @@ state_poll_averages_today <- president_averages %>%
 polling_variation <- state_poll_averages_today %>%
   group_by(state) %>%
   summarise(margin_var = mean(var / eff_n)) %>%
-  right_join(state_prior_summary_stats %>% filter(!grepl("congressional", state)), by = "state") %>%
+  right_join(state_prior_summary_stats, by = "state") %>%
   mutate(polled = !is.na(margin_var),
          margin_var = replace_na_zero(margin_var)) %>%
   dplyr::select(state, polled, margin_var)
@@ -122,7 +125,11 @@ pres_simulation_weights <- prior_weights %>%
                                  !is.na(poll_weight) ~ poll_weight),
          weight_sum = prior_weight + poll_weight,
          poll_weight = poll_weight / weight_sum,
-         prior_weight = prior_weight / weight_sum) %>%
+         prior_weight = prior_weight / weight_sum,
+         state = case_when(grepl("CD-1", state) ~ gsub(" CD-1", "'s 1st congressional district", state),
+                           grepl("CD-2", state) ~ gsub(" CD-2", "'s 2nd congressional district", state),
+                           grepl("CD-3", state) ~ gsub(" CD-3", "'s 3rd congressional district", state),
+                           !grepl("CD-", state) ~ state)) %>%
   dplyr::select(state, prior_weight, poll_weight)
 
 # Simulate state poll distribution draws
@@ -135,7 +142,11 @@ pres_state_sims <- state_polling_error_sims %>%
   melt(id.vars = "sim_id", variable.name = "state", value.name = "error") %>%
   left_join(state_poll_averages_today %>% dplyr::select(state, candidate, avg) %>% spread(candidate, avg), by = "state") %>%
   mutate(biden_poll = biden + error / 2,
-         trump_poll = trump - error / 2) %>%
+         trump_poll = trump - error / 2,
+         state = case_when(grepl("CD-1", state) ~ gsub(" CD-1", "'s 1st congressional district", state),
+                           grepl("CD-2", state) ~ gsub(" CD-2", "'s 2nd congressional district", state),
+                           grepl("CD-3", state) ~ gsub(" CD-3", "'s 3rd congressional district", state),
+                           !grepl("CD-", state) ~ state)) %>%
   dplyr::select(sim_id, state, biden_poll, trump_poll) %>%
   right_join(state_priors %>% dplyr::select(sim_id, state, electoral_votes, biden_prior = biden, trump_prior = trump), 
             by = c("sim_id", "state")) %>%

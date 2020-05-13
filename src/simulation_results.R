@@ -65,7 +65,8 @@ pres_summary_stats <- pres_state_sims %>%
             trump = sum(trump_ev)) %>%
   melt(id.vars = "sim_id", variable.name = "Candidate", value.name = "ev") %>%
   group_by(Candidate) %>%
-  summarise(pct05 = quantile(ev, 0.05),
+  summarise(win_prob = mean(ev >= 270),
+            pct05 = quantile(ev, 0.05),
             avg = mean(ev),
             pct95 = quantile(ev, 0.95))
 
@@ -98,8 +99,6 @@ biden_win_pres_prob <- (pres_state_sims %>%
     summarise(biden_ev = sum(biden_ev)) %>%
     filter(biden_ev >= 270) %>%
     nrow()) / n_sims
-
-biden_win_pres_prob
 
 ### By state
 biden_win_prob_by_state <- pres_state_sims %>%
@@ -201,6 +200,8 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 
 ## ####
 ## House
+house_candidates_2020 <- read_csv("data/house_candidates.csv")
+
 # Probabilities by district
 district_prior_summary_stats <- house_district_sims %>%
   group_by(state, seat_number) %>%
