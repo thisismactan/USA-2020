@@ -38,15 +38,17 @@ state_features <- state_fips %>%
   left_join(state_religion %>% dplyr::select(State, PctReligious), by = "State") %>%
   left_join(state_dem_margins, by = "State")
 
+cd_features <- read_csv("data/auxiliary-demographics/cd_demographics_me_ne.csv")
+
 # Compute principal components
 state_pca <- prcomp(~ PctWhite + PctBlack + PctLatino + PctColl + MedInc + Poverty + MedAge + Density + PctReligious, 
-                    data = state_features, scale = TRUE)
+                    data = state_features %>% bind_rows(cd_features) %>% arrange(State), scale = TRUE)
 
 # Grab principal component scores and compute covariance matrix
 state_pcs <- state_pca$x
 state_eigenvalues <- state_pca$sdev^2
 state_cor <- round(cov.wt(t(state_pcs), wt = state_eigenvalues, cor = TRUE)$cor, 6)
-rownames(state_cor) <- colnames(state_cor) <- state_fips$State
+rownames(state_cor) <- colnames(state_cor) <- state_features %>% bind_rows(cd_features) %>% arrange(State) %>% pull(State)
 
 polling_error_sd <- 0.05
 
