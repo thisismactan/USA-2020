@@ -1,5 +1,12 @@
 source("src/simulate.R")
 
+house_states_won <- house_district_sims %>%
+  group_by(sim_id, state) %>%
+  summarise(frac_dem_seats_won = mean(margin > 0)) %>%
+  group_by(sim_id) %>%
+  summarise(dem_states_won = sum(frac_dem_seats_won > 0.5),
+            rep_states_won = sum(frac_dem_seats_won < 0.5))
+  
 ## President ####
 # State priors ####
 ## Total electoral votes
@@ -63,9 +70,16 @@ pres_summary_stats <- pres_state_sims %>%
   group_by(sim_id) %>%
   summarise(biden = sum(biden_ev),
             trump = sum(trump_ev)) %>%
-  melt(id.vars = "sim_id", variable.name = "Candidate", value.name = "ev") %>%
-  group_by(Candidate) %>%
-  summarise(win_prob = mean(ev >= 270),
+  left_join(house_states_won %>% 
+              mutate(contingent_win = case_when(dem_states_won >= 25 ~ "biden",
+                                                rep_states_won >= 25 ~ "trump",
+                                                (dem_states_won < 25) & (rep_states_won < 25) ~ "neither")) %>%
+              dplyr::select(sim_id, contingent_win),
+            by = "sim_id") %>%
+  mutate(contingent_win = ifelse(!is.na(contingent_win), contingent_win, "trump")) %>%
+  melt(id.vars = c("sim_id", "contingent_win"), variable.name = "Candidate", value.name = "ev") %>%
+  group_by(Candidate = as.character(Candidate)) %>%
+  summarise(win_prob = mean((ev >= 270) | (ev == 269 & contingent_win == Candidate)),
             pct05 = quantile(ev, 0.05),
             avg = mean(ev),
             pct95 = quantile(ev, 0.95))

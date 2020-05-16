@@ -369,7 +369,7 @@ house_forecast_probability_history <- read_csv("output/house_forecast_probabilit
   dplyr::slice(n()) %>%
   ungroup()
 
-write_csv(presidential_forecast_probabilities_history, "output/presidential_forecast_probabilities_history.csv")
+write_csv(house_forecast_probability_history, "output/house_forecast_probability_history.csv")
 
 rm(district_poll_sims)
 gc()
