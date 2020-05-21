@@ -56,10 +56,7 @@ dem_fundraising_frac <- fundraising %>%
   mutate(pct_fundraising = individual_contributions / sum(individual_contributions)) %>%
   ungroup() %>%
   filter(party == "DEM") %>%
-  dplyr::select(-individual_contributions, -party)
-
-dem_fundraising_frac %>%
-  spread(party, pct_fundraising)
+  dplyr::select(-individual_contributions)
 
 house_results_2party <- house_results %>%
   filter(!runoff, !special, !writein) %>%

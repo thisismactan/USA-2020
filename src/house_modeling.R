@@ -130,6 +130,3 @@ house_lmer <- lmer(margin ~ natl_margin + last_natl_margin + last_margin + incum
 region_sd <- sqrt(as.vector(summary(house_lmer)$varcor$region))
 state_sd <- sqrt(as.vector(summary(house_lmer)$varcor$state))
 residual_sd <- summary(house_lmer)$sigma
-
-# 2018 contested districts
-contested_2018_lm <- lm(margin ~ natl_margin + last)

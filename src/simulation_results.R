@@ -61,7 +61,7 @@ prior_pop_ev_crosstab <- state_priors %>%
   group_by(popular_vote_winner, electoral_college_winner) %>%
   summarise(prob = n() / n_sims)
 
-pop_ev_crosstab
+prior_pop_ev_crosstab
 
 # Actual forecast ####
 pres_summary_stats <- pres_state_sims %>%

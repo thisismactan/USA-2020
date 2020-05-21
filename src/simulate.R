@@ -239,7 +239,7 @@ generic_ballot_2party_avg <- generic_ballot_averages_adj %>%
   filter(median_date == today())
 
 house_margin_mean <- -diff(generic_ballot_2party_avg$avg)
-house_margin_var <- sum(generic_ballot_2party_avg$var) - 2 * generic_ballot_poll_covariance$cov[1, 2]
+house_margin_var <- sum(generic_ballot_2party_avg$var) + abs(2 * generic_ballot_poll_covariance$cov[1, 2])
 house_margin_eff_n <- mean(generic_ballot_2party_avg$eff_n)
 house_margin_scale_ratio <- sqrt(house_margin_var) / sd(house_two_party_sims$house_two_party_margin)
 
