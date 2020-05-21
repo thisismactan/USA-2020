@@ -1,72 +1,72 @@
-﻿state,seat_name,incumbent_running,incumbent_elections_won,candidate_party,candidate_fullname,candidate_firstname,candidate_lastname
-Alabama,Class II,DEM,1,DEM,Doug Jones,Doug,Jones
-Alabama,Class II,DEM,1,REP,Tommy Tuberville,Tommy,Tuberville
-Alaska,Class II,REP,1,DEM,,,
-Alaska,Class II,REP,1,REP,Dan Sullivan,Dan,Sullivan
-Alaska,Class II,REP,1,IND,Al Gross,Al,Gross
-Arizona,Class III,REP,0,DEM,Mark Kelly,Mark,Kelly
-Arizona,Class III,REP,0,REP,Martha McSally,Martha,McSally
-Arkansas,Class II,REP,1,DEM,None,,
-Arkansas,Class II,REP,1,REP,Tom Cotton,Tom,Cotton
-Colorado,Class II,REP,1,DEM,John Hickenlooper,John,Hickenlooper
-Colorado,Class II,REP,1,REP,Cory Gardner,Cory,Gardner
-Delaware,Class II,DEM,2,DEM,Chris Coons,Chris,Coons
-Delaware,Class II,DEM,2,REP,,,
-Georgia,Class II,REP,1,DEM,Jon Ossoff,Jon,Ossoff
-Georgia,Class II,REP,1,REP,David A. Perdue,David,Perdue
-Georgia,Class III,REP,0,DEM,,,
-Georgia,Class III,REP,0,REP,,,
-Idaho,Class II,REP,2,DEM,Paulette Jordan,Paulette,Jordan
-Idaho,Class II,REP,2,REP,Jim Risch,Jim,Risch
-Illinois,Class II,DEM,4,DEM,Richard J. Durbin,Dick,Durbin
-Illinois,Class II,DEM,4,REP,Mark Curran,Mark,Curran
-Iowa,Class II,REP,1,DEM,Theresa Greenfield,Theresa,Greenfield
-Iowa,Class II,REP,1,REP,Joni K. Ernst,Joni,Ernst
-Kansas,Class II,None,4,DEM,Barbara Bollier,Barbara,Bollier
-Kansas,Class II,None,4,REP,Kris W. Kobach,Kris,Kobach
-Kentucky,Class II,REP,6,DEM,Amy McGrath,Amy,McGrath
-Kentucky,Class II,REP,6,REP,Mitch McConnell,Mitch,McConnell
-Louisiana,Class II,REP,1,DEM,Antoine Pierce,Antoine,Pierce
-Louisiana,Class II,REP,1,REP,Bill Cassidy,Bill,Cassidy
-Maine,Class II,REP,4,DEM,Sara Gideon,Sara,Gideon
-Maine,Class II,REP,4,REP,Susan M. Collins,Susan,Collins
-Massachusetts,Class II,DEM,1,DEM,,,
-Massachusetts,Class II,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai
-Michigan,Class II,DEM,1,DEM,Gary C. Peters,Gary,Peters
-Michigan,Class II,DEM,1,REP,John James,John,James
-Minnesota,Class II,DEM,1,DEM,Tina Smith,Tina,Smith
-Minnesota,Class II,DEM,1,REP,Jason Lewis,Jason,Lewis
-Mississippi,Class II,REP,1,DEM,Mike Espy,Mike,Espy
-Mississippi,Class II,REP,1,REP,Cindy Hyde-Smith,Cindy,Hyde-Smith
-Montana,Class II,REP,1,DEM,Steve Bullock,Steve,Bullock
-Montana,Class II,REP,1,REP,Steve Daines,Steve,Daines
-Nebraska,Class II,REP,1,DEM,Chris Janicek,Chris,Janicek
-Nebraska,Class II,REP,1,REP,Ben Sasse,Ben,Sasse
-New Hampshire,Class II,DEM,2,DEM,Jeanne Shaheen,Jeanne,Shaheen
-New Hampshire,Class II,DEM,2,REP,Don Bolduc,Don,Bolduc
-New Jersey,Class II,DEM,2,DEM,Cory A. Booker,Cory,Booker
-New Jersey,Class II,DEM,2,REP,Hirsh Singh,Hirsh,Singh
-New Mexico,Class II,None,2,DEM,Ben Ray Luján,Ben Ray,Luján
-New Mexico,Class II,None,2,REP,Gavin Clarkson,Gavin,Clarkson
-North Carolina,Class II,REP,1,DEM,Cal Cunningham,Cal,Cunningham
-North Carolina,Class II,REP,1,REP,Thom Tillis,Thom,Tillis
-Oklahoma,Class II,REP,5,DEM,Abby Broyles,Abby,Broyles
-Oklahoma,Class II,REP,5,REP,James M. Inhofe,Jim,Inhofe
-Oregon,Class II,DEM,2,DEM,Jeff Merkley,Jeff,Merkley
-Oregon,Class II,DEM,2,REP,Jo Rae Perkins,Jo Rae,Perkins
-Rhode Island,Class II,DEM,4,DEM,Jack Reed,Jack,Reed
-Rhode Island,Class II,DEM,4,REP,Allen Waters,Allen,Waters
-South Carolina,Class II,REP,3,DEM,Jaime Harrison,Jaime,Harrison
-South Carolina,Class II,REP,3,REP,Lindsey Graham,Lindsey,Graham
-South Dakota,Class II,REP,1,DEM,Dan Ahlers,Dan,Ahlers
-South Dakota,Class II,REP,1,REP,Mike Rounds,Mike,Rounds
-Tennessee,Class II,None,3,DEM,James Mackler,James,Mackler
-Tennessee,Class II,None,3,REP,Bill Hagerty,Bill,Hagerty
-Texas,Class II,REP,3,DEM,Mary Jennings Hegar,MJ,Hegar
-Texas,Class II,REP,3,REP,John Cornyn,John,Cornyn
-Virginia,Class II,DEM,2,DEM,Mark Warner,Mark,Warner
-Virginia,Class II,DEM,2,REP,Daniel Gade,Daniel,Gade
-West Virginia,Class II,REP,1,DEM,Richard Ojeda,Richard,Ojeda
-West Virginia,Class II,REP,1,REP,Shelley Moore Capito,Shelley,Moore Capito
-Wyoming,Class II,None,4,DEM,,,
-Wyoming,Class II,None,4,REP,Cynthia Lummis,Cynthia,Lummis
+﻿state,seat_name,incumbent_running,incumbent_elections_won,candidate_party,candidate_fullname,candidate_firstname,candidate_lastname,dem_statewide_elected,rep_statewide_elected
+Alabama,Class II,DEM,1,DEM,Doug Jones,Doug,Jones,TRUE,FALSE
+Alabama,Class II,DEM,1,REP,Tommy Tuberville,Tommy,Tuberville,TRUE,FALSE
+Alaska,Class II,REP,1,DEM,,,,,TRUE
+Alaska,Class II,REP,1,REP,Dan Sullivan,Dan,Sullivan,,TRUE
+Alaska,Class II,REP,1,IND,Al Gross,Al,Gross,,TRUE
+Arizona,Class III,REP,0,DEM,Mark Kelly,Mark,Kelly,FALSE,FALSE
+Arizona,Class III,REP,0,REP,Martha McSally,Martha,McSally,FALSE,FALSE
+Arkansas,Class II,REP,1,DEM,None,,,,TRUE
+Arkansas,Class II,REP,1,REP,Tom Cotton,Tom,Cotton,,TRUE
+Colorado,Class II,REP,1,DEM,John Hickenlooper,John,Hickenlooper,TRUE,TRUE
+Colorado,Class II,REP,1,REP,Cory Gardner,Cory,Gardner,TRUE,TRUE
+Delaware,Class II,DEM,2,DEM,Chris Coons,Chris,Coons,TRUE,FALSE
+Delaware,Class II,DEM,2,REP,,,,TRUE,FALSE
+Georgia,Class II,REP,1,DEM,Jon Ossoff,Jon,Ossoff,FALSE,TRUE
+Georgia,Class II,REP,1,REP,David A. Perdue,David,Perdue,FALSE,TRUE
+Georgia,Class III,REP,0,DEM,,,,FALSE,FALSE
+Georgia,Class III,REP,0,REP,,,,FALSE,FALSE
+Idaho,Class II,REP,2,DEM,Paulette Jordan,Paulette,Jordan,FALSE,TRUE
+Idaho,Class II,REP,2,REP,Jim Risch,Jim,Risch,FALSE,TRUE
+Illinois,Class II,DEM,4,DEM,Richard J. Durbin,Dick,Durbin,TRUE,FALSE
+Illinois,Class II,DEM,4,REP,Mark Curran,Mark,Curran,TRUE,FALSE
+Iowa,Class II,REP,1,DEM,Theresa Greenfield,Theresa,Greenfield,FALSE,TRUE
+Iowa,Class II,REP,1,REP,Joni K. Ernst,Joni,Ernst,FALSE,TRUE
+Kansas,Class II,None,4,DEM,Barbara Bollier,Barbara,Bollier,FALSE,TRUE
+Kansas,Class II,None,4,REP,Kris W. Kobach,Kris,Kobach,FALSE,TRUE
+Kentucky,Class II,REP,6,DEM,Amy McGrath,Amy,McGrath,FALSE,TRUE
+Kentucky,Class II,REP,6,REP,Mitch McConnell,Mitch,McConnell,FALSE,TRUE
+Louisiana,Class II,REP,1,DEM,Antoine Pierce,Antoine,Pierce,FALSE,TRUE
+Louisiana,Class II,REP,1,REP,Bill Cassidy,Bill,Cassidy,FALSE,TRUE
+Maine,Class II,REP,4,DEM,Sara Gideon,Sara,Gideon,FALSE,TRUE
+Maine,Class II,REP,4,REP,Susan M. Collins,Susan,Collins,FALSE,TRUE
+Massachusetts,Class II,DEM,1,DEM,,,,,FALSE
+Massachusetts,Class II,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai,,FALSE
+Michigan,Class II,DEM,1,DEM,Gary C. Peters,Gary,Peters,TRUE,FALSE
+Michigan,Class II,DEM,1,REP,John James,John,James,TRUE,FALSE
+Minnesota,Class II,DEM,1,DEM,Tina Smith,Tina,Smith,TRUE,FALSE
+Minnesota,Class II,DEM,1,REP,Jason Lewis,Jason,Lewis,TRUE,FALSE
+Mississippi,Class II,REP,1,DEM,Mike Espy,Mike,Espy,FALSE,TRUE
+Mississippi,Class II,REP,1,REP,Cindy Hyde-Smith,Cindy,Hyde-Smith,FALSE,TRUE
+Montana,Class II,REP,1,DEM,Steve Bullock,Steve,Bullock,TRUE,TRUE
+Montana,Class II,REP,1,REP,Steve Daines,Steve,Daines,TRUE,TRUE
+Nebraska,Class II,REP,1,DEM,Chris Janicek,Chris,Janicek,FALSE,TRUE
+Nebraska,Class II,REP,1,REP,Ben Sasse,Ben,Sasse,FALSE,TRUE
+New Hampshire,Class II,DEM,2,DEM,Jeanne Shaheen,Jeanne,Shaheen,TRUE,FALSE
+New Hampshire,Class II,DEM,2,REP,Don Bolduc,Don,Bolduc,TRUE,FALSE
+New Jersey,Class II,DEM,2,DEM,Cory A. Booker,Cory,Booker,TRUE,FALSE
+New Jersey,Class II,DEM,2,REP,Hirsh Singh,Hirsh,Singh,TRUE,FALSE
+New Mexico,Class II,None,2,DEM,Ben Ray Luján,Ben Ray,Luján,FALSE,FALSE
+New Mexico,Class II,None,2,REP,Gavin Clarkson,Gavin,Clarkson,FALSE,FALSE
+North Carolina,Class II,REP,1,DEM,Cal Cunningham,Cal,Cunningham,FALSE,TRUE
+North Carolina,Class II,REP,1,REP,Thom Tillis,Thom,Tillis,FALSE,TRUE
+Oklahoma,Class II,REP,5,DEM,Abby Broyles,Abby,Broyles,FALSE,TRUE
+Oklahoma,Class II,REP,5,REP,James M. Inhofe,Jim,Inhofe,FALSE,TRUE
+Oregon,Class II,DEM,2,DEM,Jeff Merkley,Jeff,Merkley,TRUE,FALSE
+Oregon,Class II,DEM,2,REP,Jo Rae Perkins,Jo Rae,Perkins,TRUE,FALSE
+Rhode Island,Class II,DEM,4,DEM,Jack Reed,Jack,Reed,TRUE,FALSE
+Rhode Island,Class II,DEM,4,REP,Allen Waters,Allen,Waters,TRUE,FALSE
+South Carolina,Class II,REP,3,DEM,Jaime Harrison,Jaime,Harrison,FALSE,TRUE
+South Carolina,Class II,REP,3,REP,Lindsey Graham,Lindsey,Graham,FALSE,TRUE
+South Dakota,Class II,REP,1,DEM,Dan Ahlers,Dan,Ahlers,FALSE,TRUE
+South Dakota,Class II,REP,1,REP,Mike Rounds,Mike,Rounds,FALSE,TRUE
+Tennessee,Class II,None,3,DEM,James Mackler,James,Mackler,FALSE,FALSE
+Tennessee,Class II,None,3,REP,Bill Hagerty,Bill,Hagerty,FALSE,FALSE
+Texas,Class II,REP,3,DEM,Mary Jennings Hegar,MJ,Hegar,FALSE,TRUE
+Texas,Class II,REP,3,REP,John Cornyn,John,Cornyn,FALSE,TRUE
+Virginia,Class II,DEM,2,DEM,Mark Warner,Mark,Warner,TRUE,FALSE
+Virginia,Class II,DEM,2,REP,Daniel Gade,Daniel,Gade,TRUE,FALSE
+West Virginia,Class II,REP,1,DEM,Richard Ojeda,Richard,Ojeda,FALSE,TRUE
+West Virginia,Class II,REP,1,REP,Shelley Moore Capito,Shelley,Moore Capito,FALSE,TRUE
+Wyoming,Class II,None,4,DEM,,,,FALSE,TRUE
+Wyoming,Class II,None,4,REP,Cynthia Lummis,Cynthia,Lummis,FALSE,TRUE
