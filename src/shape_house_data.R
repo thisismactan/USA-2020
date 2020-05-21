@@ -47,10 +47,11 @@ fundraising <- bind_rows(fundraising) %>%
                 other_loan_repayments = V16, debt = V17, individual_contributions = V18, special = V21, primary = V22, runoff = V23, general = V24, 
                 vote_share = V25, committee_contributions = V26, party_contributions = V27, end_date = V28, individual_refunds = V29, 
                 committee_refunds = V30) %>%
-  mutate(seat_number = pmax(seat_number, 1))
+  mutate(chamber = substring(candidate_id, 1, 1),
+         seat_number = pmax(seat_number, 1))
 
-dem_fundraising_frac <- fundraising %>%
-  filter(general %in% c("W", "L"), special == "", (party %in% c("DEM", "REP") | state == "Alaska")) %>%
+dem_house_fundraising_frac <- fundraising %>%
+  filter(general %in% c("W", "L"), special == "", (party %in% c("DEM", "REP") | state == "Alaska"), chamber == "H") %>%
   dplyr::select(year, state, seat_number, party, individual_contributions) %>%
   group_by(year, state, seat_number) %>%
   mutate(pct_fundraising = individual_contributions / sum(individual_contributions)) %>%
@@ -83,7 +84,7 @@ house_results_2party_filtered <- house_results_2party %>%
          !grepl("IND", incumbency_change)) %>%
   left_join(national_house_results %>% mutate(last_natl_margin = lag(natl_margin)), by = "year") %>%
   left_join(state_house_results %>% mutate(last_state_margin = lag(state_margin)), by = c("year", "state")) %>%
-  left_join(dem_fundraising_frac, by = c("year", "state", "seat_number")) %>%
+  left_join(dem_house_fundraising_frac, by = c("year", "state", "seat_number")) %>%
   mutate(dem_pct_fundraising = ifelse(is.na(pct_fundraising), 0, pct_fundraising),
          multiterm = (incumbent_running != "None") & (year - incumbent_first_elected > 2),
          multiterm_dem = multiterm & (incumbent_running == "DEM"),
