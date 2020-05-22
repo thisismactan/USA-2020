@@ -356,6 +356,11 @@ for(i in 1:n_days) {
 senate_averages_adj <- bind_rows(senate_average_adj_list) %>%
   arrange(state, seat_name, candidate_party, candidate)
 
+current_senate_averages <- senate_averages_adj %>%
+  group_by(state, seat_name, candidate) %>%
+  dplyr::slice(n()) %>%
+  mutate(poll_var = ifelse(is.na(var), 0.04^2, var))
+
 # Smoothed averages
 senate_averages_smoothed <- senate_averages_adj %>%
   group_by(state, seat_name, candidate) %>%
@@ -367,3 +372,20 @@ senate_averages_smoothed <- senate_averages_adj %>%
 
 # Clean up after yourself
 rm(list = grep("_list", ls(), value = TRUE))
+
+# Georgia special election
+georgia_primary_average <- georgia_primary_polls %>%
+  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  filter(!is.na(weight)) %>%
+  group_by(candidate) %>%
+  summarise(avg = wtd.mean(pct, weight),
+            var = wtd.var(pct, weight),
+            eff_n = sum(weight)^2 / sum(weight^2))
+
+georgia_runoff_average <- georgia_runoff_polls %>%
+  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  filter(!is.na(weight)) %>%
+  group_by(matchup, candidate) %>%
+  summarise(avg = wtd.mean(pct, weight),
+            var = wtd.var(pct, weight),
+            eff_n = sum(weight)^2 / sum(weight^2))

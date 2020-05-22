@@ -103,6 +103,32 @@ senate_polls_all <- read_csv("data/senate_polls.csv") %>%
          loess_weight = (n^0.25) * ifelse(spread == 1, 1, 5) * ifelse(grepl("IVR|Automated", mode), 1, 2) * ifelse(pop == "lv", 3, 1) *
            ifelse(mode == "Live Phone", 2, 1) * ifelse(party == "None", 4, 1) * ifelse(is.na(tracking), 1, 1 / spread) / sqrt(abs(spread - 4) + 2))
 
+georgia_primary_polls <- senate_polls_all %>%
+  filter(state == "Georgia", seat_name == "Class III") %>%
+  dplyr::select(-candidate_party) %>%
+  group_by(question_id) %>%
+  mutate(n_cands = n()) %>%
+  filter(n_cands > 2) %>%
+  spread(candidate, pct, fill = 0) %>%
+  melt(id.vars = c("poll_id", "state", "seat_name", "pollster", "question_id", "start_date", "end_date", "n", "pop", "mode", "party", "tracking",
+                   "spread", "median_date", "age", "loess_weight", "n_cands"), variable.name = "candidate", value.name = "pct") %>%
+  as.tbl()
+
+georgia_runoff_polls <- senate_polls_all %>%
+  filter(state == "Georgia", seat_name == "Class III") %>%
+  group_by(question_id) %>%
+  mutate(n_cands = n()) %>%
+  filter(n_cands == 2)
+
+georgia_question_matchups <- georgia_runoff_polls %>%
+  dplyr::select(question_id, candidate_party, candidate) %>%
+  spread(candidate_party, candidate) %>%
+  mutate(matchup = paste(DEM, "vs.", REP)) %>%
+  dplyr::select(question_id, matchup)
+
+georgia_runoff_polls <- georgia_runoff_polls %>%
+  left_join(georgia_question_matchups, by = "question_id")
+
 ## Candidates
 senate_candidates <- read_csv("data/senate_candidates.csv") %>%
   dplyr::select(state, seat_name, candidate_party, candidate_fullname) %>%
