@@ -1,11 +1,11 @@
 source("src/poll_averages.R")
 
 # President ####
-graph_states <- c("Iowa")
+graph_states <- c("National")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
-  filter(state %in% graph_states, candidate %in% c("biden", "trump", "amash"))
+  filter(state %in% graph_states, candidate %in% c("biden", "trump"))
 
 max_pct <- max(graph_state_polls$pct)
 min_pct <- min(graph_state_polls$pct)

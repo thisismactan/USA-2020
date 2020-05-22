@@ -116,7 +116,7 @@ poll_weights <- polling_variation %>%
   dplyr::select(state, poll_weight)
 
 prior_weights <- state_prior_summary_stats %>%
-  dplyr::mutate(prior_weight = 2 / (biden_prior_variance + trump_prior_variance)) %>%
+  mutate(prior_weight = 2 / (biden_prior_variance + trump_prior_variance)) %>%
   dplyr::select(state, prior_weight)
 
 pres_simulation_weights <- prior_weights %>%
@@ -373,3 +373,45 @@ write_csv(house_forecast_probability_history, "output/house_forecast_probability
 
 rm(district_poll_sims)
 gc()
+
+# Fit Senate model if it doesn't exist yet
+if(!exists("senate_lm")) {
+  source("src/senate_modeling.R")
+}
+
+senate_region_deviations <- expand.grid(region = region_names,
+                                        sim_id = 1:n_sims) %>%
+  as.tbl() %>%
+  mutate(region_deviation = rnorm(n(), 0, senate_region_sd))
+
+senate_2020_prior_sims <- read_csv("data/senate_candidates.csv") %>%
+  dplyr::select(state, seat_name, incumbent_running, dem_statewide_elected, rep_statewide_elected) %>%
+  mutate(class = case_when(seat_name == "Class I" ~ 1,
+                           seat_name == "Class II" ~ 2,
+                           seat_name == "Class III" ~ 3)) %>%
+  dplyr::distinct() %>%
+  left_join(pres_state_sims %>% mutate(state_margin = biden - trump) %>% dplyr::select(sim_id, state, state_margin), by = "state") %>%
+  left_join(last_senate_results %>% dplyr::select(state, class, last_margin = margin), by = c("state", "class")) %>%
+  left_join(regions %>% dplyr::select(state, region), by = "state") %>%
+  left_join(senate_region_deviations, by = c("region", "sim_id")) %>%
+  mutate(prior_margin = predict(senate_lm, newdata = .) + region_deviation + rnorm(n(), 0, senate_residual_sd)) %>%
+  group_by(state, seat_name) %>%
+  mutate(prior_weight = 1 / var(prior_margin)) %>%
+  dplyr::select(sim_id, state, class, prior_margin, prior_weight)
+
+senate_2020_states_polled <- unique(senate_average_margins$state)
+
+senate_state_cov <- state_cov[senate_2020_states_polled, senate_2020_states_polled]
+diag(senate_state_cov) <- diag(senate_state_cov) + senate_average_margins$var
+
+while(!is.positive.definite(senate_state_cov)) {
+  diag(senate_state_cov) <- diag(senate_state_cov) + 1e-6
+}
+
+senate_poll_errors <- rmvn(n_sims, mu = rep(0, length(senate_2020_states_polled)), sigma = senate_state_cov)
+
+senate_poll_sims <- senate_averages %>%
+  dplyr::slice(rep(1:n(), each = senate_sims)) %>%
+  mutate(sim_id = rep(1:house_n_sims, n_districts_polled),
+         poll_margin = poll_margin + rnorm(n(), 0, sqrt(poll_var))) %>%
+  dplyr::select(-poll_var)

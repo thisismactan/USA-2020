@@ -1,21 +1,21 @@
 ﻿state,seat_name,incumbent_running,incumbent_elections_won,candidate_party,candidate_fullname,candidate_firstname,candidate_lastname,dem_statewide_elected,rep_statewide_elected
 Alabama,Class II,DEM,1,DEM,Doug Jones,Doug,Jones,TRUE,FALSE
 Alabama,Class II,DEM,1,REP,Tommy Tuberville,Tommy,Tuberville,TRUE,FALSE
-Alaska,Class II,REP,1,DEM,,,,,TRUE
-Alaska,Class II,REP,1,REP,Dan Sullivan,Dan,Sullivan,,TRUE
-Alaska,Class II,REP,1,IND,Al Gross,Al,Gross,,TRUE
+Alaska,Class II,REP,1,DEM,None,,,FALSE,TRUE
+Alaska,Class II,REP,1,REP,Dan Sullivan,Dan,Sullivan,FALSE,TRUE
+Alaska,Class II,REP,1,IND,Al Gross,Al,Gross,FALSE,TRUE
 Arizona,Class III,REP,0,DEM,Mark Kelly,Mark,Kelly,FALSE,FALSE
 Arizona,Class III,REP,0,REP,Martha McSally,Martha,McSally,FALSE,FALSE
-Arkansas,Class II,REP,1,DEM,None,,,,TRUE
-Arkansas,Class II,REP,1,REP,Tom Cotton,Tom,Cotton,,TRUE
+Arkansas,Class II,REP,1,DEM,None,,,FALSE,TRUE
+Arkansas,Class II,REP,1,REP,Tom Cotton,Tom,Cotton,FALSE,TRUE
 Colorado,Class II,REP,1,DEM,John Hickenlooper,John,Hickenlooper,TRUE,TRUE
 Colorado,Class II,REP,1,REP,Cory Gardner,Cory,Gardner,TRUE,TRUE
 Delaware,Class II,DEM,2,DEM,Chris Coons,Chris,Coons,TRUE,FALSE
-Delaware,Class II,DEM,2,REP,,,,TRUE,FALSE
+Delaware,Class II,DEM,2,REP,Lauren Witzke,Lauren,Witzke,TRUE,FALSE
 Georgia,Class II,REP,1,DEM,Jon Ossoff,Jon,Ossoff,FALSE,TRUE
 Georgia,Class II,REP,1,REP,David A. Perdue,David,Perdue,FALSE,TRUE
-Georgia,Class III,REP,0,DEM,,,,FALSE,FALSE
-Georgia,Class III,REP,0,REP,,,,FALSE,FALSE
+Georgia,Class III,REP,0,DEM,TBD,,,FALSE,FALSE
+Georgia,Class III,REP,0,REP,TBD,,,FALSE,FALSE
 Idaho,Class II,REP,2,DEM,Paulette Jordan,Paulette,Jordan,FALSE,TRUE
 Idaho,Class II,REP,2,REP,Jim Risch,Jim,Risch,FALSE,TRUE
 Illinois,Class II,DEM,4,DEM,Richard J. Durbin,Dick,Durbin,TRUE,FALSE
@@ -30,8 +30,8 @@ Louisiana,Class II,REP,1,DEM,Antoine Pierce,Antoine,Pierce,FALSE,TRUE
 Louisiana,Class II,REP,1,REP,Bill Cassidy,Bill,Cassidy,FALSE,TRUE
 Maine,Class II,REP,4,DEM,Sara Gideon,Sara,Gideon,FALSE,TRUE
 Maine,Class II,REP,4,REP,Susan M. Collins,Susan,Collins,FALSE,TRUE
-Massachusetts,Class II,DEM,1,DEM,,,,,FALSE
-Massachusetts,Class II,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai,,FALSE
+Massachusetts,Class II,DEM,1,DEM,TBD,,,FALSE,FALSE
+Massachusetts,Class II,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai,FALSE,FALSE
 Michigan,Class II,DEM,1,DEM,Gary C. Peters,Gary,Peters,TRUE,FALSE
 Michigan,Class II,DEM,1,REP,John James,John,James,TRUE,FALSE
 Minnesota,Class II,DEM,1,DEM,Tina Smith,Tina,Smith,TRUE,FALSE
@@ -68,5 +68,5 @@ Virginia,Class II,DEM,2,DEM,Mark Warner,Mark,Warner,TRUE,FALSE
 Virginia,Class II,DEM,2,REP,Daniel Gade,Daniel,Gade,TRUE,FALSE
 West Virginia,Class II,REP,1,DEM,Richard Ojeda,Richard,Ojeda,FALSE,TRUE
 West Virginia,Class II,REP,1,REP,Shelley Moore Capito,Shelley,Moore Capito,FALSE,TRUE
-Wyoming,Class II,None,4,DEM,,,,FALSE,TRUE
+Wyoming,Class II,None,4,DEM,TBD,,,FALSE,TRUE
 Wyoming,Class II,None,4,REP,Cynthia Lummis,Cynthia,Lummis,FALSE,TRUE

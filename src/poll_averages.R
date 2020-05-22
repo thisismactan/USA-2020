@@ -356,10 +356,29 @@ for(i in 1:n_days) {
 senate_averages_adj <- bind_rows(senate_average_adj_list) %>%
   arrange(state, seat_name, candidate_party, candidate)
 
+senate_average_margins <- senate_polls_adj %>%
+  mutate(age = as.numeric(today() - median_date),
+         weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  filter(weight > 0) %>%
+  dplyr::select(-candidate, -pct) %>%
+  spread(candidate_party, pct_adj) %>%
+  mutate(margin = DEM - REP) %>%
+  dplyr::select(state, seat_name, weight, margin) %>%
+  group_by(state, seat_name) %>%
+  summarise(avg = wtd.mean(margin, weight),
+            var = n() * wtd.var(margin, weight) / (n() - 1),
+            eff_n = sum(weight)^2 / sum(weight^2)) %>%
+  mutate(var = case_when(var == Inf | is.na(var) ~ 0.04^2 + 0.05^2,
+                         var < Inf ~ var / eff_n + 0.05^2))
+
 current_senate_averages <- senate_averages_adj %>%
   group_by(state, seat_name, candidate) %>%
   dplyr::slice(n()) %>%
-  mutate(poll_var = ifelse(is.na(var), 0.04^2, var))
+  mutate(poll_var = ifelse(is.na(var), 0.04^2, var) / eff_n + 0.05^2) 
+
+senate_undecided_pct <- current_senate_averages %>%
+  group_by(state, seat_name) %>%
+  summarise(undecided = 1 - sum(avg))
 
 # Smoothed averages
 senate_averages_smoothed <- senate_averages_adj %>%

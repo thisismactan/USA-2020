@@ -47,6 +47,12 @@ historical_senate_results <- read_csv("data/senate_results_1976-2018.csv") %>%
          last_incumbent = lag(incumbent_running),
          open_seat = incumbent_running == "None")
 
+last_senate_results <- historical_senate_results %>%
+  filter(class == 2 | (class == 3 & state %in% c("Arizona", "Georgia")), democrat_running, republican_running) %>%
+  group_by(state, class) %>%
+  dplyr::slice(n()) %>%
+  ungroup()
+
 historical_senate_results_filtered <- historical_senate_results %>%
   # Remove appointees and elections from 2000-2004
   na.omit() %>%
@@ -56,5 +62,6 @@ historical_senate_results_filtered <- historical_senate_results %>%
   filter(democrat_running, republican_running, lag(democrat_running), lag(republican_running), incumbent_running != "IND", 
          last_incumbent != "IND", year %% 4 == 0) %>%
   
-  # Join presidential election results
-  left_join(presidential_leans, by = c("year", "state"))
+  # Join presidential election results and House national popular vote
+  left_join(presidential_leans, by = c("year", "state")) %>%
+  left_join(regions %>% dplyr::select(state, region), by = "state")
