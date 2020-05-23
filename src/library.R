@@ -1,6 +1,7 @@
 ## LIBRARIES
 
 #### Data manipulation ####
+library(glue)
 library(Hmisc)
 library(lubridate)
 library(reshape2)
@@ -10,6 +11,7 @@ library(zoo)
 
 #### Modeling ####
 library(lme4)
+library(MCMCpack)
 library(mvnfast)
 library(randomForest)
 library(xgboost)

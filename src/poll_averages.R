@@ -396,10 +396,31 @@ rm(list = grep("_list", ls(), value = TRUE))
 georgia_primary_average <- georgia_primary_polls %>%
   mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(!is.na(weight)) %>%
-  group_by(candidate) %>%
-  summarise(avg = wtd.mean(pct, weight),
-            var = wtd.var(pct, weight),
-            eff_n = sum(weight)^2 / sum(weight^2))
+  group_by(candidate, candidate_party) %>%
+  summarise(logit = wtd.mean(logit(pct), weight),
+            var_logit = wtd.var(logit(pct), weight),
+            eff_n = sum(weight)^2 / sum(weight^2)) %>%
+  ungroup()
+
+georgia_primary_undecided <- 1 - (georgia_primary_average$logit %>%
+  logit_inv() %>%
+  sum())
+
+georgia_primary_polls_matrix <- georgia_primary_polls %>%
+  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  filter(!is.na(weight)) %>%
+  mutate(logit = logit(pct)) %>%
+  dplyr::select(question_id, weight, candidate, logit) %>%
+  spread(candidate, logit, fill = logit(0.005)) %>%
+  dplyr::select(-question_id)
+
+georgia_primary_cov <- cov.wt(as.matrix(georgia_primary_polls_matrix %>% dplyr::select(-weight)), wt = georgia_primary_polls_matrix$weight)$cov +
+  # Add in polling error variance; roughly 0.4 on logit scale so 0.16 on squared-logit scale
+  diag(rep(0.16, nrow(georgia_primary_average)))
+
+while(!is.positive.definite(georgia_primary_cov)) {
+  georgia_primary_cov <- georgia_primary_cov + diag(rep(1e-6, nrow(georgia_primary_cov)))
+}
 
 georgia_runoff_average <- georgia_runoff_polls %>%
   mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%

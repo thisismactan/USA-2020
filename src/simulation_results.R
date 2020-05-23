@@ -64,20 +64,25 @@ prior_pop_ev_crosstab <- state_priors %>%
 prior_pop_ev_crosstab
 
 # Actual forecast ####
-pres_summary_stats <- pres_state_sims %>%
+pres_sim_results <- pres_state_sims %>%
   mutate(biden_ev = (biden > trump) * electoral_votes,
          trump_ev = (trump >= biden) * electoral_votes) %>%
   group_by(sim_id) %>%
   summarise(biden = sum(biden_ev),
             trump = sum(trump_ev)) %>%
   left_join(house_states_won %>% 
-              mutate(contingent_win = case_when(dem_states_won >= 25 ~ "biden",
-                                                rep_states_won >= 25 ~ "trump",
-                                                (dem_states_won < 25) & (rep_states_won < 25) ~ "neither")) %>%
+              mutate(contingent_win = case_when(dem_states_won > rep_states_won ~ "biden",
+                                                rep_states_won >= dem_states_won ~ "trump")) %>%
               dplyr::select(sim_id, contingent_win),
             by = "sim_id") %>%
-  mutate(contingent_win = ifelse(!is.na(contingent_win), contingent_win, "trump")) %>%
-  melt(id.vars = c("sim_id", "contingent_win"), variable.name = "Candidate", value.name = "ev") %>%
+  mutate(contingent_win = ifelse(!is.na(contingent_win), contingent_win, "trump"),
+         winner = case_when(biden >= 270 ~ "biden",
+                            trump >= 270 ~ "trump",
+                            biden == 269 & contingent_win == "biden" ~ "biden",
+                            trump == 269 & contingent_win == "trump" ~ "trump"))
+
+pres_summary_stats <- pres_sim_results %>%
+  melt(id.vars = c("sim_id", "contingent_win", "winner"), variable.name = "Candidate", value.name = "ev") %>%
   group_by(Candidate = as.character(Candidate)) %>%
   summarise(win_prob = mean((ev >= 270) | (ev == 269 & contingent_win == Candidate)),
             pct05 = quantile(ev, 0.05),
@@ -296,3 +301,24 @@ house_bellwetherogram %>%
   labs(title = "House bellwether-o-gram", subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        x = "P(Democratic majority | Democrat wins district) - P(Democratic majority)",
        y = "P(Republican majority | Republican wins district) - P(Republican wins district)")
+
+# Senate ####
+senate_summary_stats <- senate_seat_distribution %>%
+  left_join(senate_majority_winners %>% dplyr::select(sim_id, majority), by = "sim_id") %>%
+  group_by(party) %>%
+  summarise(majority_prob = mean(party == majority),
+            pct05 = quantile(seats_held, 0.05),
+            avg = mean(seats_held),
+            pct95 = quantile(seats_held, 0.95))
+
+senate_summary_stats  
+
+# Probabilities by state
+senate_state_probabilities <- senate_state_sims %>%
+  group_by(state, seat_name) %>%
+  summarise(dem_prob = mean(party == "Democrats"),
+            pct05 = quantile(margin, 0.05),
+            avg = mean(margin),
+            pct95 = quantile(margin, 0.95))
+
+senate_state_probabilities
