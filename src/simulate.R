@@ -358,6 +358,30 @@ house_forecast_probability_today <- house_district_sims %>%
   mutate(date = today()) %>%
   dplyr::select(date, party, prob)
 
+house_states_won <- house_district_sims %>%
+  group_by(sim_id, state) %>%
+  summarise(frac_dem_seats_won = mean(margin > 0)) %>%
+  group_by(sim_id) %>%
+  summarise(dem_states_won = sum(frac_dem_seats_won > 0.5),
+            rep_states_won = sum(frac_dem_seats_won < 0.5))
+
+pres_sim_results <- pres_state_sims %>%
+  mutate(biden_ev = (biden > trump) * electoral_votes,
+         trump_ev = (trump >= biden) * electoral_votes) %>%
+  group_by(sim_id) %>%
+  summarise(biden = sum(biden_ev),
+            trump = sum(trump_ev)) %>%
+  left_join(house_states_won %>% 
+              mutate(contingent_win = case_when(dem_states_won > rep_states_won ~ "biden",
+                                                rep_states_won >= dem_states_won ~ "trump")) %>%
+              dplyr::select(sim_id, contingent_win),
+            by = "sim_id") %>%
+  mutate(contingent_win = ifelse(!is.na(contingent_win), contingent_win, "trump"),
+         winner = case_when(biden >= 270 ~ "biden",
+                            trump >= 270 ~ "trump",
+                            biden == 269 & contingent_win == "biden" ~ "biden",
+                            trump == 269 & contingent_win == "trump" ~ "trump"))
+
 # Write this to an output file
 if(!("house_forecast_probability_history.csv" %in% list.files("output"))) {
   write_csv(house_forecast_probability_today, "output/house_forecast_probability_history.csv")
@@ -399,7 +423,7 @@ senate_2020_prior_sims <- read_csv("data/senate_candidates.csv") %>%
                                   state != "Arkansas" ~ prior_margin)) %>%
   group_by(state, seat_name) %>%
   mutate(prior_weight = ifelse(var(prior_margin) > 0, 1 / var(prior_margin), 1)) %>%
-  dplyr::select(sim_id, state, class, prior_margin, prior_weight)
+  dplyr::select(sim_id, state, seat_name, class, prior_margin, prior_weight)
 
 senate_2020_states_polled <- unique(senate_average_margins$state)
 
@@ -450,8 +474,6 @@ georgia_primary_top_two <- georgia_primary_sims %>%
   mutate(majority_win = any(pct > 0.5),
          matchup = glue_collapse(as.character(candidate), sep = " vs. "))
 
-
-
 senate_state_sims <- senate_2020_prior_sims %>%
   left_join(senate_poll_sims, by = c("sim_id", "state", "seat_name")) %>%
   mutate_at(vars(c("poll_margin", "poll_weight")), replace_na_zero) %>%
@@ -459,8 +481,6 @@ senate_state_sims <- senate_2020_prior_sims %>%
   mutate(margin = (prior_margin * prior_weight + poll_margin * poll_weight) / (prior_weight + poll_weight),
          party = ifelse(margin > 0, "Democrats", "Republicans")) %>%
   dplyr::select(sim_id, state, seat_name, class, margin, party)
-
-
 
 ## Timeline for the Senate forecast
 current_dem_senate_seats <- 35

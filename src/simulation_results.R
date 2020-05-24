@@ -1,11 +1,4 @@
 source("src/simulate.R")
-
-house_states_won <- house_district_sims %>%
-  group_by(sim_id, state) %>%
-  summarise(frac_dem_seats_won = mean(margin > 0)) %>%
-  group_by(sim_id) %>%
-  summarise(dem_states_won = sum(frac_dem_seats_won > 0.5),
-            rep_states_won = sum(frac_dem_seats_won < 0.5))
   
 ## President ####
 # State priors ####
@@ -64,22 +57,6 @@ prior_pop_ev_crosstab <- state_priors %>%
 prior_pop_ev_crosstab
 
 # Actual forecast ####
-pres_sim_results <- pres_state_sims %>%
-  mutate(biden_ev = (biden > trump) * electoral_votes,
-         trump_ev = (trump >= biden) * electoral_votes) %>%
-  group_by(sim_id) %>%
-  summarise(biden = sum(biden_ev),
-            trump = sum(trump_ev)) %>%
-  left_join(house_states_won %>% 
-              mutate(contingent_win = case_when(dem_states_won > rep_states_won ~ "biden",
-                                                rep_states_won >= dem_states_won ~ "trump")) %>%
-              dplyr::select(sim_id, contingent_win),
-            by = "sim_id") %>%
-  mutate(contingent_win = ifelse(!is.na(contingent_win), contingent_win, "trump"),
-         winner = case_when(biden >= 270 ~ "biden",
-                            trump >= 270 ~ "trump",
-                            biden == 269 & contingent_win == "biden" ~ "biden",
-                            trump == 269 & contingent_win == "trump" ~ "trump"))
 
 pres_summary_stats <- pres_sim_results %>%
   melt(id.vars = c("sim_id", "contingent_win", "winner"), variable.name = "Candidate", value.name = "ev") %>%
