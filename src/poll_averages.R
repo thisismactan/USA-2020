@@ -428,4 +428,6 @@ georgia_runoff_average <- georgia_runoff_polls %>%
   group_by(matchup, candidate) %>%
   summarise(avg = wtd.mean(pct, weight),
             var = wtd.var(pct, weight),
-            eff_n = sum(weight)^2 / sum(weight^2))
+            eff_n = sum(weight)^2 / sum(weight^2)) %>%
+  group_by(matchup) %>%
+  mutate(undecided = 1 - sum(avg))
