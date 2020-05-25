@@ -368,8 +368,8 @@ senate_average_margins <- senate_polls_adj %>%
   summarise(avg = wtd.mean(margin, weight),
             var = n() * wtd.var(margin, weight) / (n() - 1),
             eff_n = sum(weight)^2 / sum(weight^2)) %>%
-  mutate(var = case_when(var == Inf | is.na(var) ~ 0.04^2 + 0.05^2,
-                         var < Inf ~ var / eff_n + 0.05^2))
+  mutate(var = case_when(var == Inf | is.na(var) ~ 0.04^2 + 0.03^2,
+                         var < Inf ~ var / eff_n + 0.03^2))
 
 current_senate_averages <- senate_averages_adj %>%
   group_by(state, seat_name, candidate) %>%

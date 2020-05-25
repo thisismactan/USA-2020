@@ -290,12 +290,31 @@ senate_summary_stats <- senate_seat_distribution %>%
 
 senate_summary_stats  
 
-# Probabilities by state
-senate_state_probabilities <- senate_state_sims %>%
+# Summary stats by state
+senate_state_summary_stats <- senate_state_sims %>%
   group_by(state, seat_name) %>%
   summarise(dem_prob = mean(party == "Democrats"),
             pct05 = quantile(margin, 0.05),
             avg = mean(margin),
             pct95 = quantile(margin, 0.95))
 
-senate_state_probabilities
+senate_state_summary_stats %>%
+  print(n = Inf)
+
+# Histogram (a bit more complicated this time)
+senate_seat_distribution %>%
+  left_join(senate_majority_winners %>% dplyr::select(sim_id, majority), by = "sim_id") %>%
+  filter(party == "Democrats") %>% 
+  group_by(majority, seats_held) %>% 
+  summarise(prob = n() / n_sims) %>% 
+  ungroup() %>%
+  ggplot(aes(x = seats_held, y = prob, fill = majority)) +
+  geom_col(alpha = 0.7) +
+  geom_vline(data = senate_summary_stats, aes(xintercept = avg, col = party), size = 1) + 
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_fill_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
+  scale_colour_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
+  labs(title = "2020 Senate elections forecast", x = "Democratic seats held after election", y = "Probability",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
+       caption = "51 seats or 50 seats + vice presidency needed for majority") 
+  
