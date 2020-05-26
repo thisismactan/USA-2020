@@ -355,3 +355,25 @@ senate_conditional_probs %>%
        y = "P(Republican majority | Republican wins state) - P(Republican majority)",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
   
+# Ant farm
+senate_comp_states <- c("Alabama", "Arizona", "Colorado", "Georgia", "Iowa", "Kansas", "Maine", "Minnesota", "Montana", "New Hampshire",
+                        "New Mexico", "North Carolina", "South Carolina", "Texas", "Virginia")
+
+senate_forecast_probability_history %>%
+  filter(state %in% senate_comp_states) %>%
+  mutate(state = case_when(seat_name != "Class II" ~ paste(state, "(special)"),
+                           seat_name == "Class II" ~ state),
+         election_date = ifelse(state == "Georgia (special)", as.Date("2021-01-05"), as.Date("2020-11-03"))) %>%
+  ggplot(aes(x = date, y = prob, col = party)) +
+  facet_wrap(~state) +
+  geom_vline(aes(xintercept = election_date)) +
+  geom_line(data = senate_forecast_probability_history %>% filter(state == "National") %>% dplyr::select(date, party, natl_prob = prob),
+            aes(y = natl_prob), alpha = 1/5, size = 1) +
+  geom_line(size = 1) +
+  scale_colour_manual(name = "Candidate", values = c("blue", "red"), labels = c("Democrat", "Republican")) +
+  scale_x_date(limits = as.Date(c("2020-05-23", "2021-01-06")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
+  theme(legend.position = "bottom", axis.text.x = element_text(angle = 90, vjust = 0.5)) +
+  labs(title = "StatSheet 2020 Senate election forecast over time by state", x = "Date", y = "Probability of winning",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
+       caption = "National forecast shown in lighter colors") 
