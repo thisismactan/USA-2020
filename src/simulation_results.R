@@ -156,8 +156,11 @@ bellwetherogram %>%
   geom_text(aes(label = abbrev), size = 3) +
   scale_colour_gradient2(name = "P(Biden wins state)", low = "red", mid = "#880088", high = "blue", midpoint = 0.5,
                          labels = scales::percent) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   labs(title = "Bellwether-o-gram", x = "P(Biden wins presidency | Biden wins state) - P(Biden wins presidency)",
-       y = "P(Trump wins presidency | Trump wins state) - P(Trump wins presidency)")
+       y = "P(Trump wins presidency | Trump wins state) - P(Trump wins presidency)",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
 
 # Forecast over time
 comp_states <- c("Arizona", "Colorado", "Florida", "Georgia", "Iowa", "Maine", "Michigan", "Minnesota", "Nebraska's 2nd congressional district",
@@ -275,6 +278,8 @@ house_bellwetherogram %>%
   geom_text(aes(label = district_abbr), size = 2) +
   scale_colour_gradient2(name = "P(D wins district)", low = "red", mid = "#880088", high = "blue", midpoint = 0.5,
                          labels = scales::percent) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   labs(title = "House bellwether-o-gram", subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        x = "P(Democratic majority | Democrat wins district) - P(Democratic majority)",
        y = "P(Republican majority | Republican wins district) - P(Republican wins district)")
@@ -317,4 +322,36 @@ senate_seat_distribution %>%
   labs(title = "2020 Senate elections forecast", x = "Democratic seats held after election", y = "Probability",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "51 seats or 50 seats + vice presidency needed for majority") 
+
+# Bellwetherogram
+senate_conditional_probs <- senate_state_sims %>%
+  left_join(senate_state_probabilities %>% filter(party == "Democrats") %>% dplyr::select(state, seat_name, dem_prob = prob), 
+            by = c("state", "seat_name")) %>%
+  left_join(senate_majority_winners %>% dplyr::select(sim_id, majority), by = "sim_id") %>%
+  mutate(state_winner = ifelse(margin > 0, "Democrats", "Republicans")) %>%
+  group_by(state, seat_name, dem_prob, state_winner) %>%
+  summarise(cond_prob = mean(majority == state_winner)) %>%
+  spread(state_winner, cond_prob) %>%
+  mutate(dem_prob_increase = Democrats - senate_summary_stats$majority_prob[1],
+         rep_prob_increase = Republicans - senate_summary_stats$majority_prob[2])
+
+senate_conditional_probs %>% 
+  mutate(BPI = dem_prob_increase * rep_prob_increase) %>%
+  arrange(desc(BPI)) %>%
+  print(n = Inf)
+
+senate_conditional_probs %>%
+  left_join(regions %>% dplyr::select(state, abbrev), by = "state") %>%
+  mutate(abbrev = case_when(state == "Georgia" & seat_name == "Class II" ~ "GA-2",
+                            state == "Georgia" & seat_name == "Class III" ~ "GA-3",
+                            state != "Georgia" ~ abbrev)) %>%
+  ggplot(aes(x = dem_prob_increase, y = rep_prob_increase, col = dem_prob)) +
+  geom_text(aes(label = abbrev), size = 3)  +
+  scale_colour_gradient2(name = "P(Democratic win)", low = "red", mid = "#880088", high = "blue", midpoint = 0.5,
+                         labels = scales::percent) +
+  scale_x_continuous(labels = scales::percent_format(accuracy = 1)) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(title = "Senate bellwether-o-gram", x = "P(Democratic majority | Democrat wins state) - P(Democratic majority)",
+       y = "P(Republican majority | Republican wins state) - P(Republican majority)",
+       subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
   
