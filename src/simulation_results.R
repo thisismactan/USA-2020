@@ -377,3 +377,16 @@ senate_forecast_probability_history %>%
   labs(title = "StatSheet 2020 Senate election forecast over time by state", x = "Date", y = "Probability of winning",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())),
        caption = "National forecast shown in lighter colors") 
+
+# President, House, and Senate results
+pres_sim_results %>%
+  filter(sim_id <= house_n_sims) %>%
+  left_join(house_seat_distribution %>% filter(Party == "Democrats") %>% mutate(house_maj = seats >= 218) %>% dplyr::select(sim_id, house_maj), 
+            by = "sim_id") %>%
+  left_join(senate_majority_winners %>% dplyr::select(sim_id, senate_maj = majority), by = "sim_id") %>%
+  mutate(President = str_to_title(winner),
+         House = ifelse(house_maj, "Democratic", "Republican"),
+         Senate = ifelse(senate_maj == "Democrats", "Democratic", "Republican")) %>%
+  group_by(President, House, Senate) %>%
+  summarise(Probability = n() / house_n_sims) %>%
+  as.data.frame()

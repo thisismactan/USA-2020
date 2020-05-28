@@ -45,11 +45,22 @@ senate_shp <- us_states() %>%
                                max_prob >= 0.8 & max_prob < 0.95 ~ "Likely",
                                max_prob >= 0.95 ~ "Safe"),
          qual_forecast = case_when(qual_prob == "Toss-up" ~ "Toss-up",
-                                   qual_prob != "Toss-up" & winner == "Democrats" ~ paste0(qual_prob, " <font color = 'blue'>", winner, "</font>"),
+                                   qual_prob != "Toss-up" & winner == "Democrat" ~ paste0(qual_prob, " <font color = 'blue'>", winner, "</font>"),
                                    qual_prob != "Toss-up" & winner == "Republican" ~ paste0(qual_prob, " <font color = 'red'>", winner, "</font>")),
          infobox = paste0("<b><u>", name, "</b></u><br>",
                           "<b>", qual_forecast, "</b> (", scales::percent(max_prob, accuracy = 1), ")<br>"))
 
+senate_candidates <- read_csv("data/senate_candidates.csv")
+
+senate_pickups_shp <- senate_shp %>%
+  left_join(senate_candidates %>% dplyr::select(state, incumbent_party) %>% distinct(), by = c("name" = "state")) %>%
+  mutate(pickup = case_when(incumbent_party == "DEM" & Republicans > Democrats ~ "Republican",
+                            incumbent_party == "REP" & Democrats > Republicans ~ "Democratic"),
+         pickup_color = case_when(pickup == "Democratic" ~ "blue",
+                                  pickup == "Republican" ~ "red")) %>%
+  filter(!is.na(pickup))
+
 leaflet(senate_shp) %>%
   addPolygons(weight = 1, color = "#666666", opacity = 1, fillColor = ~color, fillOpacity = ~alpha, label = ~name, popup = ~infobox) %>%
-  addPolylines(weight = 1, color = "#555555")
+  addPolylines(weight = 1, color = "#555555") %>%
+  addPolylines(data = senate_pickups_shp, weight = 3, color = ~pickup_color, )
