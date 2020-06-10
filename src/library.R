@@ -34,6 +34,7 @@ library(matrixcalc)
 #### Mapping ####
 library(leaflet)
 library(rgdal)
+library(rmapshaper)
 library(sf)
 library(sp)
 library(USAboundaries)

@@ -25,6 +25,42 @@ leaflet(president_shp) %>%
   addPolygons(weight = 1, color = "#666666", opacity = 1, fillColor = ~color, fillOpacity = ~alpha, label = ~name, popup = ~infobox) %>%
   addPolylines(weight = 1, color = "#555555")
 
+# House
+house_district_key <- us_congressional() %>%
+  as.data.frame() %>%
+  dplyr::select(statefp, state = state_name) %>%
+  distinct()
+
+house_shp_simplified <- st_read("data/shapefiles/house/tl_2018_us_cd116.shp") %>%
+  ms_simplify()
+
+house_shp <- house_shp_simplified %>%
+  left_join(house_district_key, by = c("STATEFP" = "statefp")) %>%
+  mutate(seat_number = as.numeric(as.character(CD116FP))) %>%
+  left_join(district_summary_stats, by = c("state", "seat_number")) %>%
+  left_join(house_candidates_2020, by = c("state", "seat_number")) %>%
+  mutate(color = case_when(dem_prob >= 0.5 ~ "#104E8B",
+                           dem_prob < 0.5 ~ "firebrick"),
+         alpha = 0.9 * sqrt(2*abs(dem_prob - 0.5)),
+         winner = case_when(dem_prob >= 0.5 ~ "Democrat",
+                            dem_prob < 0.5 ~ "Republican"),
+         max_prob = pmax(dem_prob, 1 - dem_prob),
+         qual_prob = case_when(max_prob < 0.65 ~ "Toss-up",
+                               max_prob >= 0.65 & max_prob < 0.8 ~ "Leans",
+                               max_prob >= 0.8 & max_prob < 0.95 ~ "Likely",
+                               max_prob >= 0.95 ~ "Safe"),
+         qual_forecast = case_when(qual_prob == "Toss-up" ~ "Toss-up",
+                                   qual_prob != "Toss-up" & winner == "Democrat" ~ paste0(qual_prob, " <font color = 'blue'>", winner, "</font>"),
+                                   qual_prob != "Toss-up" & winner == "Republican" ~ paste0(qual_prob, " <font color = 'red'>", winner, "</font>")),
+         infobox = paste0("<b><u>", district_abbr, "</b></u><br>",
+                          "<b>", qual_forecast, "</b> (", scales::percent(max_prob, accuracy = 1), ")<br>"))
+
+leaflet(house_shp) %>%
+  addTiles() %>%
+  addPolygons(weight = 1, color = "#666666", opacity = 1, fillColor = ~color, fillOpacity = ~alpha, label = ~district_abbr, popup = ~infobox) %>%
+  addPolylines(weight = 1, color = "#555555")
+
+
 # Senate
 senate_shp <- us_states() %>%
   filter(name != "Puerto Rico") %>%
@@ -63,4 +99,4 @@ senate_pickups_shp <- senate_shp %>%
 leaflet(senate_shp) %>%
   addPolygons(weight = 1, color = "#666666", opacity = 1, fillColor = ~color, fillOpacity = ~alpha, label = ~name, popup = ~infobox) %>%
   addPolylines(weight = 1, color = "#555555") %>%
-  addPolylines(data = senate_pickups_shp, weight = 3, color = ~pickup_color, )
+  addPolylines(data = senate_pickups_shp, weight = 3, color = ~pickup_color)

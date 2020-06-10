@@ -162,6 +162,27 @@ bellwetherogram %>%
        y = "P(Trump wins presidency | Trump wins state) - P(Trump wins presidency)",
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
 
+# Tipping points
+pres_tipping_points <- pres_state_sims %>%
+  mutate(margin = biden - trump) %>%
+  arrange(sim_id, desc(margin)) %>%
+  group_by(sim_id) %>%
+  mutate(cum_ev = cumsum(electoral_votes)) %>%
+  filter(cum_ev >= 270) %>%
+  dplyr::slice(1) %>%
+  group_by(state) %>%
+  summarise(tipping_point_prob = n() / nrow(.))
+
+pres_tipping_points %>%
+  arrange(desc(tipping_point_prob)) %>%
+  dplyr::slice(1:15) %>%
+  ggplot(aes(x = reorder(state, tipping_point_prob))) +
+  geom_col(aes(y = tipping_point_prob)) +
+  geom_text(aes(y = tipping_point_prob + 0.01, label = scales::percent(tipping_point_prob, accuracy = 0.1)), size = 3) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+  labs(title = "Tipping point state probabilities", x = "", y = "Probability of being the tipping point state") +
+  coord_flip()
+
 # Forecast over time
 comp_states <- c("Arizona", "Colorado", "Florida", "Georgia", "Iowa", "Maine", "Michigan", "Minnesota", "Nebraska's 2nd congressional district",
                  "Nevada", "New Hampshire", "New Mexico", "North Carolina", "Ohio", "Pennsylvania", "Texas", "Virginia", "Wisconsin")
@@ -202,14 +223,14 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
 house_candidates_2020 <- read_csv("data/house_candidates.csv")
 
 # Probabilities by district
-district_prior_summary_stats <- house_district_sims %>%
+district_summary_stats <- house_district_sims %>%
   group_by(state, seat_number) %>%
   summarise(dem_prob = mean(margin > 0),
             pct05 = quantile(margin, 0.05),
             avg = mean(margin),
             pct95 = quantile(margin, 0.95))
 
-district_prior_summary_stats %>%
+district_summary_stats %>%
   print(n = Inf)
 
 # Distribution of seat totals
@@ -268,7 +289,7 @@ house_conditional_probs <- house_district_sims %>%
 
 house_bellwetherogram <- house_conditional_probs %>%
   left_join(house_candidates_2020 %>% dplyr::select(state, seat_number, district_abbr) %>% distinct(), by = c("state", "seat_number")) %>%
-  left_join(district_prior_summary_stats %>% dplyr::select(state, seat_number, dem_prob), by = c("state", "seat_number")) %>%
+  left_join(district_summary_stats %>% dplyr::select(state, seat_number, dem_prob), by = c("state", "seat_number")) %>%
   mutate(dem_logit = logit(dem_prob))
 
 house_bellwetherogram %>%
@@ -316,6 +337,7 @@ senate_seat_distribution %>%
   ggplot(aes(x = seats_held, y = prob, fill = majority)) +
   geom_col(alpha = 0.7) +
   geom_vline(data = senate_summary_stats, aes(xintercept = avg, col = party), size = 1) + 
+  scale_x_continuous(breaks = seq(from = 42, to = 58, by = 2), limits = c(43, 57)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
   scale_colour_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
@@ -338,9 +360,11 @@ senate_conditional_probs <- senate_state_sims %>%
 senate_conditional_probs %>% 
   mutate(BPI = dem_prob_increase * rep_prob_increase) %>%
   arrange(desc(BPI)) %>%
+  filter(dem_prob >= 0.05, dem_prob <= 0.95) %>%
   print(n = Inf)
 
 senate_conditional_probs %>%
+  filter(dem_prob <= 0.95, dem_prob >= 0.05) %>%
   left_join(regions %>% dplyr::select(state, abbrev), by = "state") %>%
   mutate(abbrev = case_when(state == "Georgia" & seat_name == "Class II" ~ "GA-2",
                             state == "Georgia" & seat_name == "Class III" ~ "GA-3",
@@ -389,4 +413,5 @@ pres_sim_results %>%
          Senate = ifelse(senate_maj == "Democrats", "Democratic", "Republican")) %>%
   group_by(President, House, Senate) %>%
   summarise(Probability = n() / house_n_sims) %>%
-  as.data.frame()
+  as.data.frame() %>%
+  mutate(Probability = scales::percent(Probability, accuracy = 1))
