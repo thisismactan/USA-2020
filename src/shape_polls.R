@@ -26,7 +26,7 @@ president_polls <- read_csv("data/president_polls.csv") %>%
   mutate(biden_v_trump = any(grepl("Biden", candidate)) & any(grepl("Trump", candidate)),
          has_3p = any(!grepl("Biden|Trump", candidate))) %>%
   ungroup() %>%
-  filter(biden_v_trump, pop %in% c("lv", "rv", "v"), !(candidate %in% c("Howard Schultz", "Justin Amash"))) %>%
+  filter(biden_v_trump, pop %in% c("lv", "rv", "v"), grepl("Biden|Trump", candidate)) %>%
   mutate(candidate = case_when(!grepl("Biden|Trump", candidate) ~ candidate,
                                grepl("Biden", candidate) ~ "biden",
                                grepl("Trump", candidate) ~ "trump"))

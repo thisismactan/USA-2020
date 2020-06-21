@@ -337,7 +337,7 @@ senate_seat_distribution %>%
   ggplot(aes(x = seats_held, y = prob, fill = majority)) +
   geom_col(alpha = 0.7) +
   geom_vline(data = senate_summary_stats, aes(xintercept = avg, col = party), size = 1) + 
-  scale_x_continuous(breaks = seq(from = 42, to = 58, by = 2), limits = c(43, 57)) +
+  scale_x_continuous(breaks = seq(from = 42, to = 58, by = 2), limits = c(42, 58)) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
   scale_fill_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
   scale_colour_manual(name = "Majority party", values = c("Democrats" = "blue", "Republicans" = "red")) +
@@ -380,7 +380,7 @@ senate_conditional_probs %>%
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
   
 # Ant farm
-senate_comp_states <- c("Alabama", "Arizona", "Colorado", "Georgia", "Iowa", "Kansas", "Maine", "Minnesota", "Montana", "New Hampshire",
+senate_comp_states <- c("Alabama", "Arizona", "Colorado", "Georgia", "Iowa", "Kansas", "Maine", "Michigan", "Montana", "New Hampshire",
                         "New Mexico", "North Carolina", "South Carolina", "Texas", "Virginia")
 
 senate_forecast_probability_history %>%
