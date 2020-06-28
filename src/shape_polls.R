@@ -83,7 +83,8 @@ house_district_polls <- read_csv("data/house_district_polls.csv") %>%
   
   # Pathological cases (primary polls, special elections)
   filter(!(question_id %in% c(100720, 100721, 100722, 100723, 103717, 103799, 103800, 114021, 115665, 116568, 117478, 118912, 118010, 118011,
-                              118012, 120204)))
+                              118012, 120204)),
+         start_date >= as.Date("2020-01-01"))
 
 # Senate
 senate_polls_all <- read_csv("data/senate_polls.csv") %>%

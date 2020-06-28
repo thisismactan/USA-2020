@@ -239,8 +239,8 @@ district_poll_leans <- house_district_polls %>%
   mutate(weight = 100 * loess_weight / exp((age + 1)^0.5),
          house = case_when(is.na(house) ~ 0,
                            !is.na(house) ~ house),
-         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.03 * (party == "REP") - 0.03 * (party == "DEM"),
-                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.03 * (party == "REP") + 0.03 * (party == "DEM"),
+         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.02 * (party == "REP") - 0.02 * (party == "DEM"),
+                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.02 * (party == "REP") + 0.02 * (party == "DEM"),
                          !(candidate %in% c("DEM", "REP")) ~ pct),
          district_lean = pct - avg)
 
@@ -261,7 +261,7 @@ district_averages <- district_poll_leans %>%
             district_avg = wtd.mean(district_lean + avg_today, weight),
             district_var = wtd.var(district_lean, weight),
             district_eff_n = sum(weight)^2 / sum(weight^2)) %>%
-  mutate(district_var = district_var + 0.25 / sum(district_respondents) + var_today / eff_n_today + 0.05^2) %>%
+  mutate(district_var = district_var + 0.25 / sum(district_respondents) + var_today / eff_n_today + 0.05^2 / district_eff_n) %>%
   group_by(state, seat_number) %>%
   dplyr::mutate(poll_margin = district_avg - lead(district_avg),
                 poll_var = sum(district_var),
@@ -279,8 +279,8 @@ senate_poll_leans <- senate_polls %>%
   mutate(weight = loess_weight / exp((age + 1)^0.5),
          house = case_when(is.na(house) ~ 0,
                            !is.na(house) ~ house),
-         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.04 * (party == "REP") - 0.04 * (party == "DEM"),
-                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.04 * (party == "REP") + 0.04 * (party == "DEM"),
+         pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.02 * (party == "REP") - 0.02 * (party == "DEM"),
+                         candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.02 * (party == "REP") + 0.02 * (party == "DEM"),
                          !(candidate %in% c("DEM", "REP")) ~ pct),
          state_lean = pct - avg)
 
@@ -369,7 +369,7 @@ senate_average_margins <- senate_polls_adj %>%
             var = n() * wtd.var(margin, weight) / (n() - 1),
             eff_n = sum(weight)^2 / sum(weight^2)) %>%
   mutate(var = case_when(var == Inf | is.na(var) ~ 0.05^2 + 0.03^2,
-                         var < Inf ~ var / eff_n + 0.03^2))
+                         var < Inf ~ (var + 0.03^2) / eff_n))
 
 current_senate_averages <- senate_averages_adj %>%
   group_by(state, seat_name, candidate) %>%

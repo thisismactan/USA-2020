@@ -240,7 +240,7 @@ Georgia,5,Georgia's 5th,GA-05,DEM,17,DEM,John,Lewis
 Georgia,5,Georgia's 5th,GA-05,DEM,17,REP,Angela,Stanton-King
 Georgia,6,Georgia's 6th,GA-06,DEM,1,DEM,Lucy,McBath
 Georgia,6,Georgia's 6th,GA-06,DEM,1,REP,Karen,Handel
-Georgia,7,Georgia's 7th,GA-07,None,5,DEM,,
+Georgia,7,Georgia's 7th,GA-07,None,5,DEM,Carolyn,Bourdeaux
 Georgia,7,Georgia's 7th,GA-07,None,5,REP,Rich,McCormick
 Georgia,8,Georgia's 8th,GA-08,REP,5,DEM,Lindsay,Holliday
 Georgia,8,Georgia's 8th,GA-08,REP,5,REP,Austin,Scott
@@ -340,11 +340,11 @@ Kentucky,2,Kentucky's 2nd,KY-02,REP,6,DEM,Hank,Linderman
 Kentucky,2,Kentucky's 2nd,KY-02,REP,6,REP,Brett,Guthrie
 Kentucky,3,Kentucky's 3rd,KY-03,DEM,7,DEM,John,Yarmuth
 Kentucky,3,Kentucky's 3rd,KY-03,DEM,7,REP,,
-Kentucky,4,Kentucky's 4th,KY-04,REP,4,DEM,,
+Kentucky,4,Kentucky's 4th,KY-04,REP,4,DEM,Alexandra,Owensby
 Kentucky,4,Kentucky's 4th,KY-04,REP,4,REP,Thomas,Massie
 Kentucky,5,Kentucky's 5th,KY-05,REP,20,DEM,Matthew,Best
 Kentucky,5,Kentucky's 5th,KY-05,REP,20,REP,Hal,Rogers
-Kentucky,6,Kentucky's 6th,KY-06,REP,4,DEM,,
+Kentucky,6,Kentucky's 6th,KY-06,REP,4,DEM,Josh,Hicks
 Kentucky,6,Kentucky's 6th,KY-06,REP,4,REP,Andy,Barr
 Louisiana,1,Louisiana's 1st,LA-01,REP,7,DEM,,
 Louisiana,1,Louisiana's 1st,LA-01,REP,7,REP,Steve,Scalise
@@ -425,7 +425,7 @@ Michigan,13,Michigan's 13th,MI-13,DEM,1,DEM,Rashida,Tlaib
 Michigan,13,Michigan's 13th,MI-13,DEM,1,REP,,
 Michigan,14,Michigan's 14th,MI-14,DEM,3,DEM,Brenda,Lawrence
 Michigan,14,Michigan's 14th,MI-14,DEM,3,REP,,
-Minnesota,1,Minnesota's 1st,MN-01,REP,1,DEM,,
+Minnesota,1,Minnesota's 1st,MN-01,REP,1,DEM,Dan,Feehan
 Minnesota,1,Minnesota's 1st,MN-01,REP,1,REP,Jim,Hagedorn
 Minnesota,2,Minnesota's 2nd,MN-02,DEM,1,DEM,Angie,Craig
 Minnesota,2,Minnesota's 2nd,MN-02,DEM,1,REP,,
@@ -515,24 +515,24 @@ New Mexico,2,New Mexico's 2nd,NM-02,DEM,1,DEM,Xochitl,Torres Small
 New Mexico,2,New Mexico's 2nd,NM-02,DEM,1,REP,Yvette,Herrell
 New Mexico,3,New Mexico's 3rd,NM-03,None,6,DEM,Teresa,Leger Fernandez
 New Mexico,3,New Mexico's 3rd,NM-03,None,6,REP,,
-New York,1,New York's 1st,NY-01,REP,3,DEM,Lee,Zeldin
-New York,1,New York's 1st,NY-01,REP,3,REP,,
-New York,2,New York's 2nd,NY-02,None,14,DEM,,
-New York,2,New York's 2nd,NY-02,None,14,REP,,
+New York,1,New York's 1st,NY-01,REP,3,DEM,,
+New York,1,New York's 1st,NY-01,REP,3,REP,Lee,Zeldin
+New York,2,New York's 2nd,NY-02,None,14,DEM,Jackie,Gordon
+New York,2,New York's 2nd,NY-02,None,14,REP,Andrew,Garbarino
 New York,3,New York's 3rd,NY-03,DEM,2,DEM,Tom,Suozzi
 New York,3,New York's 3rd,NY-03,DEM,2,REP,George,Santos
 New York,4,New York's 4th,NY-04,DEM,3,DEM,Kathleen,Rice
 New York,4,New York's 4th,NY-04,DEM,3,REP,Cindy,Grosz
 New York,5,New York's 5th,NY-05,DEM,11,DEM,Gregory,Meeks
-New York,5,New York's 5th,NY-05,DEM,11,REP,,
+New York,5,New York's 5th,NY-05,DEM,11,REP,None,
 New York,6,New York's 6th,NY-06,DEM,4,DEM,Grace,Meng
 New York,6,New York's 6th,NY-06,DEM,4,REP,Tom,Zmich
 New York,7,New York's 7th,NY-07,DEM,14,DEM,Nydia,Velázquez
-New York,7,New York's 7th,NY-07,DEM,14,REP,,
+New York,7,New York's 7th,NY-07,DEM,14,REP,Brian,Kelly
 New York,8,New York's 8th,NY-08,DEM,4,DEM,Hakeem,Jeffries
-New York,8,New York's 8th,NY-08,DEM,4,REP,,
+New York,8,New York's 8th,NY-08,DEM,4,REP,Garfield,Wallace
 New York,9,New York's 9th,NY-09,DEM,7,DEM,Yvette,Clarke
-New York,9,New York's 9th,NY-09,DEM,7,REP,,
+New York,9,New York's 9th,NY-09,DEM,7,REP,Constantin,Jean-Pierre
 New York,10,New York's 10th,NY-10,DEM,14,DEM,Jerry,Nadler
 New York,10,New York's 10th,NY-10,DEM,14,REP,Cathy,Bernstein
 New York,11,New York's 11th,NY-11,DEM,1,DEM,Max,Rose
@@ -542,11 +542,11 @@ New York,12,New York's 12th,NY-12,DEM,14,REP,Carlos,Cano
 New York,13,New York's 13th,NY-13,DEM,2,DEM,Adriano,Espaillat
 New York,13,New York's 13th,NY-13,DEM,2,REP,Lovelynn,Gwinn
 New York,14,New York's 14th,NY-14,DEM,1,DEM,Alexandria,Ocasio-Cortez
-New York,14,New York's 14th,NY-14,DEM,1,REP,,
-New York,15,New York's 15th,NY-15,None,15,DEM,,
-New York,15,New York's 15th,NY-15,None,15,REP,Patrick,Delices
-New York,16,New York's 16th,NY-16,DEM,16,DEM,Eliot,Engel
-New York,16,New York's 16th,NY-16,DEM,16,REP,,
+New York,14,New York's 14th,NY-14,DEM,1,REP,John,Cummings
+New York,15,New York's 15th,NY-15,None,15,DEM,Ritchie,Torres
+New York,15,New York's 15th,NY-15,None,15,REP,Orlando,Molina
+New York,16,New York's 16th,NY-16,None,16,DEM,Jamaal,Bowman
+New York,16,New York's 16th,NY-16,None,16,REP,None,
 New York,17,New York's 17th,NY-17,None,16,DEM,Nita,Lowey
 New York,17,New York's 17th,NY-17,None,16,REP,Maureen,McArdle-Schulman
 New York,18,New York's 18th,NY-18,DEM,4,DEM,Sean Patrick,Maloney
@@ -558,10 +558,10 @@ New York,20,New York's 20th,NY-20,DEM,6,REP,Elizabeth,Joy
 New York,21,New York's 21st,NY-21,REP,3,DEM,Tedra,Cobb
 New York,21,New York's 21st,NY-21,REP,3,REP,Elise,Stefanik
 New York,22,New York's 22nd,NY-22,DEM,1,DEM,Anthony,Brindisi
-New York,22,New York's 22nd,NY-22,DEM,1,REP,,
-New York,23,New York's 23rd,NY-23,REP,5,DEM,,
+New York,22,New York's 22nd,NY-22,DEM,1,REP,Claudia,Tenney
+New York,23,New York's 23rd,NY-23,REP,5,DEM,Tracy,Mitrano
 New York,23,New York's 23rd,NY-23,REP,5,REP,Tom,Reed
-New York,24,New York's 24th,NY-24,REP,3,DEM,,
+New York,24,New York's 24th,NY-24,REP,3,DEM,Dana,Balter
 New York,24,New York's 24th,NY-24,REP,3,REP,John,Katko
 New York,25,New York's 25th,NY-25,DEM,1,DEM,Joseph,Morelle
 New York,25,New York's 25th,NY-25,DEM,1,REP,George,Mitris
@@ -590,9 +590,9 @@ North Carolina,9,North Carolina's 9th,NC-09,REP,1,REP,Dan,Bishop
 North Carolina,10,North Carolina's 10th,NC-10,REP,8,DEM,David,Parker
 North Carolina,10,North Carolina's 10th,NC-10,REP,8,REP,Patrick,McHenry
 North Carolina,11,North Carolina's 11th,NC-11,None,0,DEM,Morris,Davis
-North Carolina,11,North Carolina's 11th,NC-11,None,0,REP,,
+North Carolina,11,North Carolina's 11th,NC-11,None,0,REP,Madison,Cawthorn
 North Carolina,12,North Carolina's 12th,NC-12,DEM,3,DEM,Alma,Adams
-North Carolina,12,North Carolina's 12th,NC-12,DEM,3,REP,,
+North Carolina,12,North Carolina's 12th,NC-12,DEM,3,REP,None,
 North Carolina,13,North Carolina's 13th,NC-13,REP,2,DEM,Scott,Huffman
 North Carolina,13,North Carolina's 13th,NC-13,REP,2,REP,Tedra,Budd
 North Dakota,1,North Dakota's at-large,ND-AL,REP,1,DEM,Zach,Raknerud
@@ -805,26 +805,26 @@ Utah,4,Utah's 4th,UT-04,DEM,1,DEM,Ben,McAdams
 Utah,4,Utah's 4th,UT-04,DEM,1,REP,,
 Vermont,1,Vermont's at-large,VT-AL,DEM,7,DEM,Peter,Welch
 Vermont,1,Vermont's at-large,VT-AL,DEM,7,REP,,
-Virginia,1,Virginia's 1st,VA-01,REP,7,DEM,,
+Virginia,1,Virginia's 1st,VA-01,REP,7,DEM,Qasim,Rashid
 Virginia,1,Virginia's 1st,VA-01,REP,7,REP,Rob,Wittman
 Virginia,2,Virginia's 2nd,VA-02,DEM,1,DEM,Elaine,Luria
-Virginia,2,Virginia's 2nd,VA-02,DEM,1,REP,,
+Virginia,2,Virginia's 2nd,VA-02,DEM,1,REP,Scott,Taylor
 Virginia,3,Virginia's 3rd,VA-03,DEM,14,DEM,Bobby,Scott
-Virginia,3,Virginia's 3rd,VA-03,DEM,14,REP,,
+Virginia,3,Virginia's 3rd,VA-03,DEM,14,REP,John,Collick
 Virginia,4,Virginia's 4th,VA-04,DEM,2,DEM,Donald,McEachin
-Virginia,4,Virginia's 4th,VA-04,DEM,2,REP,,
-Virginia,5,Virginia's 5th,VA-05,None,1,DEM,,
+Virginia,4,Virginia's 4th,VA-04,DEM,2,REP,Leon,Benjamin
+Virginia,5,Virginia's 5th,VA-05,None,1,DEM,Cameron,Webb
 Virginia,5,Virginia's 5th,VA-05,None,1,REP,Bob,Good
-Virginia,6,Virginia's 6th,VA-06,REP,1,DEM,,
+Virginia,6,Virginia's 6th,VA-06,REP,1,DEM,Nicholas,Betts
 Virginia,6,Virginia's 6th,VA-06,REP,1,REP,Ben,Cline
 Virginia,7,Virginia's 7th,VA-07,DEM,1,DEM,Abigail,Spanberger
 Virginia,7,Virginia's 7th,VA-07,DEM,1,REP,,
 Virginia,8,Virginia's 8th,VA-08,DEM,3,DEM,Don,Beyer
-Virginia,8,Virginia's 8th,VA-08,DEM,3,REP,,
-Virginia,9,Virginia's 9th,VA-09,REP,5,DEM,Cameron,Dickerson
+Virginia,8,Virginia's 8th,VA-08,DEM,3,REP,Jeff,Jordan
+Virginia,9,Virginia's 9th,VA-09,REP,5,DEM,None,
 Virginia,9,Virginia's 9th,VA-09,REP,5,REP,Morgan,Griffith
 Virginia,10,Virginia's 10th,VA-10,DEM,1,DEM,Jennifer,Wexton
-Virginia,10,Virginia's 10th,VA-10,DEM,1,REP,,
+Virginia,10,Virginia's 10th,VA-10,DEM,1,REP,Aliscia,Andrews
 Virginia,11,Virginia's 11th,VA-11,DEM,6,DEM,Gerry,Connolly
 Virginia,11,Virginia's 11th,VA-11,DEM,6,REP,Manga,Anantatmula
 Washington,1,Washington's 1st,WA-01,DEM,4,DEM,Suzanne,DelBene
