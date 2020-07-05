@@ -453,7 +453,7 @@ senate_poll_sims <- senate_poll_errors %>%
   dplyr::select(sim_id, state, seat_name, poll_margin, poll_weight)
 
 ## Real quick, do the Georgia special election
-georgia_primary_undecided_dirichlet_params <- c(1, 1, 5, 2, 5, 5, 5, 1, 1)
+georgia_primary_undecided_dirichlet_params <- c(5, 2, 5, 5, 5, 1, 1)
 georgia_primary_undecided_pct <- rdirichlet(n_sims, alpha = georgia_primary_undecided_dirichlet_params) * georgia_primary_undecided
 
 georgia_primary_sims <- logit_inv(rmvn(n_sims, mu = georgia_primary_average$logit, sigma = georgia_primary_cov))

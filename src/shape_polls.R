@@ -120,7 +120,8 @@ georgia_primary_polls <- senate_polls_all %>%
        variable.name = "candidate", value.name = "pct") %>%
   as.tbl() %>%
   inner_join(georgia_primary_candidates, by = c("candidate", "candidate_party")) %>%
-  arrange(age)
+  arrange(age) %>%
+  filter(candidate_party %in% c("DEM", "REP"))
 
 georgia_runoff_polls <- senate_polls_all %>%
   filter(state == "Georgia", seat_name == "Class III") %>%
