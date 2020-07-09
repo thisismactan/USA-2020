@@ -1,9 +1,8 @@
 ﻿state,seat_name,incumbent_party,incumbent_running,incumbent_elections_won,candidate_party,candidate_fullname,candidate_firstname,candidate_lastname,dem_statewide_elected,rep_statewide_elected
 Alabama,Class II,DEM,DEM,1,DEM,Doug Jones,Doug,Jones,TRUE,FALSE
 Alabama,Class II,DEM,DEM,1,REP,Tommy Tuberville,Tommy,Tuberville,TRUE,FALSE
-Alaska,Class II,REP,REP,1,DEM,None,,,FALSE,TRUE
+Alaska,Class II,REP,REP,1,DEM,Al Gross,Al,Gross,FALSE,TRUE
 Alaska,Class II,REP,REP,1,REP,Dan Sullivan,Dan,Sullivan,FALSE,TRUE
-Alaska,Class II,REP,REP,1,IND,Al Gross,Al,Gross,FALSE,TRUE
 Arizona,Class III,REP,REP,0,DEM,Mark Kelly,Mark,Kelly,FALSE,FALSE
 Arizona,Class III,REP,REP,0,REP,Martha McSally,Martha,McSally,FALSE,FALSE
 Arkansas,Class II,REP,REP,1,DEM,None,,,FALSE,TRUE

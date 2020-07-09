@@ -79,7 +79,7 @@ generic_ballot_averages_smoothed %>%
 
 
 # Senate ####
-graph_states <- "North Carolina"
+graph_states <- "Michigan"
 graph_seats <- "Class II"
 
 graph_state_polls <- senate_polls %>% 

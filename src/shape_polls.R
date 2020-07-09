@@ -151,7 +151,7 @@ senate_poll_candidates <- senate_polls_all %>%
   spread(candidate_party, candidate)
 
 senate_question_ids <- senate_candidates %>%
-  left_join(senate_poll_candidates, by = c("state", "seat_name", "DEM", "IND", "REP")) %>%
+  left_join(senate_poll_candidates, by = c("state", "seat_name", "DEM", "REP")) %>%
   filter(!is.na(question_id)) %>%
   pull(question_id)
 

@@ -380,8 +380,8 @@ senate_conditional_probs %>%
        subtitle = paste0(month(today(), label = TRUE, abbr = FALSE), " ", day(today()), ", ", year(today())))
   
 # Ant farm
-senate_comp_states <- c("Alabama", "Arizona", "Colorado", "Georgia", "Iowa", "Kansas", "Maine", "Michigan", "Montana", "New Hampshire",
-                        "New Mexico", "North Carolina", "South Carolina", "Texas", "Virginia")
+senate_comp_states <- c("Alabama", "Alaska", "Arizona", "Colorado", "Georgia", "Iowa", "Kansas", "Maine", "Michigan",
+                        "Montana", "New Hampshire", "North Carolina", "South Carolina", "Texas", "Virginia")
 
 senate_forecast_probability_history %>%
   filter(state %in% senate_comp_states) %>%
@@ -389,7 +389,7 @@ senate_forecast_probability_history %>%
                            seat_name == "Class II" ~ state),
          election_date = ifelse(state == "Georgia (special)", as.Date("2021-01-05"), as.Date("2020-11-03"))) %>%
   ggplot(aes(x = date, y = prob, col = party)) +
-  facet_wrap(~state) +
+  facet_wrap(~state, nrow = 4) +
   geom_vline(aes(xintercept = election_date)) +
   geom_line(data = senate_forecast_probability_history %>% filter(state == "National") %>% dplyr::select(date, party, natl_prob = prob),
             aes(y = natl_prob), alpha = 1/5, size = 1) +

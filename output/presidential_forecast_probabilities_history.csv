@@ -8891,3 +8891,459 @@ date,state,candidate,prob
 2020-07-05,Wisconsin,trump,0.15908
 2020-07-05,Wyoming,biden,0
 2020-07-05,Wyoming,trump,1
+2020-07-06,Alabama,biden,5.7e-4
+2020-07-06,Alabama,trump,0.99943
+2020-07-06,Alaska,biden,0.11587
+2020-07-06,Alaska,trump,0.88413
+2020-07-06,Arizona,biden,0.66794
+2020-07-06,Arizona,trump,0.33206
+2020-07-06,Arkansas,biden,0.00518
+2020-07-06,Arkansas,trump,0.99482
+2020-07-06,California,biden,1
+2020-07-06,California,trump,0
+2020-07-06,Colorado,biden,0.98576
+2020-07-06,Colorado,trump,0.01424
+2020-07-06,Connecticut,biden,0.9998
+2020-07-06,Connecticut,trump,2e-4
+2020-07-06,Delaware,biden,0.99899
+2020-07-06,Delaware,trump,0.00101
+2020-07-06,District of Columbia,biden,1
+2020-07-06,District of Columbia,trump,0
+2020-07-06,Florida,biden,0.78805
+2020-07-06,Florida,trump,0.21195
+2020-07-06,Georgia,biden,0.54644
+2020-07-06,Georgia,trump,0.45356
+2020-07-06,Hawaii,biden,1
+2020-07-06,Hawaii,trump,0
+2020-07-06,Idaho,biden,2.5e-4
+2020-07-06,Idaho,trump,0.99975
+2020-07-06,Illinois,biden,0.99822
+2020-07-06,Illinois,trump,0.00178
+2020-07-06,Indiana,biden,0.01805
+2020-07-06,Indiana,trump,0.98195
+2020-07-06,Iowa,biden,0.33355
+2020-07-06,Iowa,trump,0.66645
+2020-07-06,Kansas,biden,0.01276
+2020-07-06,Kansas,trump,0.98724
+2020-07-06,Kentucky,biden,5e-5
+2020-07-06,Kentucky,trump,0.99995
+2020-07-06,Louisiana,biden,0.05345
+2020-07-06,Louisiana,trump,0.94655
+2020-07-06,Maine,biden,0.95375
+2020-07-06,Maine,trump,0.04625
+2020-07-06,Maine's 1st congressional district,biden,0.99986
+2020-07-06,Maine's 1st congressional district,trump,1.4e-4
+2020-07-06,Maine's 2nd congressional district,biden,0.39804
+2020-07-06,Maine's 2nd congressional district,trump,0.60196
+2020-07-06,Maryland,biden,1
+2020-07-06,Maryland,trump,0
+2020-07-06,Massachusetts,biden,1
+2020-07-06,Massachusetts,trump,0
+2020-07-06,Michigan,biden,0.87697
+2020-07-06,Michigan,trump,0.12303
+2020-07-06,Minnesota,biden,0.92874
+2020-07-06,Minnesota,trump,0.07126
+2020-07-06,Mississippi,biden,0.0338
+2020-07-06,Mississippi,trump,0.9662
+2020-07-06,Missouri,biden,0.03815
+2020-07-06,Missouri,trump,0.96185
+2020-07-06,Montana,biden,0.00423
+2020-07-06,Montana,trump,0.99577
+2020-07-06,National,biden,0.91113
+2020-07-06,National,trump,0.08887
+2020-07-06,Nebraska,biden,0.00813
+2020-07-06,Nebraska,trump,0.99187
+2020-07-06,Nebraska's 1st congressional district,biden,0.03032
+2020-07-06,Nebraska's 1st congressional district,trump,0.96968
+2020-07-06,Nebraska's 2nd congressional district,biden,0.87762
+2020-07-06,Nebraska's 2nd congressional district,trump,0.12238
+2020-07-06,Nebraska's 3rd congressional district,biden,0
+2020-07-06,Nebraska's 3rd congressional district,trump,1
+2020-07-06,Nevada,biden,0.93641
+2020-07-06,Nevada,trump,0.06359
+2020-07-06,New Hampshire,biden,0.86433
+2020-07-06,New Hampshire,trump,0.13567
+2020-07-06,New Jersey,biden,0.99977
+2020-07-06,New Jersey,trump,2.3e-4
+2020-07-06,New Mexico,biden,0.9934
+2020-07-06,New Mexico,trump,0.0066
+2020-07-06,New York,biden,1
+2020-07-06,New York,trump,0
+2020-07-06,North Carolina,biden,0.70172
+2020-07-06,North Carolina,trump,0.29828
+2020-07-06,North Dakota,biden,1e-5
+2020-07-06,North Dakota,trump,0.99999
+2020-07-06,Ohio,biden,0.35656
+2020-07-06,Ohio,trump,0.64344
+2020-07-06,Oklahoma,biden,0
+2020-07-06,Oklahoma,trump,1
+2020-07-06,Oregon,biden,0.98722
+2020-07-06,Oregon,trump,0.01278
+2020-07-06,Pennsylvania,biden,0.83539
+2020-07-06,Pennsylvania,trump,0.16461
+2020-07-06,Rhode Island,biden,0.99663
+2020-07-06,Rhode Island,trump,0.00337
+2020-07-06,South Carolina,biden,0.10808
+2020-07-06,South Carolina,trump,0.89192
+2020-07-06,South Dakota,biden,0.0013
+2020-07-06,South Dakota,trump,0.9987
+2020-07-06,Tennessee,biden,0.00121
+2020-07-06,Tennessee,trump,0.99879
+2020-07-06,Texas,biden,0.32468
+2020-07-06,Texas,trump,0.67532
+2020-07-06,Utah,biden,0.01191
+2020-07-06,Utah,trump,0.98809
+2020-07-06,Vermont,biden,0.99998
+2020-07-06,Vermont,trump,2e-5
+2020-07-06,Virginia,biden,0.98706
+2020-07-06,Virginia,trump,0.01294
+2020-07-06,Washington,biden,0.99996
+2020-07-06,Washington,trump,4e-5
+2020-07-06,West Virginia,biden,0
+2020-07-06,West Virginia,trump,1
+2020-07-06,Wisconsin,biden,0.84185
+2020-07-06,Wisconsin,trump,0.15815
+2020-07-06,Wyoming,biden,0
+2020-07-06,Wyoming,trump,1
+2020-07-07,Alabama,biden,5.8e-4
+2020-07-07,Alabama,trump,0.99942
+2020-07-07,Alaska,biden,0.11648
+2020-07-07,Alaska,trump,0.88352
+2020-07-07,Arizona,biden,0.66916
+2020-07-07,Arizona,trump,0.33084
+2020-07-07,Arkansas,biden,0.00521
+2020-07-07,Arkansas,trump,0.99479
+2020-07-07,California,biden,1
+2020-07-07,California,trump,0
+2020-07-07,Colorado,biden,0.98596
+2020-07-07,Colorado,trump,0.01404
+2020-07-07,Connecticut,biden,0.9998
+2020-07-07,Connecticut,trump,2e-4
+2020-07-07,Delaware,biden,0.999
+2020-07-07,Delaware,trump,0.001
+2020-07-07,District of Columbia,biden,1
+2020-07-07,District of Columbia,trump,0
+2020-07-07,Florida,biden,0.7907
+2020-07-07,Florida,trump,0.2093
+2020-07-07,Georgia,biden,0.54788
+2020-07-07,Georgia,trump,0.45212
+2020-07-07,Hawaii,biden,1
+2020-07-07,Hawaii,trump,0
+2020-07-07,Idaho,biden,2.5e-4
+2020-07-07,Idaho,trump,0.99975
+2020-07-07,Illinois,biden,0.99823
+2020-07-07,Illinois,trump,0.00177
+2020-07-07,Indiana,biden,0.01822
+2020-07-07,Indiana,trump,0.98178
+2020-07-07,Iowa,biden,0.33434
+2020-07-07,Iowa,trump,0.66566
+2020-07-07,Kansas,biden,0.01289
+2020-07-07,Kansas,trump,0.98711
+2020-07-07,Kentucky,biden,5e-5
+2020-07-07,Kentucky,trump,0.99995
+2020-07-07,Louisiana,biden,0.0537
+2020-07-07,Louisiana,trump,0.9463
+2020-07-07,Maine,biden,0.95371
+2020-07-07,Maine,trump,0.04629
+2020-07-07,Maine's 1st congressional district,biden,0.99986
+2020-07-07,Maine's 1st congressional district,trump,1.4e-4
+2020-07-07,Maine's 2nd congressional district,biden,0.39808
+2020-07-07,Maine's 2nd congressional district,trump,0.60192
+2020-07-07,Maryland,biden,1
+2020-07-07,Maryland,trump,0
+2020-07-07,Massachusetts,biden,1
+2020-07-07,Massachusetts,trump,0
+2020-07-07,Michigan,biden,0.87921
+2020-07-07,Michigan,trump,0.12079
+2020-07-07,Minnesota,biden,0.92841
+2020-07-07,Minnesota,trump,0.07159
+2020-07-07,Mississippi,biden,0.03408
+2020-07-07,Mississippi,trump,0.96592
+2020-07-07,Missouri,biden,0.03828
+2020-07-07,Missouri,trump,0.96172
+2020-07-07,Montana,biden,0.00431
+2020-07-07,Montana,trump,0.99569
+2020-07-07,National,biden,0.9122
+2020-07-07,National,trump,0.0878
+2020-07-07,Nebraska,biden,0.00816
+2020-07-07,Nebraska,trump,0.99184
+2020-07-07,Nebraska's 1st congressional district,biden,0.03051
+2020-07-07,Nebraska's 1st congressional district,trump,0.96949
+2020-07-07,Nebraska's 2nd congressional district,biden,0.87794
+2020-07-07,Nebraska's 2nd congressional district,trump,0.12206
+2020-07-07,Nebraska's 3rd congressional district,biden,0
+2020-07-07,Nebraska's 3rd congressional district,trump,1
+2020-07-07,Nevada,biden,0.93675
+2020-07-07,Nevada,trump,0.06325
+2020-07-07,New Hampshire,biden,0.86495
+2020-07-07,New Hampshire,trump,0.13505
+2020-07-07,New Jersey,biden,0.99977
+2020-07-07,New Jersey,trump,2.3e-4
+2020-07-07,New Mexico,biden,0.9934
+2020-07-07,New Mexico,trump,0.0066
+2020-07-07,New York,biden,1
+2020-07-07,New York,trump,0
+2020-07-07,North Carolina,biden,0.7017
+2020-07-07,North Carolina,trump,0.2983
+2020-07-07,North Dakota,biden,1e-5
+2020-07-07,North Dakota,trump,0.99999
+2020-07-07,Ohio,biden,0.35836
+2020-07-07,Ohio,trump,0.64164
+2020-07-07,Oklahoma,biden,0
+2020-07-07,Oklahoma,trump,1
+2020-07-07,Oregon,biden,0.98725
+2020-07-07,Oregon,trump,0.01275
+2020-07-07,Pennsylvania,biden,0.83628
+2020-07-07,Pennsylvania,trump,0.16372
+2020-07-07,Rhode Island,biden,0.99664
+2020-07-07,Rhode Island,trump,0.00336
+2020-07-07,South Carolina,biden,0.10873
+2020-07-07,South Carolina,trump,0.89127
+2020-07-07,South Dakota,biden,0.0013
+2020-07-07,South Dakota,trump,0.9987
+2020-07-07,Tennessee,biden,0.00123
+2020-07-07,Tennessee,trump,0.99877
+2020-07-07,Texas,biden,0.32573
+2020-07-07,Texas,trump,0.67427
+2020-07-07,Utah,biden,0.01203
+2020-07-07,Utah,trump,0.98797
+2020-07-07,Vermont,biden,0.99998
+2020-07-07,Vermont,trump,2e-5
+2020-07-07,Virginia,biden,0.98711
+2020-07-07,Virginia,trump,0.01289
+2020-07-07,Washington,biden,0.99996
+2020-07-07,Washington,trump,4e-5
+2020-07-07,West Virginia,biden,0
+2020-07-07,West Virginia,trump,1
+2020-07-07,Wisconsin,biden,0.84278
+2020-07-07,Wisconsin,trump,0.15722
+2020-07-07,Wyoming,biden,0
+2020-07-07,Wyoming,trump,1
+2020-07-08,Alabama,biden,5.3e-4
+2020-07-08,Alabama,trump,0.99947
+2020-07-08,Alaska,biden,0.11369
+2020-07-08,Alaska,trump,0.88631
+2020-07-08,Arizona,biden,0.66984
+2020-07-08,Arizona,trump,0.33016
+2020-07-08,Arkansas,biden,0.00473
+2020-07-08,Arkansas,trump,0.99527
+2020-07-08,California,biden,1
+2020-07-08,California,trump,0
+2020-07-08,Colorado,biden,0.98684
+2020-07-08,Colorado,trump,0.01316
+2020-07-08,Connecticut,biden,0.99983
+2020-07-08,Connecticut,trump,1.7e-4
+2020-07-08,Delaware,biden,0.99913
+2020-07-08,Delaware,trump,8.7e-4
+2020-07-08,District of Columbia,biden,1
+2020-07-08,District of Columbia,trump,0
+2020-07-08,Florida,biden,0.79318
+2020-07-08,Florida,trump,0.20682
+2020-07-08,Georgia,biden,0.54813
+2020-07-08,Georgia,trump,0.45187
+2020-07-08,Hawaii,biden,1
+2020-07-08,Hawaii,trump,0
+2020-07-08,Idaho,biden,2.2e-4
+2020-07-08,Idaho,trump,0.99978
+2020-07-08,Illinois,biden,0.99828
+2020-07-08,Illinois,trump,0.00172
+2020-07-08,Indiana,biden,0.01723
+2020-07-08,Indiana,trump,0.98277
+2020-07-08,Iowa,biden,0.33247
+2020-07-08,Iowa,trump,0.66753
+2020-07-08,Kansas,biden,0.01165
+2020-07-08,Kansas,trump,0.98835
+2020-07-08,Kentucky,biden,4e-5
+2020-07-08,Kentucky,trump,0.99996
+2020-07-08,Louisiana,biden,0.0516
+2020-07-08,Louisiana,trump,0.9484
+2020-07-08,Maine,biden,0.95537
+2020-07-08,Maine,trump,0.04463
+2020-07-08,Maine's 1st congressional district,biden,0.99986
+2020-07-08,Maine's 1st congressional district,trump,1.4e-4
+2020-07-08,Maine's 2nd congressional district,biden,0.39855
+2020-07-08,Maine's 2nd congressional district,trump,0.60145
+2020-07-08,Maryland,biden,1
+2020-07-08,Maryland,trump,0
+2020-07-08,Massachusetts,biden,1
+2020-07-08,Massachusetts,trump,0
+2020-07-08,Michigan,biden,0.88133
+2020-07-08,Michigan,trump,0.11867
+2020-07-08,Minnesota,biden,0.92961
+2020-07-08,Minnesota,trump,0.07039
+2020-07-08,Mississippi,biden,0.03235
+2020-07-08,Mississippi,trump,0.96765
+2020-07-08,Missouri,biden,0.0375
+2020-07-08,Missouri,trump,0.9625
+2020-07-08,Montana,biden,0.00394
+2020-07-08,Montana,trump,0.99606
+2020-07-08,National,biden,0.91506
+2020-07-08,National,trump,0.08494
+2020-07-08,Nebraska,biden,0.00751
+2020-07-08,Nebraska,trump,0.99249
+2020-07-08,Nebraska's 1st congressional district,biden,0.02917
+2020-07-08,Nebraska's 1st congressional district,trump,0.97083
+2020-07-08,Nebraska's 2nd congressional district,biden,0.88488
+2020-07-08,Nebraska's 2nd congressional district,trump,0.11512
+2020-07-08,Nebraska's 3rd congressional district,biden,0
+2020-07-08,Nebraska's 3rd congressional district,trump,1
+2020-07-08,Nevada,biden,0.93757
+2020-07-08,Nevada,trump,0.06243
+2020-07-08,New Hampshire,biden,0.86726
+2020-07-08,New Hampshire,trump,0.13274
+2020-07-08,New Jersey,biden,0.99978
+2020-07-08,New Jersey,trump,2.2e-4
+2020-07-08,New Mexico,biden,0.99381
+2020-07-08,New Mexico,trump,0.00619
+2020-07-08,New York,biden,1
+2020-07-08,New York,trump,0
+2020-07-08,North Carolina,biden,0.70082
+2020-07-08,North Carolina,trump,0.29918
+2020-07-08,North Dakota,biden,0
+2020-07-08,North Dakota,trump,1
+2020-07-08,Ohio,biden,0.3588
+2020-07-08,Ohio,trump,0.6412
+2020-07-08,Oklahoma,biden,0
+2020-07-08,Oklahoma,trump,1
+2020-07-08,Oregon,biden,0.98787
+2020-07-08,Oregon,trump,0.01213
+2020-07-08,Pennsylvania,biden,0.83741
+2020-07-08,Pennsylvania,trump,0.16259
+2020-07-08,Rhode Island,biden,0.9968
+2020-07-08,Rhode Island,trump,0.0032
+2020-07-08,South Carolina,biden,0.09858
+2020-07-08,South Carolina,trump,0.90142
+2020-07-08,South Dakota,biden,0.00121
+2020-07-08,South Dakota,trump,0.99879
+2020-07-08,Tennessee,biden,0.00115
+2020-07-08,Tennessee,trump,0.99885
+2020-07-08,Texas,biden,0.32328
+2020-07-08,Texas,trump,0.67672
+2020-07-08,Utah,biden,0.01169
+2020-07-08,Utah,trump,0.98831
+2020-07-08,Vermont,biden,0.99998
+2020-07-08,Vermont,trump,2e-5
+2020-07-08,Virginia,biden,0.98829
+2020-07-08,Virginia,trump,0.01171
+2020-07-08,Washington,biden,0.99996
+2020-07-08,Washington,trump,4e-5
+2020-07-08,West Virginia,biden,0
+2020-07-08,West Virginia,trump,1
+2020-07-08,Wisconsin,biden,0.84388
+2020-07-08,Wisconsin,trump,0.15612
+2020-07-08,Wyoming,biden,0
+2020-07-08,Wyoming,trump,1
+2020-07-09,Alabama,biden,5.4e-4
+2020-07-09,Alabama,trump,0.99946
+2020-07-09,Alaska,biden,0.08672
+2020-07-09,Alaska,trump,0.91328
+2020-07-09,Arizona,biden,0.66421
+2020-07-09,Arizona,trump,0.33579
+2020-07-09,Arkansas,biden,0.00484
+2020-07-09,Arkansas,trump,0.99516
+2020-07-09,California,biden,1
+2020-07-09,California,trump,0
+2020-07-09,Colorado,biden,0.98602
+2020-07-09,Colorado,trump,0.01398
+2020-07-09,Connecticut,biden,0.99981
+2020-07-09,Connecticut,trump,1.9e-4
+2020-07-09,Delaware,biden,0.99898
+2020-07-09,Delaware,trump,0.00102
+2020-07-09,District of Columbia,biden,1
+2020-07-09,District of Columbia,trump,0
+2020-07-09,Florida,biden,0.78917
+2020-07-09,Florida,trump,0.21083
+2020-07-09,Georgia,biden,0.53378
+2020-07-09,Georgia,trump,0.46622
+2020-07-09,Hawaii,biden,1
+2020-07-09,Hawaii,trump,0
+2020-07-09,Idaho,biden,2.3e-4
+2020-07-09,Idaho,trump,0.99977
+2020-07-09,Illinois,biden,0.99809
+2020-07-09,Illinois,trump,0.00191
+2020-07-09,Indiana,biden,0.0174
+2020-07-09,Indiana,trump,0.9826
+2020-07-09,Iowa,biden,0.33062
+2020-07-09,Iowa,trump,0.66938
+2020-07-09,Kansas,biden,0.01176
+2020-07-09,Kansas,trump,0.98824
+2020-07-09,Kentucky,biden,4e-5
+2020-07-09,Kentucky,trump,0.99996
+2020-07-09,Louisiana,biden,0.05141
+2020-07-09,Louisiana,trump,0.94859
+2020-07-09,Maine,biden,0.95269
+2020-07-09,Maine,trump,0.04731
+2020-07-09,Maine's 1st congressional district,biden,0.99986
+2020-07-09,Maine's 1st congressional district,trump,1.4e-4
+2020-07-09,Maine's 2nd congressional district,biden,0.39554
+2020-07-09,Maine's 2nd congressional district,trump,0.60446
+2020-07-09,Maryland,biden,1
+2020-07-09,Maryland,trump,0
+2020-07-09,Massachusetts,biden,1
+2020-07-09,Massachusetts,trump,0
+2020-07-09,Michigan,biden,0.8795
+2020-07-09,Michigan,trump,0.1205
+2020-07-09,Minnesota,biden,0.92632
+2020-07-09,Minnesota,trump,0.07368
+2020-07-09,Mississippi,biden,0.03245
+2020-07-09,Mississippi,trump,0.96755
+2020-07-09,Missouri,biden,0.03741
+2020-07-09,Missouri,trump,0.96259
+2020-07-09,Montana,biden,0.00371
+2020-07-09,Montana,trump,0.99629
+2020-07-09,National,biden,0.90996
+2020-07-09,National,trump,0.09004
+2020-07-09,Nebraska,biden,0.00753
+2020-07-09,Nebraska,trump,0.99247
+2020-07-09,Nebraska's 1st congressional district,biden,0.02915
+2020-07-09,Nebraska's 1st congressional district,trump,0.97085
+2020-07-09,Nebraska's 2nd congressional district,biden,0.88099
+2020-07-09,Nebraska's 2nd congressional district,trump,0.11901
+2020-07-09,Nebraska's 3rd congressional district,biden,0
+2020-07-09,Nebraska's 3rd congressional district,trump,1
+2020-07-09,Nevada,biden,0.93494
+2020-07-09,Nevada,trump,0.06506
+2020-07-09,New Hampshire,biden,0.86351
+2020-07-09,New Hampshire,trump,0.13649
+2020-07-09,New Jersey,biden,0.99978
+2020-07-09,New Jersey,trump,2.2e-4
+2020-07-09,New Mexico,biden,0.99328
+2020-07-09,New Mexico,trump,0.00672
+2020-07-09,New York,biden,1
+2020-07-09,New York,trump,0
+2020-07-09,North Carolina,biden,0.69292
+2020-07-09,North Carolina,trump,0.30708
+2020-07-09,North Dakota,biden,1e-5
+2020-07-09,North Dakota,trump,0.99999
+2020-07-09,Ohio,biden,0.35585
+2020-07-09,Ohio,trump,0.64415
+2020-07-09,Oklahoma,biden,0
+2020-07-09,Oklahoma,trump,1
+2020-07-09,Oregon,biden,0.98686
+2020-07-09,Oregon,trump,0.01314
+2020-07-09,Pennsylvania,biden,0.83326
+2020-07-09,Pennsylvania,trump,0.16674
+2020-07-09,Rhode Island,biden,0.99648
+2020-07-09,Rhode Island,trump,0.00352
+2020-07-09,South Carolina,biden,0.09779
+2020-07-09,South Carolina,trump,0.90221
+2020-07-09,South Dakota,biden,0.00122
+2020-07-09,South Dakota,trump,0.99878
+2020-07-09,Tennessee,biden,0.00115
+2020-07-09,Tennessee,trump,0.99885
+2020-07-09,Texas,biden,0.31248
+2020-07-09,Texas,trump,0.68752
+2020-07-09,Utah,biden,0.0118
+2020-07-09,Utah,trump,0.9882
+2020-07-09,Vermont,biden,0.99998
+2020-07-09,Vermont,trump,2e-5
+2020-07-09,Virginia,biden,0.98729
+2020-07-09,Virginia,trump,0.01271
+2020-07-09,Washington,biden,0.99996
+2020-07-09,Washington,trump,4e-5
+2020-07-09,West Virginia,biden,0
+2020-07-09,West Virginia,trump,1
+2020-07-09,Wisconsin,biden,0.84024
+2020-07-09,Wisconsin,trump,0.15976
+2020-07-09,Wyoming,biden,0
+2020-07-09,Wyoming,trump,1

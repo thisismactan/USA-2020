@@ -13,8 +13,7 @@ Alabama,6,Alabama's 6th,AL-06,REP,3,DEM,None,
 Alabama,6,Alabama's 6th,AL-06,REP,3,REP,Gary,Palmer
 Alabama,7,Alabama's 7th,AL-07,DEM,5,DEM,Terri,Sewell
 Alabama,7,Alabama's 7th,AL-07,DEM,5,REP,,
-Alaska,1,Alaska's at-large,AK-AL,REP,24,DEM,,
-Alaska,1,Alaska's at-large,AK-AL,REP,24,IND,Alyse,Galvin
+Alaska,1,Alaska's at-large,AK-AL,REP,24,DEM,Alyse,Galvin
 Alaska,1,Alaska's at-large,AK-AL,REP,24,REP,Don,Young
 Arizona,1,Arizona's 1st,AZ-01,DEM,2,DEM,Tom,O'Halleran
 Arizona,1,Arizona's 1st,AZ-01,DEM,2,REP,,
@@ -152,8 +151,8 @@ Colorado,1,Colorado's 1st,CO-01,DEM,12,DEM,Diana,DeGette
 Colorado,1,Colorado's 1st,CO-01,DEM,12,REP,Shane,Bolling
 Colorado,2,Colorado's 2nd,CO-02,DEM,1,DEM,Joe,Neguse
 Colorado,2,Colorado's 2nd,CO-02,DEM,1,REP,Charlie,Winn
-Colorado,3,Colorado's 3rd,CO-03,REP,5,DEM,,
-Colorado,3,Colorado's 3rd,CO-03,REP,5,REP,Scott,Tipton
+Colorado,3,Colorado's 3rd,CO-03,None,5,DEM,Diane,Mitsch Bush
+Colorado,3,Colorado's 3rd,CO-03,None,5,REP,Lauren,Boebert
 Colorado,4,Colorado's 4th,CO-04,REP,3,DEM,Ike,McCorkle
 Colorado,4,Colorado's 4th,CO-04,REP,3,REP,Ken,Buck
 Colorado,5,Colorado's 5th,CO-05,REP,7,DEM,Jillian,Freeland
@@ -339,7 +338,7 @@ Kentucky,1,Kentucky's 1st,KY-01,REP,2,REP,James,Comer
 Kentucky,2,Kentucky's 2nd,KY-02,REP,6,DEM,Hank,Linderman
 Kentucky,2,Kentucky's 2nd,KY-02,REP,6,REP,Brett,Guthrie
 Kentucky,3,Kentucky's 3rd,KY-03,DEM,7,DEM,John,Yarmuth
-Kentucky,3,Kentucky's 3rd,KY-03,DEM,7,REP,,
+Kentucky,3,Kentucky's 3rd,KY-03,DEM,7,REP,Rhonda,Palazzo
 Kentucky,4,Kentucky's 4th,KY-04,REP,4,DEM,Alexandra,Owensby
 Kentucky,4,Kentucky's 4th,KY-04,REP,4,REP,Thomas,Massie
 Kentucky,5,Kentucky's 5th,KY-05,REP,20,DEM,Matthew,Best
@@ -547,7 +546,7 @@ New York,15,New York's 15th,NY-15,None,15,DEM,Ritchie,Torres
 New York,15,New York's 15th,NY-15,None,15,REP,Orlando,Molina
 New York,16,New York's 16th,NY-16,None,16,DEM,Jamaal,Bowman
 New York,16,New York's 16th,NY-16,None,16,REP,None,
-New York,17,New York's 17th,NY-17,None,16,DEM,Nita,Lowey
+New York,17,New York's 17th,NY-17,None,16,DEM,Mondaire,Jones
 New York,17,New York's 17th,NY-17,None,16,REP,Maureen,McArdle-Schulman
 New York,18,New York's 18th,NY-18,DEM,4,DEM,Sean Patrick,Maloney
 New York,18,New York's 18th,NY-18,DEM,4,REP,Chele,Farley
