@@ -130,9 +130,12 @@ georgia_runoff_polls <- senate_polls_all %>%
   filter(n_cands == 2)
 
 georgia_question_matchups <- georgia_runoff_polls %>%
-  dplyr::select(question_id, candidate_party, candidate) %>%
-  spread(candidate_party, candidate) %>%
-  mutate(matchup = paste(DEM, "vs.", REP)) %>%
+  dplyr::select(question_id, candidate) %>%
+  group_by(question_id) %>%
+  mutate(candidate_num = 1:2) %>%
+  ungroup() %>%
+  spread(candidate_num, candidate) %>%
+  mutate(matchup = paste(`1`, "vs.", `2`)) %>%
   dplyr::select(question_id, matchup)
 
 georgia_runoff_polls <- georgia_runoff_polls %>%

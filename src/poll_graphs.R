@@ -1,7 +1,7 @@
 source("src/poll_averages.R")
 
 # President ####
-graph_states <- c("Wisconsin")
+graph_states <- c("Texas")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
