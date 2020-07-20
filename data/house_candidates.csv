@@ -1,8 +1,8 @@
 ﻿state,seat_number,district_name,district_abbr,incumbent_running,incumbent_elections_won,candidate_party,candidate_firstname,candidate_lastname
-Alabama,1,Alabama's 1st,AL-01,None,4,DEM,,
-Alabama,1,Alabama's 1st,AL-01,None,4,REP,,
+Alabama,1,Alabama's 1st,AL-01,None,4,DEM,James,Averhart
+Alabama,1,Alabama's 1st,AL-01,None,4,REP,Jerry,Carl
 Alabama,2,Alabama's 2nd,AL-02,None,5,DEM,Phyllis,Harvey-Hall
-Alabama,2,Alabama's 2nd,AL-02,None,5,REP,,
+Alabama,2,Alabama's 2nd,AL-02,None,5,REP,Barry,Moore
 Alabama,3,Alabama's 3rd,AL-03,REP,9,DEM,Adia,Winfrey
 Alabama,3,Alabama's 3rd,AL-03,REP,9,REP,Mike,Rogers
 Alabama,4,Alabama's 4th,AL-04,REP,12,DEM,Rick,Neighbors
@@ -12,7 +12,7 @@ Alabama,5,Alabama's 5th,AL-05,REP,5,REP,Mo,Brooks
 Alabama,6,Alabama's 6th,AL-06,REP,3,DEM,None,
 Alabama,6,Alabama's 6th,AL-06,REP,3,REP,Gary,Palmer
 Alabama,7,Alabama's 7th,AL-07,DEM,5,DEM,Terri,Sewell
-Alabama,7,Alabama's 7th,AL-07,DEM,5,REP,,
+Alabama,7,Alabama's 7th,AL-07,DEM,5,REP,None,
 Alaska,1,Alaska's at-large,AK-AL,REP,24,DEM,Alyse,Galvin
 Alaska,1,Alaska's at-large,AK-AL,REP,24,REP,Don,Young
 Arizona,1,Arizona's 1st,AZ-01,DEM,2,DEM,Tom,O'Halleran
@@ -170,7 +170,7 @@ Connecticut,3,Connecticut's 3rd,CT-03,DEM,15,REP,Margaret,Streicker
 Connecticut,4,Connecticut's 4th,CT-04,DEM,6,DEM,Jim,Himes
 Connecticut,4,Connecticut's 4th,CT-04,DEM,6,REP,T. J.,Elgin
 Connecticut,5,Connecticut's 5th,CT-05,DEM,1,DEM,Jahana,Hayes
-Connecticut,5,Connecticut's 5th,CT-05,DEM,1,REP,,
+Connecticut,5,Connecticut's 5th,CT-05,DEM,1,REP,David,Sullivan
 Delaware,1,Delaware's at-large,DE-AL,DEM,2,DEM,Lisa,Blunt Rochester
 Delaware,1,Delaware's at-large,DE-AL,DEM,2,REP,,
 Florida,1,Florida's 1st,FL-01,REP,2,DEM,Phil,Ehr
@@ -235,8 +235,8 @@ Georgia,3,Georgia's 3rd,GA-03,REP,2,DEM,Val,Almonord
 Georgia,3,Georgia's 3rd,GA-03,REP,2,REP,Drew,Ferguson
 Georgia,4,Georgia's 4th,GA-04,DEM,7,DEM,Hank,Johnson
 Georgia,4,Georgia's 4th,GA-04,DEM,7,REP,Johsie,Cruz
-Georgia,5,Georgia's 5th,GA-05,DEM,17,DEM,John,Lewis
-Georgia,5,Georgia's 5th,GA-05,DEM,17,REP,Angela,Stanton-King
+Georgia,5,Georgia's 5th,GA-05,None,17,DEM,Nikema,Williams
+Georgia,5,Georgia's 5th,GA-05,None,17,REP,Angela,Stanton-King
 Georgia,6,Georgia's 6th,GA-06,DEM,1,DEM,Lucy,McBath
 Georgia,6,Georgia's 6th,GA-06,DEM,1,REP,Karen,Handel
 Georgia,7,Georgia's 7th,GA-07,None,5,DEM,Carolyn,Bourdeaux
@@ -247,7 +247,7 @@ Georgia,9,Georgia's 9th,GA-09,None,4,DEM,,
 Georgia,9,Georgia's 9th,GA-09,None,4,REP,,
 Georgia,10,Georgia's 10th,GA-10,REP,3,DEM,Tabitha,Johnson-Green
 Georgia,10,Georgia's 10th,GA-10,REP,3,REP,Jody,Hice
-Georgia,11,Georgia's 11th,GA-11,REP,3,DEM,,
+Georgia,11,Georgia's 11th,GA-11,REP,3,DEM,Dana,Barrett
 Georgia,11,Georgia's 11th,GA-11,REP,3,REP,Barry,Loudermilk
 Georgia,12,Georgia's 12th,GA-12,REP,3,DEM,Liz,Johnson
 Georgia,12,Georgia's 12th,GA-12,REP,3,REP,Rick,Allen
@@ -259,7 +259,7 @@ Hawaii,1,Hawaii's 1st,HI-01,DEM,1,DEM,Ed,Case
 Hawaii,1,Hawaii's 1st,HI-01,DEM,1,REP,,
 Hawaii,2,Hawaii's 2nd,HI-02,None,4,DEM,,
 Hawaii,2,Hawaii's 2nd,HI-02,None,4,REP,,
-Idaho,1,Idaho's 1st,ID-01,REP,1,DEM,,
+Idaho,1,Idaho's 1st,ID-01,REP,1,DEM,Rudy,Soto
 Idaho,1,Idaho's 1st,ID-01,REP,1,REP,Russ,Fulcher
 Idaho,2,Idaho's 2nd,ID-02,REP,11,DEM,Aaron,Swisher
 Idaho,2,Idaho's 2nd,ID-02,REP,11,REP,Mike,Simpson
@@ -297,13 +297,13 @@ Illinois,16,Illinois's 16th,IL-16,REP,5,DEM,Daniel,Brzozowski
 Illinois,16,Illinois's 16th,IL-16,REP,5,REP,Adam,Kinzinger
 Illinois,17,Illinois's 17th,IL-17,DEM,4,DEM,Cheri,Bustos
 Illinois,17,Illinois's 17th,IL-17,DEM,4,REP,Esther Joy,King
-Illinois,18,Illinois's 18th,IL-18,REP,3,DEM,None,
+Illinois,18,Illinois's 18th,IL-18,REP,3,DEM,George,Petrilli
 Illinois,18,Illinois's 18th,IL-18,REP,3,REP,Darin,LaHood
 Indiana,1,Indiana's 1st,IN-01,None,18,DEM,Frank,Mrvan
 Indiana,1,Indiana's 1st,IN-01,None,18,REP,Mark,Leyva
 Indiana,2,Indiana's 2nd,IN-02,REP,4,DEM,Pat,Hackett
 Indiana,2,Indiana's 2nd,IN-02,REP,4,REP,Jackie,Walorski
-Indiana,3,Indiana's 3rd,IN-03,REP,2,DEM,,
+Indiana,3,Indiana's 3rd,IN-03,REP,2,DEM,Chip,Coldiron
 Indiana,3,Indiana's 3rd,IN-03,REP,2,REP,Jim,Banks
 Indiana,4,Indiana's 4th,IN-04,REP,1,DEM,Joe,Mackey
 Indiana,4,Indiana's 4th,IN-04,REP,1,REP,Jim,Baird
@@ -323,8 +323,8 @@ Iowa,2,Iowa's 2nd,IA-02,None,7,DEM,Rita,Hart
 Iowa,2,Iowa's 2nd,IA-02,None,7,REP,Mariannette,Miller-Meeks
 Iowa,3,Iowa's 3rd,IA-03,DEM,1,DEM,Cindy,Axne
 Iowa,3,Iowa's 3rd,IA-03,DEM,1,REP,David,Young
-Iowa,4,Iowa's 4th,IA-04,REP,9,DEM,J. D.,Scholten
-Iowa,4,Iowa's 4th,IA-04,REP,9,REP,Randy,Feenstra
+Iowa,4,Iowa's 4th,IA-04,None,9,DEM,J. D.,Scholten
+Iowa,4,Iowa's 4th,IA-04,None,9,REP,Randy,Feenstra
 Kansas,1,Kansas's 1st,KS-01,None,2,DEM,,
 Kansas,1,Kansas's 1st,KS-01,None,2,REP,,
 Kansas,2,Kansas's 2nd,KS-02,REP,1,DEM,Michelle,De La Isla
@@ -361,22 +361,22 @@ Maine,1,Maine's 1st,ME-01,DEM,6,DEM,Chellie,Pingree
 Maine,1,Maine's 1st,ME-01,DEM,6,REP,Jay,Allen
 Maine,2,Maine's 2nd,ME-02,DEM,1,DEM,Jared,Golden
 Maine,2,Maine's 2nd,ME-02,DEM,1,REP,,
-Maryland,1,Maryland's 1st,MD-01,REP,5,DEM,,
+Maryland,1,Maryland's 1st,MD-01,REP,5,DEM,Mia,Mason
 Maryland,1,Maryland's 1st,MD-01,REP,5,REP,Andy,Harris
 Maryland,2,Maryland's 2nd,MD-02,DEM,9,DEM,Dutch,Ruppersberger
-Maryland,2,Maryland's 2nd,MD-02,DEM,9,REP,,
+Maryland,2,Maryland's 2nd,MD-02,DEM,9,REP,Johnny Ray,Sailing
 Maryland,3,Maryland's 3rd,MD-03,DEM,7,DEM,John,Sarbanes
 Maryland,3,Maryland's 3rd,MD-03,DEM,7,REP,Charles,Anthony
 Maryland,4,Maryland's 4th,MD-04,DEM,2,DEM,Anthony,Brown
 Maryland,4,Maryland's 4th,MD-04,DEM,2,REP,George,McDermott
 Maryland,5,Maryland's 5th,MD-05,DEM,20,DEM,Steny,Hoyer
-Maryland,5,Maryland's 5th,MD-05,DEM,20,REP,,
+Maryland,5,Maryland's 5th,MD-05,DEM,20,REP,Chris,Palombi
 Maryland,6,Maryland's 6th,MD-06,DEM,1,DEM,David,Trone
 Maryland,6,Maryland's 6th,MD-06,DEM,1,REP,Neil,Parrott
 Maryland,7,Maryland's 7th,MD-07,DEM,1,DEM,Kweisi,Mfume
 Maryland,7,Maryland's 7th,MD-07,DEM,1,REP,Kimberly,Klacik
 Maryland,8,Maryland's 8th,MD-08,DEM,2,DEM,Jamie,Raskin
-Maryland,8,Maryland's 8th,MD-08,DEM,2,REP,,
+Maryland,8,Maryland's 8th,MD-08,DEM,2,REP,Gregory,Coll
 Massachusetts,1,Massachusetts's 1st,MA-01,DEM,16,DEM,Richard,Neal
 Massachusetts,1,Massachusetts's 1st,MA-01,DEM,16,REP,None,
 Massachusetts,2,Massachusetts's 2nd,MA-02,DEM,12,DEM,Jim,McGovern
@@ -427,7 +427,7 @@ Michigan,14,Michigan's 14th,MI-14,DEM,3,REP,,
 Minnesota,1,Minnesota's 1st,MN-01,REP,1,DEM,Dan,Feehan
 Minnesota,1,Minnesota's 1st,MN-01,REP,1,REP,Jim,Hagedorn
 Minnesota,2,Minnesota's 2nd,MN-02,DEM,1,DEM,Angie,Craig
-Minnesota,2,Minnesota's 2nd,MN-02,DEM,1,REP,,
+Minnesota,2,Minnesota's 2nd,MN-02,DEM,1,REP,Tyler,Kistner
 Minnesota,3,Minnesota's 3rd,MN-03,DEM,1,DEM,Dean,Phillips
 Minnesota,3,Minnesota's 3rd,MN-03,DEM,1,REP,Kendall,Qualls
 Minnesota,4,Minnesota's 4th,MN-04,DEM,10,DEM,Betty,McCollum
@@ -438,12 +438,12 @@ Minnesota,6,Minnesota's 6th,MN-06,REP,3,DEM,Ian,Todd
 Minnesota,6,Minnesota's 6th,MN-06,REP,3,REP,Tom,Emmer
 Minnesota,7,Minnesota's 7th,MN-07,DEM,15,DEM,Collin,Peterson
 Minnesota,7,Minnesota's 7th,MN-07,DEM,15,REP,,
-Minnesota,8,Minnesota's 8th,MN-08,REP,1,DEM,,
+Minnesota,8,Minnesota's 8th,MN-08,REP,1,DEM,Quinn,Nystrom
 Minnesota,8,Minnesota's 8th,MN-08,REP,1,REP,Pete,Stauber
 Mississippi,1,Mississippi's 1st,MS-01,REP,3,DEM,Antonia,Eliason
 Mississippi,1,Mississippi's 1st,MS-01,REP,3,REP,Trent,Kelly
 Mississippi,2,Mississippi's 2nd,MS-02,DEM,14,DEM,Bennie,Thompson
-Mississippi,2,Mississippi's 2nd,MS-02,DEM,14,REP,,
+Mississippi,2,Mississippi's 2nd,MS-02,DEM,14,REP,Brian,Flowers
 Mississippi,3,Mississippi's 3rd,MS-03,REP,1,DEM,Dot,Benford
 Mississippi,3,Mississippi's 3rd,MS-03,REP,1,REP,Michael,Guest
 Mississippi,4,Mississippi's 4th,MS-04,REP,5,DEM,None,
@@ -473,37 +473,37 @@ Nebraska,2,Nebraska's 2nd,NE-02,REP,2,REP,Don,Bacon
 Nebraska,3,Nebraska's 3rd,NE-03,REP,7,DEM,Mark,Elworth
 Nebraska,3,Nebraska's 3rd,NE-03,REP,7,REP,Adrian,Smith
 Nevada,1,Nevada's 1st,NV-01,DEM,4,DEM,Dina,Titus
-Nevada,1,Nevada's 1st,NV-01,DEM,4,REP,,
+Nevada,1,Nevada's 1st,NV-01,DEM,4,REP,Joyce,Bentley
 Nevada,2,Nevada's 2nd,NV-02,REP,5,DEM,Patricia,Ackerman
 Nevada,2,Nevada's 2nd,NV-02,REP,5,REP,Mark,Amodei
 Nevada,3,Nevada's 3rd,NV-03,DEM,1,DEM,Susie,Lee
 Nevada,3,Nevada's 3rd,NV-03,DEM,1,REP,Dan,Rodimer
 Nevada,4,Nevada's 4th,NV-04,DEM,1,DEM,Steven,Horsford
-Nevada,4,Nevada's 4th,NV-04,DEM,1,REP,,
+Nevada,4,Nevada's 4th,NV-04,DEM,1,REP,Jim,Marchant
 New Hampshire,1,New Hampshire's 1st,NH-01,DEM,1,DEM,Chris,Pappas
 New Hampshire,1,New Hampshire's 1st,NH-01,DEM,1,REP,,
 New Hampshire,2,New Hampshire's 2nd,NH-02,DEM,4,DEM,Ann,Kuster
 New Hampshire,2,New Hampshire's 2nd,NH-02,DEM,4,REP,,
 New Jersey,1,New Jersey's 1st,NJ-01,DEM,1,DEM,Donald,Norcross
 New Jersey,1,New Jersey's 1st,NJ-01,DEM,1,REP,Claire,Gustafson
-New Jersey,2,New Jersey's 2nd,NJ-02,REP,1,DEM,,
+New Jersey,2,New Jersey's 2nd,NJ-02,REP,1,DEM,Amy,Kennedy
 New Jersey,2,New Jersey's 2nd,NJ-02,REP,1,REP,Jeff,Van Drew
 New Jersey,3,New Jersey's 3rd,NJ-03,DEM,1,DEM,Andy,Kim
-New Jersey,3,New Jersey's 3rd,NJ-03,DEM,1,REP,,
-New Jersey,4,New Jersey's 4th,NJ-04,REP,20,DEM,,
+New Jersey,3,New Jersey's 3rd,NJ-03,DEM,1,REP,David,Richter
+New Jersey,4,New Jersey's 4th,NJ-04,REP,20,DEM,Stephanie,Schmid
 New Jersey,4,New Jersey's 4th,NJ-04,REP,20,REP,Chris,Smith
 New Jersey,5,New Jersey's 5th,NJ-05,DEM,2,DEM,Josh,Gottheimer
-New Jersey,5,New Jersey's 5th,NJ-05,DEM,2,REP,,
+New Jersey,5,New Jersey's 5th,NJ-05,DEM,2,REP,Frank,Pallotta
 New Jersey,6,New Jersey's 6th,NJ-06,DEM,16,DEM,Frank,Pallone
-New Jersey,6,New Jersey's 6th,NJ-06,DEM,16,REP,,
+New Jersey,6,New Jersey's 6th,NJ-06,DEM,16,REP,None,
 New Jersey,7,New Jersey's 7th,NJ-07,DEM,1,DEM,Tom,Malinowski
 New Jersey,7,New Jersey's 7th,NJ-07,DEM,1,REP,Thomas,Kean
 New Jersey,8,New Jersey's 8th,NJ-08,DEM,7,DEM,Albio,Sires
 New Jersey,8,New Jersey's 8th,NJ-08,DEM,7,REP,Jason,Mushnick
 New Jersey,9,New Jersey's 9th,NJ-09,DEM,12,DEM,Bill,Pascrell
-New Jersey,9,New Jersey's 9th,NJ-09,DEM,12,REP,,
+New Jersey,9,New Jersey's 9th,NJ-09,DEM,12,REP,Billy,Prepeh
 New Jersey,10,New Jersey's 10th,NJ-10,DEM,4,DEM,Donald,Payne
-New Jersey,10,New Jersey's 10th,NJ-10,DEM,4,REP,,
+New Jersey,10,New Jersey's 10th,NJ-10,DEM,4,REP,Jennifer,Zinone
 New Jersey,11,New Jersey's 11th,NJ-11,DEM,1,DEM,Mikie,Sherrill
 New Jersey,11,New Jersey's 11th,NJ-11,DEM,1,REP,Rosemary,Becchi
 New Jersey,12,New Jersey's 12th,NJ-12,DEM,3,DEM,Bonnie,Watson Coleman
@@ -513,8 +513,8 @@ New Mexico,1,New Mexico's 1st,NM-01,DEM,1,REP,Michelle,Garcia Holmes
 New Mexico,2,New Mexico's 2nd,NM-02,DEM,1,DEM,Xochitl,Torres Small
 New Mexico,2,New Mexico's 2nd,NM-02,DEM,1,REP,Yvette,Herrell
 New Mexico,3,New Mexico's 3rd,NM-03,None,6,DEM,Teresa,Leger Fernandez
-New Mexico,3,New Mexico's 3rd,NM-03,None,6,REP,,
-New York,1,New York's 1st,NY-01,REP,3,DEM,,
+New Mexico,3,New Mexico's 3rd,NM-03,None,6,REP,Alexis,Johnson
+New York,1,New York's 1st,NY-01,REP,3,DEM,Nancy,Goroff
 New York,1,New York's 1st,NY-01,REP,3,REP,Lee,Zeldin
 New York,2,New York's 2nd,NY-02,None,14,DEM,Jackie,Gordon
 New York,2,New York's 2nd,NY-02,None,14,REP,Andrew,Garbarino
@@ -551,7 +551,7 @@ New York,17,New York's 17th,NY-17,None,16,REP,Maureen,McArdle-Schulman
 New York,18,New York's 18th,NY-18,DEM,4,DEM,Sean Patrick,Maloney
 New York,18,New York's 18th,NY-18,DEM,4,REP,Chele,Farley
 New York,19,New York's 19th,NY-19,DEM,1,DEM,Antonio,Delgado
-New York,19,New York's 19th,NY-19,DEM,1,REP,,
+New York,19,New York's 19th,NY-19,DEM,1,REP,Kyle,Van De Water
 New York,20,New York's 20th,NY-20,DEM,6,DEM,Paul,Tonko
 New York,20,New York's 20th,NY-20,DEM,6,REP,Elizabeth,Joy
 New York,21,New York's 21st,NY-21,REP,3,DEM,Tedra,Cobb
@@ -628,7 +628,7 @@ Ohio,15,Ohio's 15th,OH-15,REP,5,DEM,Joel,Newby
 Ohio,15,Ohio's 15th,OH-15,REP,5,REP,Steve,Stivers
 Ohio,16,Ohio's 16th,OH-16,REP,1,DEM,Aaron Paul,Godfrey
 Ohio,16,Ohio's 16th,OH-16,REP,1,REP,Anthony,Gonzalez
-Oklahoma,1,Oklahoma's 1st,OK-01,REP,1,DEM,,
+Oklahoma,1,Oklahoma's 1st,OK-01,REP,1,DEM,Kojo,Asamoa-Caesar
 Oklahoma,1,Oklahoma's 1st,OK-01,REP,1,REP,Kevin,Hern
 Oklahoma,2,Oklahoma's 2nd,OK-02,REP,4,DEM,Danyell,Lanier
 Oklahoma,2,Oklahoma's 2nd,OK-02,REP,4,REP,Markwayne,Mullin
@@ -726,7 +726,7 @@ Texas,1,Texas's 1st,TX-01,REP,8,DEM,Hank,Gilbert
 Texas,1,Texas's 1st,TX-01,REP,8,REP,Louie,Gohmert
 Texas,2,Texas's 2nd,TX-02,REP,1,DEM,Sima,Ladjevardian
 Texas,2,Texas's 2nd,TX-02,REP,1,REP,Dan,Crenshaw
-Texas,3,Texas's 3rd,TX-03,REP,1,DEM,,
+Texas,3,Texas's 3rd,TX-03,REP,1,DEM,Lulu,Seikaly
 Texas,3,Texas's 3rd,TX-03,REP,1,REP,Van,Taylor
 Texas,4,Texas's 4th,TX-04,REP,3,DEM,Russell,Foster
 Texas,4,Texas's 4th,TX-04,REP,3,REP,John,Ratcliffe
@@ -746,18 +746,18 @@ Texas,11,Texas's 11th,TX-11,None,8,DEM,Jon Mark,Hogg
 Texas,11,Texas's 11th,TX-11,None,8,REP,August,Pfluger
 Texas,12,Texas's 12th,TX-12,REP,12,DEM,Lisa,Welch
 Texas,12,Texas's 12th,TX-12,REP,12,REP,Kay,Granger
-Texas,13,Texas's 13th,TX-13,REP,13,DEM,,
-Texas,13,Texas's 13th,TX-13,REP,13,REP,,
+Texas,13,Texas's 13th,TX-13,REP,13,DEM,Gus,Trujillo
+Texas,13,Texas's 13th,TX-13,REP,13,REP,Ronny,Jackson
 Texas,14,Texas's 14th,TX-14,REP,4,DEM,Adrienne,Bell
 Texas,14,Texas's 14th,TX-14,REP,4,REP,Randy,Weber
 Texas,15,Texas's 15th,TX-15,DEM,2,DEM,Vicente,González
-Texas,15,Texas's 15th,TX-15,DEM,2,REP,,
+Texas,15,Texas's 15th,TX-15,DEM,2,REP,Monica,de la Cruz-Hernandez
 Texas,16,Texas's 16th,TX-16,DEM,1,DEM,Veronica,Escobar
-Texas,16,Texas's 16th,TX-16,DEM,1,REP,,
-Texas,17,Texas's 17th,TX-17,None,5,DEM,,
-Texas,17,Texas's 17th,TX-17,None,5,REP,,
+Texas,16,Texas's 16th,TX-16,DEM,1,REP,Irene,Armendariz-Jackson
+Texas,17,Texas's 17th,TX-17,None,5,DEM,Rick,Kennedy
+Texas,17,Texas's 17th,TX-17,None,5,REP,Pete,Sessions
 Texas,18,Texas's 18th,TX-18,DEM,13,DEM,Sheila,Jackson Lee
-Texas,18,Texas's 18th,TX-18,DEM,13,REP,,
+Texas,18,Texas's 18th,TX-18,DEM,13,REP,Wendell,Champion
 Texas,19,Texas's 19th,TX-19,REP,2,DEM,Tom,Watson
 Texas,19,Texas's 19th,TX-19,REP,2,REP,Jodey,Arrington
 Texas,20,Texas's 20th,TX-20,DEM,4,DEM,Joaquín,Castro
@@ -768,7 +768,7 @@ Texas,22,Texas's 22nd,TX-22,None,6,DEM,Sri,Kulkarni
 Texas,22,Texas's 22nd,TX-22,None,6,REP,Pete,Olson
 Texas,23,Texas's 23rd,TX-23,None,3,DEM,Gina,Ortiz Jones
 Texas,23,Texas's 23rd,TX-23,None,3,REP,,
-Texas,24,Texas's 24th,TX-24,None,8,DEM,,
+Texas,24,Texas's 24th,TX-24,None,8,DEM,Candace,Valenzuela
 Texas,24,Texas's 24th,TX-24,None,8,REP,Beth,Van Duyne
 Texas,25,Texas's 25th,TX-25,REP,4,DEM,Julie,Oliver
 Texas,25,Texas's 25th,TX-25,REP,4,REP,Roger,Williams
@@ -782,7 +782,7 @@ Texas,29,Texas's 29th,TX-29,DEM,1,DEM,Sylvia,Garcia
 Texas,29,Texas's 29th,TX-29,DEM,1,REP,Jaimy,Blanco
 Texas,30,Texas's 30th,TX-30,DEM,14,DEM,Eddie Bernice,Johnson
 Texas,30,Texas's 30th,TX-30,DEM,14,REP,Tre,Pennie
-Texas,31,Texas's 31st,TX-31,REP,9,DEM,,
+Texas,31,Texas's 31st,TX-31,REP,9,DEM,Donna,Imam
 Texas,31,Texas's 31st,TX-31,REP,9,REP,John,Carter
 Texas,32,Texas's 32nd,TX-32,DEM,1,DEM,Colin,Allred
 Texas,32,Texas's 32nd,TX-32,DEM,1,REP,Genevieve,Collins
@@ -791,14 +791,14 @@ Texas,33,Texas's 33rd,TX-33,DEM,4,REP,Fabian,Vasquez
 Texas,34,Texas's 34th,TX-34,DEM,4,DEM,Filemon,Vela
 Texas,34,Texas's 34th,TX-34,DEM,4,REP,Rey,Gonzalez
 Texas,35,Texas's 35th,TX-35,DEM,13,DEM,Lloyd,Doggett
-Texas,35,Texas's 35th,TX-35,DEM,13,REP,,
+Texas,35,Texas's 35th,TX-35,DEM,13,REP,Jenny,Sharon
 Texas,36,Texas's 36th,TX-36,REP,3,DEM,Rashad,Lewis
 Texas,36,Texas's 36th,TX-36,REP,3,REP,Brian,Babin
-Utah,1,Utah's 1st,UT-01,None,9,DEM,,
-Utah,1,Utah's 1st,UT-01,None,9,REP,,
-Utah,2,Utah's 2nd,UT-02,REP,4,DEM,,
+Utah,1,Utah's 1st,UT-01,None,9,DEM,Darren,Parry
+Utah,1,Utah's 1st,UT-01,None,9,REP,Blake,Moore
+Utah,2,Utah's 2nd,UT-02,REP,4,DEM,Kael,Weston
 Utah,2,Utah's 2nd,UT-02,REP,4,REP,Chris,Stewart
-Utah,3,Utah's 3rd,UT-03,REP,2,DEM,,
+Utah,3,Utah's 3rd,UT-03,REP,2,DEM,Devin,Thorpe
 Utah,3,Utah's 3rd,UT-03,REP,2,REP,John,Curtis
 Utah,4,Utah's 4th,UT-04,DEM,1,DEM,Ben,McAdams
 Utah,4,Utah's 4th,UT-04,DEM,1,REP,,
@@ -850,7 +850,7 @@ West Virginia,1,West Virginia's 1st,WV-01,REP,5,DEM,Natalie,Cline
 West Virginia,1,West Virginia's 1st,WV-01,REP,5,REP,David,McKinley
 West Virginia,2,West Virginia's 2nd,WV-02,REP,3,DEM,Cathy,Kunkel
 West Virginia,2,West Virginia's 2nd,WV-02,REP,3,REP,Alex,Mooney
-West Virginia,3,West Virginia's 3rd,WV-03,REP,1,DEM,,
+West Virginia,3,West Virginia's 3rd,WV-03,REP,1,DEM,Hillary,Turner
 West Virginia,3,West Virginia's 3rd,WV-03,REP,1,REP,Carol,Miller
 Wisconsin,1,Wisconsin's 1st,WI-01,REP,1,DEM,Roger,Polack
 Wisconsin,1,Wisconsin's 1st,WI-01,REP,1,REP,Bryan,Steil
