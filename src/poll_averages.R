@@ -242,11 +242,16 @@ district_poll_leans <- house_district_polls %>%
          pct = case_when(candidate_party == "DEM" ~ pct + house / 2 + rv_bias + 0.02 * (party == "REP") - 0.02 * (party == "DEM"),
                          candidate_party == "REP" ~ pct - house / 2 - rv_bias - 0.02 * (party == "REP") + 0.02 * (party == "DEM"),
                          !(candidate %in% c("DEM", "REP")) ~ pct),
-         district_lean = pct - avg)
+         district_lean = pct - avg) %>% 
+  group_by(question_id, weight, candidate_party) %>%
+  dplyr::slice(1) %>%
+  ungroup() %>%
+  filter(!is.na(avg))
 
 district_poll_leans_simp <- district_poll_leans %>%
   dplyr::select(question_id, weight, candidate_party, district_lean) %>%
-  spread(candidate_party, district_lean)
+  spread(candidate_party, district_lean) %>%
+  filter(!is.na(DEM), !is.na(REP))
 
 district_poll_cov <- cov.wt(district_poll_leans_simp %>% dplyr::select(DEM, REP),
                             wt = district_poll_leans_simp$weight)$cov[1,2]
