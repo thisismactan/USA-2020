@@ -57,7 +57,6 @@ prior_pop_ev_crosstab <- state_priors %>%
 prior_pop_ev_crosstab
 
 # Actual forecast ####
-
 pres_summary_stats <- pres_sim_results %>%
   melt(id.vars = c("sim_id", "contingent_win", "winner"), variable.name = "Candidate", value.name = "ev") %>%
   group_by(Candidate = as.character(Candidate)) %>%
@@ -67,6 +66,18 @@ pres_summary_stats <- pres_sim_results %>%
             pct95 = quantile(ev, 0.95))
 
 pres_summary_stats
+
+pres_state_summary_stats <- pres_state_sims %>%
+  mutate(biden_margin = biden - trump) %>%
+  dplyr::select(-biden, -trump) %>%
+  group_by(State = state, EVs = electoral_votes) %>%
+  summarise(biden_prob = mean(biden_margin > 0),
+            pct05 = quantile(biden_margin, 0.05),
+            pct50 = mean(biden_margin),
+            pct95 = quantile(biden_margin, 0.95))
+
+pres_state_summary_stats %>%
+  print(n = Inf)
 
 ## Histogram that shit
 pres_state_sims %>%

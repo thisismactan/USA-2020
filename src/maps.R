@@ -36,12 +36,13 @@ house_shp_simplified <- st_read("data/shapefiles/house/tl_2018_us_cd116.shp") %>
 
 house_shp <- house_shp_simplified %>%
   left_join(house_district_key, by = c("STATEFP" = "statefp")) %>%
-  mutate(seat_number = as.numeric(as.character(CD116FP))) %>%
+  mutate(seat_number = as.numeric(as.character(CD116FP)),
+         seat_number = ifelse(seat_number == 0, 1, seat_number)) %>%
   left_join(district_summary_stats, by = c("state", "seat_number")) %>%
   left_join(house_candidates_2020, by = c("state", "seat_number")) %>%
   mutate(color = case_when(dem_prob >= 0.5 ~ "#104E8B",
                            dem_prob < 0.5 ~ "firebrick"),
-         alpha = 0.9 * sqrt(2*abs(dem_prob - 0.5)),
+         alpha = 0.75 * (2*abs(dem_prob - 0.5)),
          winner = case_when(dem_prob >= 0.5 ~ "Democrat",
                             dem_prob < 0.5 ~ "Republican"),
          max_prob = pmax(dem_prob, 1 - dem_prob),
@@ -58,7 +59,8 @@ house_shp <- house_shp_simplified %>%
 leaflet(house_shp) %>%
   addTiles() %>%
   addPolygons(weight = 1, color = "#666666", opacity = 1, fillColor = ~color, fillOpacity = ~alpha, label = ~district_abbr, popup = ~infobox) %>%
-  addPolylines(weight = 1, color = "#555555")
+  addPolylines(weight = 1, color = "#555555") %>%
+  addPolylines(data = us_states(), weight = 1.5, color = "black")
 
 
 # Senate

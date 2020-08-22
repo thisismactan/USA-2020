@@ -1,7 +1,7 @@
 source("src/poll_averages.R")
 
 # President ####
-graph_states <- c("National")
+graph_states <- c("Texas")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
@@ -16,9 +16,10 @@ current_poll_average <- president_averages %>%
 
 current_poll_average %>%
   ggplot(aes(x = candidate, y = avg, fill = candidate)) +
+  facet_wrap(~state) +
   geom_col() +
   geom_errorbar(aes(ymin = avg - 1.645 * sqrt(var / eff_n), ymax = avg + 1.645 * sqrt(var / eff_n)), col = "#666666") +
-  geom_text(aes(y = avg + 0.02, label = scales::percent(avg, accuracy = 0.1)), size = 4) +
+  geom_text(aes(y = avg + 0.02, label = scales::percent(avg, accuracy = 0.1)), size = 3) +
   scale_y_continuous(labels = scales::percent) +
   scale_fill_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) +
