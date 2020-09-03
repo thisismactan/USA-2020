@@ -29,8 +29,8 @@ Louisiana,Class II,REP,REP,1,DEM,Antoine Pierce,Antoine,Pierce,FALSE,TRUE
 Louisiana,Class II,REP,REP,1,REP,Bill Cassidy,Bill,Cassidy,FALSE,TRUE
 Maine,Class II,REP,REP,4,DEM,Sara Gideon,Sara,Gideon,FALSE,TRUE
 Maine,Class II,REP,REP,4,REP,Susan M. Collins,Susan,Collins,FALSE,TRUE
-Massachusetts,Class II,DEM,DEM,1,DEM,TBD,,,FALSE,FALSE
-Massachusetts,Class II,DEM,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai,FALSE,FALSE
+Massachusetts,Class II,DEM,DEM,1,DEM,Ed Markey,Ed,Markey,TRUE,FALSE
+Massachusetts,Class II,DEM,DEM,1,REP,Shiva Ayyadurai,Shiva,Ayyadurai,TRUE,FALSE
 Michigan,Class II,DEM,DEM,1,DEM,Gary C. Peters,Gary,Peters,TRUE,FALSE
 Michigan,Class II,DEM,DEM,1,REP,John James,John,James,TRUE,FALSE
 Minnesota,Class II,DEM,DEM,1,DEM,Tina Smith,Tina,Smith,TRUE,FALSE

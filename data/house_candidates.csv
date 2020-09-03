@@ -162,17 +162,17 @@ Colorado,6,Colorado's 6th,CO-06,DEM,1,REP,Steve,House
 Colorado,7,Colorado's 7th,CO-07,DEM,7,DEM,Ed,Perlmutter
 Colorado,7,Colorado's 7th,CO-07,DEM,7,REP,Casper,Stockham
 Connecticut,1,Connecticut's 1st,CT-01,DEM,11,DEM,John,Larson
-Connecticut,1,Connecticut's 1st,CT-01,DEM,11,REP,None,
+Connecticut,1,Connecticut's 1st,CT-01,DEM,11,REP,Mary,Fay
 Connecticut,2,Connecticut's 2nd,CT-02,DEM,7,DEM,Joe,Courtney
 Connecticut,2,Connecticut's 2nd,CT-02,DEM,7,REP,Justin,Anderson
 Connecticut,3,Connecticut's 3rd,CT-03,DEM,15,DEM,Rosa,DeLauro
 Connecticut,3,Connecticut's 3rd,CT-03,DEM,15,REP,Margaret,Streicker
 Connecticut,4,Connecticut's 4th,CT-04,DEM,6,DEM,Jim,Himes
-Connecticut,4,Connecticut's 4th,CT-04,DEM,6,REP,T. J.,Elgin
+Connecticut,4,Connecticut's 4th,CT-04,DEM,6,REP,Jonathan,Riddle
 Connecticut,5,Connecticut's 5th,CT-05,DEM,1,DEM,Jahana,Hayes
 Connecticut,5,Connecticut's 5th,CT-05,DEM,1,REP,David,Sullivan
 Delaware,1,Delaware's at-large,DE-AL,DEM,2,DEM,Lisa,Blunt Rochester
-Delaware,1,Delaware's at-large,DE-AL,DEM,2,REP,Lee,Murphy
+Delaware,1,Delaware's at-large,DE-AL,DEM,2,REP,TBD,
 Florida,1,Florida's 1st,FL-01,REP,2,DEM,Phil,Ehr
 Florida,1,Florida's 1st,FL-01,REP,2,REP,Matt,Gaetz
 Florida,2,Florida's 2nd,FL-02,REP,2,DEM,Kristy,Thripp
@@ -383,10 +383,10 @@ Massachusetts,2,Massachusetts's 2nd,MA-02,DEM,12,DEM,Jim,McGovern
 Massachusetts,2,Massachusetts's 2nd,MA-02,DEM,12,REP,Tracy,Lovvorn
 Massachusetts,3,Massachusetts's 3rd,MA-03,DEM,1,DEM,Lori,Trahan
 Massachusetts,3,Massachusetts's 3rd,MA-03,DEM,1,REP,None,
-Massachusetts,4,Massachusetts's 4th,MA-04,None,4,DEM,Becky,Grossman
+Massachusetts,4,Massachusetts's 4th,MA-04,None,4,DEM,Jake,Auchincloss
 Massachusetts,4,Massachusetts's 4th,MA-04,None,4,REP,Julie,Hall
 Massachusetts,5,Massachusetts's 5th,MA-05,DEM,4,DEM,Katherine,Clark
-Massachusetts,5,Massachusetts's 5th,MA-05,DEM,4,REP,None,
+Massachusetts,5,Massachusetts's 5th,MA-05,DEM,4,REP,Caroline,Colarusso
 Massachusetts,6,Massachusetts's 6th,MA-06,DEM,3,DEM,Seth,Moulton
 Massachusetts,6,Massachusetts's 6th,MA-06,DEM,3,REP,John Paul,Moran
 Massachusetts,7,Massachusetts's 7th,MA-07,DEM,1,DEM,Ayanna,Pressley
@@ -394,7 +394,7 @@ Massachusetts,7,Massachusetts's 7th,MA-07,DEM,1,REP,None,
 Massachusetts,8,Massachusetts's 8th,MA-08,DEM,10,DEM,Stephen,Lynch
 Massachusetts,8,Massachusetts's 8th,MA-08,DEM,10,REP,None,
 Massachusetts,9,Massachusetts's 9th,MA-09,DEM,5,DEM,Bill,Keating
-Massachusetts,9,Massachusetts's 9th,MA-09,DEM,5,REP,None,
+Massachusetts,9,Massachusetts's 9th,MA-09,DEM,5,REP,Helen,Brady
 Michigan,1,Michigan's 1st,MI-01,REP,2,DEM,Dana,Ferguson
 Michigan,1,Michigan's 1st,MI-01,REP,2,REP,Jackie,Bergman
 Michigan,2,Michigan's 2nd,MI-02,REP,5,DEM,Bryan,Berghoef
