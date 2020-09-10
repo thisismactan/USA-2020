@@ -59,6 +59,34 @@ dem_house_fundraising_frac <- fundraising %>%
   filter(party == "DEM") %>%
   dplyr::select(-individual_contributions)
 
+dem_senate_fundraising_frac <- fundraising %>%
+  filter(general %in% c("W", "L"), special == "", (party %in% c("DEM", "REP") | state == "Alaska"), chamber == "S") %>%
+  dplyr::select(year, state, seat_number, party, individual_contributions) %>%
+  group_by(year, state, seat_number) %>%
+  mutate(pct_fundraising = individual_contributions / sum(individual_contributions)) %>%
+  ungroup() %>%
+  filter(party == "DEM") %>%
+  dplyr::select(-individual_contributions)
+  
+# This year
+dem_house_fundraising_frac_2020 <- read_csv("data/house_candidates.csv") %>%
+  left_join(fundraising %>% filter(year == 2020) %>% dplyr::select(candidate_id, individual_contributions), 
+            by = c("fec_candidate_id" = "candidate_id")) %>%
+  mutate(individual_contributions = ifelse(is.na(individual_contributions), 0, individual_contributions)) %>%
+  dplyr::select(-candidate_firstname, -candidate_lastname, -fec_candidate_id) %>%
+  spread(candidate_party, individual_contributions) %>%
+  mutate(dem_pct_fundraising = DEM / (DEM + REP)) %>%
+  dplyr::select(state, seat_number, dem_pct_fundraising)
+
+dem_senate_fundraising_frac_2020 <- read_csv("data/senate_candidates.csv") %>%
+  left_join(fundraising %>% filter(year == 2020) %>% dplyr::select(candidate_id, individual_contributions), 
+            by = c("fec_candidate_id" = "candidate_id")) %>%
+  mutate(individual_contributions = ifelse(is.na(individual_contributions), 0, individual_contributions)) %>%
+  dplyr::select(state, seat_name, candidate_party, individual_contributions) %>%
+  spread(candidate_party, individual_contributions) %>%
+  mutate(dem_pct_fundraising = DEM / (DEM + REP)) %>%
+  dplyr::select(state, seat_name, dem_pct_fundraising)
+
 house_results_2party <- house_results %>%
   filter(!runoff, !special, !writein) %>%
   # Handle multiple candidate from a party (as in states with top-two primaries)
@@ -91,7 +119,7 @@ house_results_2party_filtered <- house_results_2party %>%
          multiterm_rep = multiterm & (incumbent_running == "REP")) %>%
   dplyr::select(year, pres_year, state, seat_number, region, incumbent_running, incumbent_first_elected, multiterm, multiterm_dem, multiterm_rep, 
                 incumbency_change, margin, last_margin, natl_margin, last_natl_margin, state_margin, last_state_margin, dem_pct_fundraising) %>%
-  na.omit()
+  na.omit() 
 
 house_results_2party_filtered$incumbency_change <- factor(house_results_2party_filtered$incumbency_change)
 house_results_2party_filtered

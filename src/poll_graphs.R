@@ -1,7 +1,7 @@
 source("src/poll_averages.R")
 
 # President ####
-graph_states <- c("Texas")
+graph_states <- c("Ohio")
 
 # Setting limits for the graphs
 graph_state_polls <- president_polls %>% 
@@ -36,6 +36,7 @@ president_averages_smoothed %>%
   geom_point(data = graph_state_polls, 
              aes(y = pct), alpha = 0.5, size = 1) +
   geom_line(size = 1) +
+  geom_text(data = current_poll_average, aes(x = median_date + 5, y = avg, label = scales::percent(avg)), size = 3, show.legend = FALSE) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_fill_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_y_continuous(labels = scales::percent, limits = c(min_pct - 0.1, max_pct + 0.1)) +

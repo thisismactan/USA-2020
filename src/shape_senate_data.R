@@ -64,4 +64,5 @@ historical_senate_results_filtered <- historical_senate_results %>%
   
   # Join presidential election results and House national popular vote
   left_join(presidential_leans, by = c("year", "state")) %>%
-  left_join(regions %>% dplyr::select(state, region), by = "state")
+  left_join(regions %>% dplyr::select(state, region), by = "state") %>%
+  left_join()

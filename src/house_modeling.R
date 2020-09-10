@@ -124,9 +124,13 @@ house_results_2party_filtered %>%
 # 2018 model
 house_lm <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change, 
                data = house_results_2party_filtered)
+house_lm_fundraising <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + dem_pct_fundraising, 
+                           data = house_results_2party_filtered)
 house_lmer <- lmer(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + (1|state) + (1|region), 
                    data = house_results_2party_filtered)
+house_lmer_fundraising <- lmer(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + dem_pct_fundraising + (1|state) + 
+                                 (1|region), data = house_results_2party_filtered)
 
-region_sd <- sqrt(as.vector(summary(house_lmer)$varcor$region))
-state_sd <- sqrt(as.vector(summary(house_lmer)$varcor$state))
-residual_sd <- summary(house_lmer)$sigma
+region_sd <- sqrt(as.vector(summary(house_lmer_fundraising)$varcor$region))
+state_sd <- sqrt(as.vector(summary(house_lmer_fundraising)$varcor$state))
+residual_sd <- summary(house_lmer_fundraising)$sigma
