@@ -7487,3 +7487,291 @@ date,state,seat_name,party,prob
 2020-09-09,West Virginia,Class II,Republicans,0.99878
 2020-09-09,Wyoming,Class II,Democrats,2e-5
 2020-09-09,Wyoming,Class II,Republicans,0.99998
+2020-09-10,Alabama,Class II,Democrats,0.03502
+2020-09-10,Alabama,Class II,Republicans,0.96498
+2020-09-10,Alaska,Class II,Democrats,0.14223
+2020-09-10,Alaska,Class II,Republicans,0.85777
+2020-09-10,Arizona,Class III,Democrats,0.86695
+2020-09-10,Arizona,Class III,Republicans,0.13305
+2020-09-10,Arkansas,Class II,Democrats,0
+2020-09-10,Arkansas,Class II,Republicans,1
+2020-09-10,Colorado,Class II,Democrats,0.7792
+2020-09-10,Colorado,Class II,Republicans,0.2208
+2020-09-10,Delaware,Class II,Democrats,0.98776
+2020-09-10,Delaware,Class II,Republicans,0.012240000000000029
+2020-09-10,Georgia,Class II,Democrats,0.32136
+2020-09-10,Georgia,Class II,Republicans,0.67864
+2020-09-10,Georgia,Class III,Democrats,0.19077
+2020-09-10,Georgia,Class III,Republicans,0.80923
+2020-09-10,Idaho,Class II,Democrats,0.00216
+2020-09-10,Idaho,Class II,Republicans,0.99784
+2020-09-10,Illinois,Class II,Democrats,0.98957
+2020-09-10,Illinois,Class II,Republicans,0.01043000000000005
+2020-09-10,Iowa,Class II,Democrats,0.096560000000000007
+2020-09-10,Iowa,Class II,Republicans,0.90344
+2020-09-10,Kansas,Class II,Democrats,0.10481
+2020-09-10,Kansas,Class II,Republicans,0.89519
+2020-09-10,Kentucky,Class II,Democrats,0.02669
+2020-09-10,Kentucky,Class II,Republicans,0.97331
+2020-09-10,Louisiana,Class II,Democrats,0.04417
+2020-09-10,Louisiana,Class II,Republicans,0.95583
+2020-09-10,Maine,Class II,Democrats,0.29625
+2020-09-10,Maine,Class II,Republicans,0.70375
+2020-09-10,Massachusetts,Class II,Democrats,0.99942
+2020-09-10,Massachusetts,Class II,Republicans,5.800000000000249e-4
+2020-09-10,Michigan,Class II,Democrats,0.93668
+2020-09-10,Michigan,Class II,Republicans,0.06332000000000004
+2020-09-10,Minnesota,Class II,Democrats,0.9785
+2020-09-10,Minnesota,Class II,Republicans,0.021499999999999964
+2020-09-10,Mississippi,Class II,Democrats,0.05214
+2020-09-10,Mississippi,Class II,Republicans,0.94786
+2020-09-10,Montana,Class II,Democrats,0.14121
+2020-09-10,Montana,Class II,Republicans,0.8587899999999999
+2020-09-10,National,NA,Democrats,0.52439
+2020-09-10,National,NA,Republicans,0.47561
+2020-09-10,Nebraska,Class II,Democrats,0.00409
+2020-09-10,Nebraska,Class II,Republicans,0.99591
+2020-09-10,New Hampshire,Class II,Democrats,0.99892
+2020-09-10,New Hampshire,Class II,Republicans,0.0010799999999999699
+2020-09-10,New Jersey,Class II,Democrats,0.9899
+2020-09-10,New Jersey,Class II,Republicans,0.010099999999999998
+2020-09-10,New Mexico,Class II,Democrats,0.9323
+2020-09-10,New Mexico,Class II,Republicans,0.06769999999999998
+2020-09-10,North Carolina,Class II,Democrats,0.65787
+2020-09-10,North Carolina,Class II,Republicans,0.34213000000000005
+2020-09-10,Oklahoma,Class II,Democrats,0
+2020-09-10,Oklahoma,Class II,Republicans,1
+2020-09-10,Oregon,Class II,Democrats,0.9907
+2020-09-10,Oregon,Class II,Republicans,0.009299999999999975
+2020-09-10,Rhode Island,Class II,Democrats,0.99918
+2020-09-10,Rhode Island,Class II,Republicans,8.200000000000429e-4
+2020-09-10,South Carolina,Class II,Democrats,0.15005
+2020-09-10,South Carolina,Class II,Republicans,0.84995
+2020-09-10,South Dakota,Class II,Democrats,0.00558
+2020-09-10,South Dakota,Class II,Republicans,0.99442
+2020-09-10,Tennessee,Class II,Democrats,0.01669
+2020-09-10,Tennessee,Class II,Republicans,0.98331
+2020-09-10,Texas,Class II,Democrats,0.01557
+2020-09-10,Texas,Class II,Republicans,0.98443
+2020-09-10,Virginia,Class II,Democrats,0.94557
+2020-09-10,Virginia,Class II,Republicans,0.05442999999999998
+2020-09-10,West Virginia,Class II,Democrats,0.00106
+2020-09-10,West Virginia,Class II,Republicans,0.99894
+2020-09-10,Wyoming,Class II,Democrats,2e-5
+2020-09-10,Wyoming,Class II,Republicans,0.99998
+2020-09-11,Alabama,Class II,Democrats,0.03771
+2020-09-11,Alabama,Class II,Republicans,0.96229
+2020-09-11,Alaska,Class II,Democrats,0.14044
+2020-09-11,Alaska,Class II,Republicans,0.85956
+2020-09-11,Arizona,Class III,Democrats,0.8706
+2020-09-11,Arizona,Class III,Republicans,0.12939999999999996
+2020-09-11,Arkansas,Class II,Democrats,0
+2020-09-11,Arkansas,Class II,Republicans,1
+2020-09-11,Colorado,Class II,Democrats,0.77861
+2020-09-11,Colorado,Class II,Republicans,0.22138999999999998
+2020-09-11,Delaware,Class II,Democrats,0.98801
+2020-09-11,Delaware,Class II,Republicans,0.011989999999999945
+2020-09-11,Georgia,Class II,Democrats,0.3168
+2020-09-11,Georgia,Class II,Republicans,0.6832
+2020-09-11,Georgia,Class III,Democrats,0.19207
+2020-09-11,Georgia,Class III,Republicans,0.80793
+2020-09-11,Idaho,Class II,Democrats,0.00219
+2020-09-11,Idaho,Class II,Republicans,0.99781
+2020-09-11,Illinois,Class II,Democrats,0.98971
+2020-09-11,Illinois,Class II,Republicans,0.010290000000000021
+2020-09-11,Iowa,Class II,Democrats,0.09752
+2020-09-11,Iowa,Class II,Republicans,0.90248
+2020-09-11,Kansas,Class II,Democrats,0.10443
+2020-09-11,Kansas,Class II,Republicans,0.89557
+2020-09-11,Kentucky,Class II,Democrats,0.02679
+2020-09-11,Kentucky,Class II,Republicans,0.97321
+2020-09-11,Louisiana,Class II,Democrats,0.04474
+2020-09-11,Louisiana,Class II,Republicans,0.95526
+2020-09-11,Maine,Class II,Democrats,0.37313
+2020-09-11,Maine,Class II,Republicans,0.62687
+2020-09-11,Massachusetts,Class II,Democrats,0.99943
+2020-09-11,Massachusetts,Class II,Republicans,5.699999999999594e-4
+2020-09-11,Michigan,Class II,Democrats,0.93588
+2020-09-11,Michigan,Class II,Republicans,0.06411999999999995
+2020-09-11,Minnesota,Class II,Democrats,0.97783
+2020-09-11,Minnesota,Class II,Republicans,0.022170000000000023
+2020-09-11,Mississippi,Class II,Democrats,0.05285
+2020-09-11,Mississippi,Class II,Republicans,0.94715
+2020-09-11,Montana,Class II,Democrats,0.14068
+2020-09-11,Montana,Class II,Republicans,0.85932
+2020-09-11,National,NA,Democrats,0.54021
+2020-09-11,National,NA,Republicans,0.45979
+2020-09-11,Nebraska,Class II,Democrats,0.00419
+2020-09-11,Nebraska,Class II,Republicans,0.99581
+2020-09-11,New Hampshire,Class II,Democrats,0.99866
+2020-09-11,New Hampshire,Class II,Republicans,0.0013400000000000079
+2020-09-11,New Jersey,Class II,Democrats,0.99009
+2020-09-11,New Jersey,Class II,Republicans,0.009909999999999974
+2020-09-11,New Mexico,Class II,Democrats,0.92607
+2020-09-11,New Mexico,Class II,Republicans,0.07393000000000005
+2020-09-11,North Carolina,Class II,Democrats,0.62993
+2020-09-11,North Carolina,Class II,Republicans,0.37007
+2020-09-11,Oklahoma,Class II,Democrats,0
+2020-09-11,Oklahoma,Class II,Republicans,1
+2020-09-11,Oregon,Class II,Democrats,0.99081
+2020-09-11,Oregon,Class II,Republicans,0.009190000000000031
+2020-09-11,Rhode Island,Class II,Democrats,0.9992
+2020-09-11,Rhode Island,Class II,Republicans,8.000000000000229e-4
+2020-09-11,South Carolina,Class II,Democrats,0.14536
+2020-09-11,South Carolina,Class II,Republicans,0.8546400000000001
+2020-09-11,South Dakota,Class II,Democrats,0.00573
+2020-09-11,South Dakota,Class II,Republicans,0.99427
+2020-09-11,Tennessee,Class II,Democrats,0.01685
+2020-09-11,Tennessee,Class II,Republicans,0.98315
+2020-09-11,Texas,Class II,Democrats,0.01867
+2020-09-11,Texas,Class II,Republicans,0.98133
+2020-09-11,Virginia,Class II,Democrats,0.94625
+2020-09-11,Virginia,Class II,Republicans,0.053749999999999964
+2020-09-11,West Virginia,Class II,Democrats,0.00109
+2020-09-11,West Virginia,Class II,Republicans,0.99891
+2020-09-11,Wyoming,Class II,Democrats,2e-5
+2020-09-11,Wyoming,Class II,Republicans,0.99998
+2020-09-12,Alabama,Class II,Democrats,0.0381
+2020-09-12,Alabama,Class II,Republicans,0.9619
+2020-09-12,Alaska,Class II,Democrats,0.13908
+2020-09-12,Alaska,Class II,Republicans,0.86092
+2020-09-12,Arizona,Class III,Democrats,0.82525
+2020-09-12,Arizona,Class III,Republicans,0.17474999999999996
+2020-09-12,Arkansas,Class II,Democrats,0
+2020-09-12,Arkansas,Class II,Republicans,1
+2020-09-12,Colorado,Class II,Democrats,0.77958
+2020-09-12,Colorado,Class II,Republicans,0.22041999999999995
+2020-09-12,Delaware,Class II,Democrats,0.98818
+2020-09-12,Delaware,Class II,Republicans,0.011820000000000053
+2020-09-12,Georgia,Class II,Democrats,0.31533
+2020-09-12,Georgia,Class II,Republicans,0.68467
+2020-09-12,Georgia,Class III,Democrats,0.19175
+2020-09-12,Georgia,Class III,Republicans,0.80825
+2020-09-12,Idaho,Class II,Democrats,0.00222
+2020-09-12,Idaho,Class II,Republicans,0.99778
+2020-09-12,Illinois,Class II,Democrats,0.98981
+2020-09-12,Illinois,Class II,Republicans,0.010190000000000032
+2020-09-12,Iowa,Class II,Democrats,0.09869
+2020-09-12,Iowa,Class II,Republicans,0.90131000000000006
+2020-09-12,Kansas,Class II,Democrats,0.10495
+2020-09-12,Kansas,Class II,Republicans,0.89505
+2020-09-12,Kentucky,Class II,Democrats,0.02696
+2020-09-12,Kentucky,Class II,Republicans,0.97304
+2020-09-12,Louisiana,Class II,Democrats,0.0452
+2020-09-12,Louisiana,Class II,Republicans,0.9548
+2020-09-12,Maine,Class II,Democrats,0.37218
+2020-09-12,Maine,Class II,Republicans,0.62782
+2020-09-12,Massachusetts,Class II,Democrats,0.99943
+2020-09-12,Massachusetts,Class II,Republicans,5.699999999999594e-4
+2020-09-12,Michigan,Class II,Democrats,0.93698
+2020-09-12,Michigan,Class II,Republicans,0.06301999999999996
+2020-09-12,Minnesota,Class II,Democrats,0.98051
+2020-09-12,Minnesota,Class II,Republicans,0.019490000000000007
+2020-09-12,Mississippi,Class II,Democrats,0.05334
+2020-09-12,Mississippi,Class II,Republicans,0.9466600000000001
+2020-09-12,Montana,Class II,Democrats,0.14121
+2020-09-12,Montana,Class II,Republicans,0.8587899999999999
+2020-09-12,National,NA,Democrats,0.51475
+2020-09-12,National,NA,Republicans,0.48525
+2020-09-12,Nebraska,Class II,Democrats,0.00426
+2020-09-12,Nebraska,Class II,Republicans,0.99574
+2020-09-12,New Hampshire,Class II,Democrats,0.99852
+2020-09-12,New Hampshire,Class II,Republicans,0.0014800000000000368
+2020-09-12,New Jersey,Class II,Democrats,0.99021
+2020-09-12,New Jersey,Class II,Republicans,0.009789999999999965
+2020-09-12,New Mexico,Class II,Democrats,0.87461
+2020-09-12,New Mexico,Class II,Republicans,0.12539
+2020-09-12,North Carolina,Class II,Democrats,0.63147
+2020-09-12,North Carolina,Class II,Republicans,0.36853
+2020-09-12,Oklahoma,Class II,Democrats,0
+2020-09-12,Oklahoma,Class II,Republicans,1
+2020-09-12,Oregon,Class II,Democrats,0.99082
+2020-09-12,Oregon,Class II,Republicans,0.009179999999999966
+2020-09-12,Rhode Island,Class II,Democrats,0.99921
+2020-09-12,Rhode Island,Class II,Republicans,7.899999999999574e-4
+2020-09-12,South Carolina,Class II,Democrats,0.1458
+2020-09-12,South Carolina,Class II,Republicans,0.8542
+2020-09-12,South Dakota,Class II,Democrats,0.00581
+2020-09-12,South Dakota,Class II,Republicans,0.99419
+2020-09-12,Tennessee,Class II,Democrats,0.01703
+2020-09-12,Tennessee,Class II,Republicans,0.98297
+2020-09-12,Texas,Class II,Democrats,0.01889
+2020-09-12,Texas,Class II,Republicans,0.98111
+2020-09-12,Virginia,Class II,Democrats,0.9469
+2020-09-12,Virginia,Class II,Republicans,0.053100000000000036
+2020-09-12,West Virginia,Class II,Democrats,0.00109
+2020-09-12,West Virginia,Class II,Republicans,0.99891
+2020-09-12,Wyoming,Class II,Democrats,2e-5
+2020-09-12,Wyoming,Class II,Republicans,0.99998
+2020-09-13,Alabama,Class II,Democrats,0.03706
+2020-09-13,Alabama,Class II,Republicans,0.96294
+2020-09-13,Alaska,Class II,Democrats,0.13564
+2020-09-13,Alaska,Class II,Republicans,0.86436
+2020-09-13,Arizona,Class III,Democrats,0.79217
+2020-09-13,Arizona,Class III,Republicans,0.20782999999999996
+2020-09-13,Arkansas,Class II,Democrats,0
+2020-09-13,Arkansas,Class II,Republicans,1
+2020-09-13,Colorado,Class II,Democrats,0.77758
+2020-09-13,Colorado,Class II,Republicans,0.22241999999999995
+2020-09-13,Delaware,Class II,Democrats,0.98738
+2020-09-13,Delaware,Class II,Republicans,0.012619999999999965
+2020-09-13,Georgia,Class II,Democrats,0.31219
+2020-09-13,Georgia,Class II,Republicans,0.68781
+2020-09-13,Georgia,Class III,Democrats,0.1917
+2020-09-13,Georgia,Class III,Republicans,0.8083
+2020-09-13,Idaho,Class II,Democrats,0.00214
+2020-09-13,Idaho,Class II,Republicans,0.99786
+2020-09-13,Illinois,Class II,Democrats,0.98949
+2020-09-13,Illinois,Class II,Republicans,0.01051000000000002
+2020-09-13,Iowa,Class II,Democrats,0.09797
+2020-09-13,Iowa,Class II,Republicans,0.90203
+2020-09-13,Kansas,Class II,Democrats,0.104
+2020-09-13,Kansas,Class II,Republicans,0.896
+2020-09-13,Kentucky,Class II,Democrats,0.02659
+2020-09-13,Kentucky,Class II,Republicans,0.97341
+2020-09-13,Louisiana,Class II,Democrats,0.04348
+2020-09-13,Louisiana,Class II,Republicans,0.95652
+2020-09-13,Maine,Class II,Democrats,0.36406
+2020-09-13,Maine,Class II,Republicans,0.63594
+2020-09-13,Massachusetts,Class II,Democrats,0.99908
+2020-09-13,Massachusetts,Class II,Republicans,9.200000000000319e-4
+2020-09-13,Michigan,Class II,Democrats,0.93627
+2020-09-13,Michigan,Class II,Republicans,0.06372999999999995
+2020-09-13,Minnesota,Class II,Democrats,0.9762
+2020-09-13,Minnesota,Class II,Republicans,0.023800000000000043
+2020-09-13,Mississippi,Class II,Democrats,0.05307
+2020-09-13,Mississippi,Class II,Republicans,0.94693
+2020-09-13,Montana,Class II,Democrats,0.13824
+2020-09-13,Montana,Class II,Republicans,0.86176
+2020-09-13,National,NA,Democrats,0.4895
+2020-09-13,National,NA,Republicans,0.5105
+2020-09-13,Nebraska,Class II,Democrats,0.00461
+2020-09-13,Nebraska,Class II,Republicans,0.99539
+2020-09-13,New Hampshire,Class II,Democrats,0.99825
+2020-09-13,New Hampshire,Class II,Republicans,0.0017500000000000293
+2020-09-13,New Jersey,Class II,Democrats,0.9899
+2020-09-13,New Jersey,Class II,Republicans,0.010099999999999998
+2020-09-13,New Mexico,Class II,Democrats,0.87325
+2020-09-13,New Mexico,Class II,Republicans,0.12675000000000003
+2020-09-13,North Carolina,Class II,Democrats,0.62736
+2020-09-13,North Carolina,Class II,Republicans,0.37263999999999997
+2020-09-13,Oklahoma,Class II,Democrats,0
+2020-09-13,Oklahoma,Class II,Republicans,1
+2020-09-13,Oregon,Class II,Democrats,0.99095
+2020-09-13,Oregon,Class II,Republicans,0.009050000000000002
+2020-09-13,Rhode Island,Class II,Democrats,0.99921
+2020-09-13,Rhode Island,Class II,Republicans,7.899999999999574e-4
+2020-09-13,South Carolina,Class II,Democrats,0.14238
+2020-09-13,South Carolina,Class II,Republicans,0.85762
+2020-09-13,South Dakota,Class II,Democrats,0.00548
+2020-09-13,South Dakota,Class II,Republicans,0.99452
+2020-09-13,Tennessee,Class II,Democrats,0.01576
+2020-09-13,Tennessee,Class II,Republicans,0.98424
+2020-09-13,Texas,Class II,Democrats,0.01986
+2020-09-13,Texas,Class II,Republicans,0.98014
+2020-09-13,Virginia,Class II,Democrats,0.94417
+2020-09-13,Virginia,Class II,Republicans,0.055830000000000046
+2020-09-13,West Virginia,Class II,Democrats,0.00111
+2020-09-13,West Virginia,Class II,Republicans,0.99889
+2020-09-13,Wyoming,Class II,Democrats,2e-5
+2020-09-13,Wyoming,Class II,Republicans,0.99998

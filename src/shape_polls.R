@@ -89,7 +89,7 @@ house_district_polls <- read_csv("data/house_district_polls.csv") %>%
 
 # Senate
 senate_polls_all <- read_csv("data/senate_polls.csv") %>%
-  filter(!is.na(state), population %in% c("rv", "lv", "v"), cycle == 2020) %>%
+  filter(!is.na(state), population %in% c("rv", "lv", "v"), candidate_party %in% c("DEM", "REP"), cycle == 2020) %>%
   dplyr::select(poll_id, state, seat_name, pollster, question_id, start_date, end_date, n = sample_size, pop = population, mode = methodology, 
                 party = partisan, tracking, candidate_party, candidate = candidate_name, pct) %>%
   mutate(pct = pct / 100,
@@ -151,7 +151,7 @@ senate_candidates <- read_csv("data/senate_candidates.csv") %>%
 ## Filter polls to those with the appropriate candidate matchups
 senate_poll_candidates <- senate_polls_all %>%
   dplyr::select(state, seat_name, question_id, candidate_party, candidate) %>%
-  filter(seat_name == "Class II" | state == "Arizona") %>%
+  filter(seat_name == "Class II" | state == "Arizona", candidate_party %in% c("DEM", "REP")) %>%
   spread(candidate_party, candidate)
 
 senate_question_ids <- senate_candidates %>%

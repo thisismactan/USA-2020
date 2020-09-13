@@ -451,7 +451,7 @@ Missouri,1,Missouri's 1st,MO-01,None,10,DEM,Cori,Bush,H8MO01143
 Missouri,1,Missouri's 1st,MO-01,None,10,REP,Anthony,Rogers,
 Missouri,2,Missouri's 2nd,MO-02,REP,4,DEM,Jill,Schupp,H0MO02254
 Missouri,2,Missouri's 2nd,MO-02,REP,4,REP,Ann,Wagner,H2MO02102
-Missouri,3,Missouri's 3rd,MO-03,REP,6,DEM,Megan,Rezabek,H8MO03203
+Missouri,3,Missouri's 3rd,MO-03,REP,6,DEM,Megan,Rezabek,H0MO03203
 Missouri,3,Missouri's 3rd,MO-03,REP,6,REP,Blaine,Luetkemeyer,H8MO09153
 Missouri,4,Missouri's 4th,MO-04,REP,5,DEM,Lindsey,Simmons,H0MO04235
 Missouri,4,Missouri's 4th,MO-04,REP,5,REP,Vicky,Hartzler,H0MO04086
@@ -602,7 +602,7 @@ Ohio,2,Ohio's 2nd,OH-02,REP,4,REP,Brad,Wenstrup,H2OH02085
 Ohio,3,Ohio's 3rd,OH-03,DEM,4,DEM,Joyce,Beatty,H2OH03125
 Ohio,3,Ohio's 3rd,OH-03,DEM,4,REP,Mark,Richardson,
 Ohio,4,Ohio's 4th,OH-04,REP,7,DEM,Shannon,Freshour,H0OH04093
-Ohio,4,Ohio's 4th,OH-04,REP,7,REP,Jim,Jordan,H0OH04082
+Ohio,4,Ohio's 4th,OH-04,REP,7,REP,Jim,Jordan,H6OH04082
 Ohio,5,Ohio's 5th,OH-05,REP,6,DEM,Nick,Rubando,H0OH05074
 Ohio,5,Ohio's 5th,OH-05,REP,6,REP,Bob,Latta,H8OH05036
 Ohio,6,Ohio's 6th,OH-06,REP,5,DEM,Shawna,Roberts,H8OH06133
@@ -716,7 +716,7 @@ Tennessee,5,Tennessee's 5th,TN-05,DEM,9,REP,None,,
 Tennessee,6,Tennessee's 6th,TN-06,REP,1,DEM,Christopher,Finley,H0TN47012
 Tennessee,6,Tennessee's 6th,TN-06,REP,1,REP,John,Rose,H8TN06094
 Tennessee,7,Tennessee's 7th,TN-07,REP,1,DEM,Kiran,Sreepada,H0TN07255
-Tennessee,7,Tennessee's 7th,TN-07,REP,1,REP,Mark,Green,H0TN07076
+Tennessee,7,Tennessee's 7th,TN-07,REP,1,REP,Mark,Green,H8TN07076
 Tennessee,8,Tennessee's 8th,TN-08,REP,2,DEM,Erika,Stotts Pearson,H6TN08250
 Tennessee,8,Tennessee's 8th,TN-08,REP,2,REP,David,Kustoff,H2TN07103
 Tennessee,9,Tennessee's 9th,TN-09,DEM,7,DEM,Steve,Cohen,H6TN09068
@@ -802,7 +802,7 @@ Utah,3,Utah's 3rd,UT-03,REP,2,REP,John,Curtis,H8UT03238
 Utah,4,Utah's 4th,UT-04,DEM,1,DEM,Ben,McAdams,H8UT04053
 Utah,4,Utah's 4th,UT-04,DEM,1,REP,Burgess,Owens,H0UT04076
 Vermont,1,Vermont's at-large,VT-AL,DEM,7,DEM,Peter,Welch,H6VT00160
-Vermont,1,Vermont's at-large,VT-AL,DEM,7,REP,Miriam,Berry,H0VT01065
+Vermont,1,Vermont's at-large,VT-AL,DEM,7,REP,Miriam,Berry,H0VT01062
 Virginia,1,Virginia's 1st,VA-01,REP,7,DEM,Qasim,Rashid,H0VA01235
 Virginia,1,Virginia's 1st,VA-01,REP,7,REP,Rob,Wittman,H8VA01147
 Virginia,2,Virginia's 2nd,VA-02,DEM,1,DEM,Elaine,Luria,H8VA02111

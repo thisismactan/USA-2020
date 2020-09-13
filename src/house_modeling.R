@@ -4,7 +4,7 @@ set.seed(2020)
 
 # Models
 ## Linear regression
-house_lm_pre_2016 <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change, 
+house_lm_pre_2016 <- lm(margin ~ natl_margin + last_natl_margin + last_margin + incumbency_change + dem_pct_fundraising, 
                data = house_results_2party_filtered %>% filter(year < 2016))
 summary(house_lm_pre_2016)
 
