@@ -33,9 +33,10 @@ national_house_results <- house_results %>%
 election_years <- seq(from = 2006, to = 2020, by = 2)
 fundraising <- vector("list", length(election_years))
 for(y in 1:length(election_years)) {
-  fundraising_filename <- paste0("data/fec-data/fundraising_", election_years[y], ".txt")
-  fundraising[[y]] <- read.delim(fundraising_filename, header = FALSE, sep = "|") %>%
-    mutate(year = election_years[y])
+  fundraising_filename <- paste0("data/fec-data/fundraising_", election_years[y], ".csv")
+  fundraising[[y]] <- read.csv(fundraising_filename, header = FALSE) %>%
+    mutate(year = election_years[y],
+           V1 = gsub("ï»¿", "", V1)) 
 }
 
 fundraising <- bind_rows(fundraising) %>% 
@@ -51,7 +52,7 @@ fundraising <- bind_rows(fundraising) %>%
          seat_number = pmax(seat_number, 1))
 
 dem_house_fundraising_frac <- fundraising %>%
-  filter(general %in% c("W", "L"), special == "", (party %in% c("DEM", "REP") | state == "Alaska"), chamber == "H") %>%
+  filter(general %in% c("W", "L"), special == "" | is.na(special), (party %in% c("DEM", "REP") | state == "Alaska"), chamber == "H") %>%
   dplyr::select(year, state, seat_number, party, individual_contributions) %>%
   group_by(year, state, seat_number) %>%
   mutate(pct_fundraising = individual_contributions / sum(individual_contributions)) %>%
