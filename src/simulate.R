@@ -297,7 +297,7 @@ if(exists("house_district_sims")) {
 }
 gc()
 
-house_n_sims <- 0.8 * n_sims
+house_n_sims <- 0.75 * n_sims
 
 ## State and regional-level deviations
 house_region_deviations <- regions %>%

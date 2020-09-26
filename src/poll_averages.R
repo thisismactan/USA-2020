@@ -12,7 +12,7 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   national_president_average_list[[i]] <- national_president_polls %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
     group_by(candidate, state) %>%
     summarise(avg = wtd.mean(pct, weight),
@@ -58,7 +58,7 @@ national_president_polls_adj <- national_president_polls %>%
 
 # Covariance matrix for current polls
 president_poll_matrix <- national_president_polls_adj %>%
-  mutate(weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  mutate(weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(weight > 0) %>%
   dplyr::select(weight, poll_id, question_id, candidate, pct) %>% 
   spread(candidate, pct) %>%
@@ -76,7 +76,7 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   national_president_average_adj_list[[i]] <- national_president_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
     group_by(candidate, state) %>%
     summarise(avg = wtd.mean(pct, weight),
@@ -145,7 +145,7 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   generic_ballot_average_list[[i]] <- generic_ballot_polls %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
     group_by(candidate) %>%
     summarise(avg = wtd.mean(pct, weight),
@@ -191,7 +191,7 @@ generic_ballot_polls_adj <- generic_ballot_polls %>%
 
 # Covariance matrix for current polls
 generic_ballot_poll_matrix <- generic_ballot_polls_adj %>%
-  mutate(weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 2)^0.5)) %>%
+  mutate(weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 2)^0.5)) %>%
   filter(weight > 0) %>%
   dplyr::select(weight, poll_id, question_id, candidate, pct) %>% 
   spread(candidate, pct) %>%
@@ -210,7 +210,7 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   generic_ballot_average_adj_list[[i]] <- generic_ballot_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
     group_by(candidate) %>%
     summarise(avg = wtd.mean(pct, weight),
@@ -329,7 +329,7 @@ senate_polls_adj <- senate_polls %>%
 
 # Covariance matrix for current polls
 senate_poll_matrix <- senate_polls_adj %>%
-  mutate(weight = (age <= 60) * (age >= 0) * loess_weight / exp((age + 2)^0.5)) %>%
+  mutate(weight = (age <= 30) * (age >= 0) * loess_weight / exp((age + 2)^0.5)) %>%
   filter(weight > 0) %>%
   dplyr::select(weight, poll_id, question_id, candidate_party, pct) %>% 
   spread(candidate_party, pct) %>%
@@ -348,7 +348,7 @@ for(i in 1:n_days) {
   # Compute averages and standard errors
   senate_average_adj_list[[i]] <- senate_polls_adj %>%
     mutate(age = as.numeric(current_date - median_date),
-           weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+           weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
     filter(weight > 0) %>%
     group_by(candidate, candidate_party, state, seat_name) %>%
     summarise(avg = wtd.mean(pct, weight),
@@ -363,7 +363,7 @@ senate_averages_adj <- bind_rows(senate_average_adj_list) %>%
 
 senate_average_margins <- senate_polls_adj %>%
   mutate(age = as.numeric(today() - median_date),
-         weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+         weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(weight > 0) %>%
   dplyr::select(-candidate, -pct) %>%
   spread(candidate_party, pct_adj) %>%
@@ -399,7 +399,7 @@ rm(list = grep("_list", ls(), value = TRUE))
 
 # Georgia special election
 georgia_primary_average <- georgia_primary_polls %>%
-  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  mutate(weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(!is.na(weight)) %>%
   group_by(candidate, candidate_party) %>%
   summarise(logit = wtd.mean(logit(pct), weight),
@@ -412,7 +412,7 @@ georgia_primary_undecided <- 1 - (georgia_primary_average$logit %>%
   sum())
 
 georgia_primary_polls_matrix <- georgia_primary_polls %>%
-  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  mutate(weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(!is.na(weight)) %>%
   mutate(logit = logit(pct)) %>%
   dplyr::select(question_id, weight, candidate, logit) %>%
@@ -428,7 +428,7 @@ while(!is.positive.definite(georgia_primary_cov)) {
 }
 
 georgia_runoff_average <- georgia_runoff_polls %>%
-  mutate(weight = 100 * (age <= 90) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
+  mutate(weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(!is.na(weight)) %>%
   group_by(matchup, candidate) %>%
   summarise(avg = wtd.mean(pct, weight),
