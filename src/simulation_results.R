@@ -207,6 +207,8 @@ presidential_forecast_probabilities_history %>%
   ggplot(aes(x = date, y = prob, col = candidate)) +
   geom_line(size = 1) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
+  geom_text(data = pres_summary_stats %>% mutate(date = today() + 6) %>% dplyr::select(candidate = Candidate, everything()), 
+            aes(x = date, y = win_prob, label = scales::percent(win_prob, accuracy = 1)), size = 3) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +
@@ -221,6 +223,11 @@ ggplot(swing_state_pres_forecast_history, aes(x = date, y = prob, col = candidat
             alpha = 1/5, size = 1) +
   geom_line(size = 1) +
   geom_vline(xintercept = as.Date("2020-11-03")) +
+  geom_text(data = pres_state_summary_stats %>% mutate(date = today() + 10, trump = 1 - biden_prob) %>% 
+              filter(State %in% comp_states) %>%
+              dplyr::select(state = State, date, biden = biden_prob, trump) %>% 
+              melt(id.vars = c("state", "date"), variable.name = "candidate", value.name = "prob"), 
+            aes(x = date, y = prob, label = scales::percent(prob, accuracy = 1)), size = 3, show.legend = FALSE) +
   scale_colour_manual(name = "Candidate", values = candidate_colors, labels = candidate_fullnames) +
   scale_x_date(limits = as.Date(c("2020-04-17", "2020-11-04")), breaks = date_breaks("months"), labels = date_format("%b %Y")) +
   scale_y_continuous(labels = scales::percent_format(accuracy = 1), limits = c(0, 1)) +

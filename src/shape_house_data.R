@@ -70,8 +70,19 @@ dem_senate_fundraising_frac <- fundraising %>%
   dplyr::select(-individual_contributions)
   
 # This year
+oct_fundraising <- read.csv("data/fec-data/fundraising_2020_oct.csv", header = FALSE) %>%
+  mutate(V1 = gsub("ï»¿", "", V1)) %>%
+  inner_join(regions %>% dplyr::select(state, abbrev), by = c("V19" = "abbrev")) %>%
+  dplyr::select(state, seat_number = V20, candidate_id = V1, candidate_name = V2, candidate_status = V3, party_code = V4, party = V5, 
+                total_receipts = V6, transfers_from_committees = V7, total_disbursements = V8, transfers_to_committees = V9, beginning_cash = V10,
+                end_cash = V11, candidate_contributions = V12, candidate_loans = V13, other_loans = V14, candidate_loan_repayments = V15,
+                other_loan_repayments = V16, debt = V17, individual_contributions = V18, special = V21, primary = V22, runoff = V23, general = V24, 
+                vote_share = V25, committee_contributions = V26, party_contributions = V27, end_date = V28, individual_refunds = V29, 
+                committee_refunds = V30) %>%
+  as.tbl()
+
 dem_house_fundraising_frac_2020 <- read_csv("data/house_candidates.csv") %>%
-  left_join(fundraising %>% filter(year == 2020) %>% dplyr::select(candidate_id, individual_contributions), 
+  left_join(oct_fundraising %>% dplyr::select(candidate_id, individual_contributions), 
             by = c("fec_candidate_id" = "candidate_id")) %>%
   mutate(individual_contributions = ifelse(is.na(individual_contributions), 0, individual_contributions)) %>%
   dplyr::select(-candidate_firstname, -candidate_lastname, -fec_candidate_id) %>%
@@ -80,7 +91,7 @@ dem_house_fundraising_frac_2020 <- read_csv("data/house_candidates.csv") %>%
   dplyr::select(state, seat_number, dem_pct_fundraising)
 
 dem_senate_fundraising_frac_2020 <- read_csv("data/senate_candidates.csv") %>%
-  left_join(fundraising %>% filter(year == 2020) %>% dplyr::select(candidate_id, individual_contributions), 
+  left_join(oct_fundraising %>% dplyr::select(candidate_id, individual_contributions), 
             by = c("fec_candidate_id" = "candidate_id")) %>%
   mutate(individual_contributions = ifelse(is.na(individual_contributions), 0, individual_contributions)) %>%
   dplyr::select(state, seat_name, candidate_party, individual_contributions) %>%

@@ -405,7 +405,8 @@ georgia_primary_average <- georgia_primary_polls %>%
   summarise(logit = wtd.mean(logit(pct), weight),
             var_logit = wtd.var(logit(pct), weight),
             eff_n = sum(weight)^2 / sum(weight^2)) %>%
-  ungroup()
+  ungroup() %>%
+  filter(!is.na(var_logit))
 
 georgia_primary_undecided <- 1 - (georgia_primary_average$logit %>%
   logit_inv() %>%
@@ -414,8 +415,10 @@ georgia_primary_undecided <- 1 - (georgia_primary_average$logit %>%
 georgia_primary_polls_matrix <- georgia_primary_polls %>%
   mutate(weight = 100 * (age <= 60) * (age >= 0) * loess_weight / exp((age + 1)^0.5)) %>%
   filter(!is.na(weight)) %>%
-  mutate(logit = logit(pct)) %>%
+  mutate(logit = logit(pct),
+         logit = ifelse(logit == -Inf, logit(0.005), logit)) %>%
   dplyr::select(question_id, weight, candidate, logit) %>%
+  filter(candidate %in% georgia_primary_average$candidate) %>%
   spread(candidate, logit, fill = logit(0.005)) %>%
   dplyr::select(-question_id)
 

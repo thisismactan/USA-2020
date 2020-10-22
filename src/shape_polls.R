@@ -151,7 +151,7 @@ senate_candidates <- read_csv("data/senate_candidates.csv") %>%
 ## Filter polls to those with the appropriate candidate matchups
 senate_poll_candidates <- senate_polls_all %>%
   dplyr::select(state, seat_name, question_id, candidate_party, candidate) %>%
-  filter(seat_name == "Class II" | state == "Arizona", candidate_party %in% c("DEM", "REP")) %>%
+  filter(seat_name == "Class II" | state == "Arizona", candidate_party %in% c("DEM", "REP"), state != "Louisiana") %>%
   spread(candidate_party, candidate)
 
 senate_question_ids <- senate_candidates %>%
