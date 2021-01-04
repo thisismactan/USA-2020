@@ -325,6 +325,7 @@ house_bellwetherogram %>%
 
 # Senate ####
 senate_summary_stats <- senate_seat_distribution %>%
+  filter(sim_id %in% condition_sim_ids) %>%
   left_join(senate_majority_winners %>% dplyr::select(sim_id, majority), by = "sim_id") %>%
   group_by(party) %>%
   summarise(majority_prob = mean(party == majority),
@@ -336,6 +337,7 @@ senate_summary_stats
 
 # Summary stats by state
 senate_state_summary_stats <- senate_state_sims %>%
+  filter(sim_id %in% condition_sim_ids) %>%
   group_by(state, seat_name) %>%
   summarise(dem_prob = mean(party == "Democrats"),
             pct05 = quantile(margin, 0.05),

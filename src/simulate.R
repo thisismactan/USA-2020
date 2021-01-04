@@ -65,7 +65,7 @@ state_priors <- total_deviations %>%
   left_join(state_two_party_margins_2016, by = "state") %>%
   mutate(two_party_margin_natl_change = national_two_party_margin - two_party_margin_2016,
          prior_predicted_two_party_margin = state_two_party_margin * fixed_effect_coefficients["last_two_party_margin"] +
-           two_party_margin_natl_change * fixed_effect_coefficients["last_two_party_margin"] + total_deviation,
+           two_party_margin_natl_change * fixed_effect_coefficients["two_party_margin_natl_change"] + total_deviation,
          prior_predicted_two_party_margin = pmax(prior_predicted_two_party_margin, -1),
          prior_predicted_two_party_margin = pmin(prior_predicted_two_party_margin, 1),
          biden = 0.5 + prior_predicted_two_party_margin / 2,
